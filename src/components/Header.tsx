@@ -38,7 +38,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 group">
-              <img src="/brands/ehslynxafrik-logo.png" alt="EHS-LYNX AFRIK Logo" className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-102" />
+              <img src="/brands/ehslynxafrik-logo.png" alt="EHS-LYNX AFRIK Logo" className="h-13 w-auto object-contain transition-transform duration-200 group-hover:scale-102" />
             </Link>
           </div>
 

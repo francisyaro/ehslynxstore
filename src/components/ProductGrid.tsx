@@ -216,6 +216,19 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                   key={product.id}
                   className="flex flex-col border border-slate-200 bg-white rounded-2xl overflow-hidden hover:border-brand-blue/35 hover:shadow-lg hover:shadow-slate-100 transition-all duration-300 group relative"
                 >
+                  {/* Product Image Container */}
+                  <div className="h-44 w-full bg-slate-50 border-b border-slate-100 p-4 flex items-center justify-center relative overflow-hidden">
+                    {product.images && product.images.length > 0 ? (
+                      <img
+                        src={product.images[0]}
+                        alt={product.name}
+                        className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                      />
+                    ) : (
+                      <span className="text-[10px] text-slate-400 font-bold uppercase">Image non disponible</span>
+                    )}
+                  </div>
+
                   <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                     <div className="space-y-2">
                       <div className="flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase h-6">

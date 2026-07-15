@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Company Brief */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/brands/ehslynxafrik-logo.png" alt="EHS-LYNX AFRIK Logo" className="h-8 w-auto object-contain" />
+              <img src="/brands/ehslynxafrik-logo.png" alt="EHS-LYNX AFRIK Logo" className="h-11 w-auto object-contain" />
             </div>
             <p className="text-xs leading-relaxed text-slate-500">
               Distributeur officiel agréé d\'équipements de métrologie, d\'hygiène industrielle et de santé-sécurité au travail pour l\'Afrique de l\'Ouest et du Centre.
