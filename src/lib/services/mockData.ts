@@ -107,7 +107,7 @@ export const BRANDS: Brand[] = [
     id: 'brand-ohd',
     name: 'OHD',
     slug: 'ohd',
-    logo: 'OHD logo',
+    logo: '/brands/ohd-logo.png',
     description: 'Le standard mondial pour les essais d\'ajustement quantitatifs rapides et précis des masques de protection respiratoire.'
   }
 ];
@@ -1115,7 +1115,7 @@ export const PRODUCTS: Product[] = [
       'Norme OSHA 29 CFR 1910.134',
       'CE / CSA'
     ],
-    images: ['/products/quantifit2.jpg'],
+    images: ['/products/quantifit2.png'],
     public_documents: [
       { name: 'Brochure QuantiFit2 (FR).pdf', url: '#', size: '4.5 MB' }
     ],
@@ -1134,6 +1134,106 @@ export const PRODUCTS: Product[] = [
           { key: 'Écran', value: 'Écran tactile couleur de 7 pouces' },
           { key: 'Batterie optionnelle', value: 'Autonomie de 6 heures sur batterie Lithium-Ion' },
           { key: 'Connexions', value: 'USB, Bluetooth, Ethernet' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-ohd-aerofit',
+    brand_id: 'brand-ohd',
+    category_id: 'cat-respiratory',
+    name: 'Système de Fit Testing quantitatif portable',
+    model: 'AeroFit',
+    manufacturer_reference: 'OHD-AF',
+    slug: 'fit-test-aerofit',
+    short_description: 'Système compact de test d\'ajustement respiratoire par pression négative contrôlée (PNC) conçu pour les interventions sur site.',
+    long_description: 'L\'AeroFit d\'OHD est la version portable ultra-compacte du système de Fit Testing par PNC. Logé dans un boîtier bleu résistant aux chocs, il permet de tester l\'ajustement de masques respiratoires en moins de 2 minutes en aspirant l\'air à l\'intérieur du masque pour mesurer scientifiquement les fuites d\'air à la source.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Essais d\'ajustement de masques en extérieur / chantiers',
+      'Audits HSE d\'étanchéité des masques de protection individuelle',
+      'Tests réguliers dans les mines et usines pétrochimiques'
+    ],
+    sectors: ['Industries minières', 'Secteur Pétrole/Gaz', 'Cabinets HSE mobiles'],
+    advantages: [
+      'Technologie PNC sans génération d\'aérosols salins',
+      'Test ultra-rapide de conformité OSHA',
+      'Utilisation simple avec l\'air ambiant',
+      'Boîtier léger à poignée de transport ergonomique'
+    ],
+    standards_certifications: [
+      'Normes OSHA 29 CFR 1910.134',
+      'CE / FCC'
+    ],
+    images: ['/products/aerofit.jpg'],
+    public_documents: [
+      { name: 'Fiche technique OHD AeroFit.pdf', url: '#', size: '1.8 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Technologie',
+        items: [
+          { key: 'Principe de mesure', value: 'Pression Négative Contrôlée (PNC)' },
+          { key: 'Durée du protocole', value: 'Moins de 2 minutes' }
+        ]
+      },
+      {
+        group: 'Physique',
+        items: [
+          { key: 'Dimensions', value: '38 x 28 x 16 cm' },
+          { key: 'Poids', value: '3.6 kg' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-ohd-tiger-xt',
+    brand_id: 'brand-ohd',
+    category_id: 'cat-air',
+    name: 'Détecteur de COV portable (PID) avec kit mallette',
+    model: 'Tiger XT',
+    manufacturer_reference: 'ION-TIGER-XT',
+    slug: 'detecteur-cov-pid-tiger-xt',
+    short_description: 'Détecteur de composés organiques volatils (COV) par photoionisation (PID) haute performance livré en kit complet.',
+    long_description: 'Le kit Tiger XT est un détecteur de COV à photoionisation (PID) portable de référence. Il intègre une technologie brevetée d\'électrode de rechange résistante à l\'humidité pour éviter les dérives de signal dans les climats chauds et humides (Afrique de l\'Ouest/Centre). Il permet de détecter et quantifier instantanément des centaines de gaz toxiques et de vapeurs chimiques. Livré en kit complet sous mallette durcie antichoc.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Mesure de COV en hygiène industrielle',
+      'Contrôle des espaces confinés avant entrée',
+      'Réponse d\'urgence aux fuites de produits chimiques'
+    ],
+    sectors: ['Pétrole & Gaz', 'Industries Chimiques', 'Mines & Carrières', 'Cabinets d\'audit HSE'],
+    advantages: [
+      'Technologie PID brevetée anti-humidité exclusive',
+      'Plage de détection immense : de 1 ppb à 20 000 ppm',
+      'Grand écran graphique couleur rétroéclairé',
+      'Mallette durcie de transport avec kit de calibrage et accessoires inclus'
+    ],
+    standards_certifications: [
+      'Intrinsèquement Sûr (ATEX/IECEx Zone 1)',
+      'Indice de protection IP65',
+      'CE / RoHS'
+    ],
+    images: ['/products/tiger-xt.jpg'],
+    public_documents: [
+      { name: 'Fiche technique Tiger XT Kit.pdf', url: '#', size: '2.5 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Détection PID',
+        items: [
+          { key: 'Lampe de détection', value: 'Krypton 10.6 eV standard (autres options dispo)' },
+          { key: 'Plage dynamique', value: '1 ppb à 20 000 ppm (méthane équivalent)' },
+          { key: 'Temps de réponse (T90)', value: 'Moins de 2 secondes' }
+        ]
+      },
+      {
+        group: 'Physique & Batterie',
+        items: [
+          { key: 'Protection boîtier', value: 'IP65' },
+          { key: 'Autonomie', value: 'Jusqu\'à 24 heures de fonctionnement continu' }
         ]
       }
     ]
