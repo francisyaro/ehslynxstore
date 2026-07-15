@@ -183,8 +183,51 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bento Box 3: Services HSE & Diagnostics (Light Theme) */}
-        <div className="relative min-h-[500px] flex flex-col justify-between items-center text-center p-8 bg-slate-100 border border-slate-200 rounded-3xl overflow-hidden transition-all">
+        {/* Bento Box 3: SVANTEK SV 307 (Light Theme) */}
+        <div className="relative min-h-[500px] flex flex-col justify-between items-center text-center p-8 bg-white border border-slate-200 rounded-3xl overflow-hidden hover:shadow-lg hover:shadow-slate-100 transition-all">
+          <div className="space-y-2 z-10">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-green">SVANTEK</p>
+            <h2 className="text-3xl font-extrabold text-slate-900">Station SV 307</h2>
+            <p className="text-xs text-slate-500 max-w-xs mx-auto">
+              Station de surveillance continue du bruit extérieur étanche (IP65) avec modem 4G intégré.
+            </p>
+            <div className="flex justify-center gap-4 pt-1">
+              <Link href="/produits/svantek/station-bruit-outdoor-sv-307" className="text-xs font-bold text-brand-blue hover:underline">En savoir plus</Link>
+              <Link href="/produits/svantek/station-bruit-outdoor-sv-307" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
+            </div>
+          </div>
+          
+          <div className="w-full flex justify-center z-10 mt-6 h-56 items-center">
+            <img src="/products/sv-307.jpg" alt="SVANTEK Station SV 307" className="max-h-full object-contain hover:scale-105 transition-transform duration-300 rounded-xl" />
+          </div>
+        </div>
+
+        {/* Bento Box 4: SENSIDYNE Gilian Dustlight (Light Theme) */}
+        <div className="relative min-h-[500px] flex flex-col justify-between items-center text-center p-8 bg-white border border-slate-200 rounded-3xl overflow-hidden hover:shadow-lg hover:shadow-slate-100 transition-all">
+          <div className="space-y-2 z-10">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-green">SENSIDYNE</p>
+            <h2 className="text-3xl font-extrabold text-slate-900">Gilian Dustlight</h2>
+            <p className="text-xs text-slate-500 max-w-xs mx-auto">
+              Moniteur individuel de poussières en temps réel pour la protection directe des travailleurs.
+            </p>
+            <div className="flex justify-center gap-4 pt-1">
+              <Link href="/produits/sensidyne/moniteur-poussieres-dustlight" className="text-xs font-bold text-brand-blue hover:underline">En savoir plus</Link>
+              <Link href="/produits/sensidyne/moniteur-poussieres-dustlight" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
+            </div>
+          </div>
+          
+          <div className="w-full flex justify-center z-10 mt-6 h-56 items-center">
+            <img src="/products/dustlight.png" alt="Gilian Dustlight" className="max-h-full object-contain hover:scale-105 transition-transform duration-300" />
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------- */}
+      {/* SERVICES & LYNX ACADEMY SECTION */}
+      {/* ------------------------------------------------------------- */}
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Services HSE & Diagnostics */}
+        <div className="relative min-h-[400px] flex flex-col justify-between items-center text-center p-8 bg-slate-100 border border-slate-200 rounded-3xl overflow-hidden transition-all">
           <div className="space-y-2 z-10 text-slate-900">
             <p className="text-[10px] font-bold uppercase tracking-widest text-brand-blue">SERVICES & CONSEIL</p>
             <h2 className="text-3xl font-extrabold text-slate-900">Ingénierie HSE & Étalonnage</h2>
@@ -208,8 +251,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bento Box 4: Lynx Academy (Light Red/Orange Accent Theme) */}
-        <div className="relative min-h-[500px] flex flex-col justify-between items-center text-center p-8 bg-gradient-to-br from-red-50 to-orange-50 border border-brand-red/20 rounded-3xl overflow-hidden hover:shadow-lg hover:shadow-slate-100 transition-all">
+        {/* Lynx Academy */}
+        <div className="relative min-h-[400px] flex flex-col justify-between items-center text-center p-8 bg-gradient-to-br from-red-50 to-orange-50 border border-brand-red/20 rounded-3xl overflow-hidden hover:shadow-lg hover:shadow-slate-100 transition-all">
           <div className="space-y-2 z-10 text-slate-900">
             <p className="text-[10px] font-bold uppercase tracking-widest text-brand-red">FORMATION PROFESSIONNELLE</p>
             <h2 className="text-3xl font-extrabold text-slate-900">Lynx Academy</h2>
@@ -227,7 +270,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
       </section>
 
       {/* ------------------------------------------------------------- */}
