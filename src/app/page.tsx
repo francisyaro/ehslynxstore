@@ -8,7 +8,7 @@ export default function Home() {
     <div className="bg-slate-950 text-slate-100 min-h-screen font-sans">
       
       {/* ------------------------------------------------------------- */}
-      {/* SPOTLIGHT 1: SVANTEK SV 977D (Apple Style Hero 1 - Dark/Premium) */}
+      {/* SPOTLIGHT 1: SVANTEK SV 971 (Apple Style Hero 1 - Dark/Premium) */}
       {/* ------------------------------------------------------------- */}
       <section className="relative w-full min-h-[640px] flex flex-col justify-between items-center text-center py-16 bg-gradient-to-b from-slate-950 to-slate-900 overflow-hidden border-b border-slate-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(18,67,140,0.15),transparent_60%)] pointer-events-none" />
@@ -17,20 +17,20 @@ export default function Home() {
         <div className="space-y-4 max-w-2xl px-4 z-10">
           <p className="text-xs font-bold uppercase tracking-widest text-brand-green">SVANTEK</p>
           <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-none">
-            Sonomètre SV 977D
+            Sonomètre SV 971
           </h1>
           <p className="text-lg sm:text-xl text-slate-400 max-w-lg mx-auto font-medium">
-            La précision ultime pour la métrologie acoustique de Classe 1.
+            Le plus petit sonomètre de Classe 1 de précision au monde.
           </p>
           <div className="flex justify-center gap-6 pt-2">
             <Link
-              href="/produits/svantek/sonometre-sv-977d"
+              href="/produits/svantek/sonometre-compact-sv-971"
               className="inline-flex items-center gap-1 text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors group"
             >
               En savoir plus <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/produits/svantek/sonometre-sv-977d"
+              href="/produits/svantek/sonometre-compact-sv-971"
               className="inline-flex items-center gap-1 text-sm font-bold text-brand-green hover:text-green-400 transition-colors"
             >
               Demander un prix
@@ -47,7 +47,7 @@ export default function Home() {
             <div className="w-full h-32 bg-slate-900 rounded-xl border border-slate-800 p-3 flex flex-col justify-between relative overflow-hidden">
               <div className="absolute top-0 right-0 w-20 h-20 bg-brand-green/5 rounded-full blur-md" />
               <div className="flex justify-between items-center text-[8px] text-slate-500 font-bold uppercase">
-                <span>SV 977D</span>
+                <span>SV 971</span>
                 <span className="text-brand-green">RUNNING</span>
               </div>
               <div className="text-2xl font-black text-white font-mono text-center my-auto flex items-end justify-center gap-1">
@@ -208,24 +208,24 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bento Box 2: SVANTEK SV 104A (Dark Theme) */}
+        {/* Bento Box 2: SVANTEK SV 307 (Dark Theme) */}
         <div className="relative min-h-[500px] flex flex-col justify-between items-center text-center p-8 bg-slate-900/60 border border-slate-900 rounded-3xl overflow-hidden hover:border-slate-850 transition-all">
           <div className="space-y-2 z-10">
             <p className="text-[10px] font-bold uppercase tracking-widest text-brand-green">SVANTEK</p>
-            <h2 className="text-3xl font-extrabold text-white">Dosimètre SV 104A</h2>
+            <h2 className="text-3xl font-extrabold text-white">Station SV 307</h2>
             <p className="text-xs text-slate-400 max-w-xs mx-auto">
-              Dosimétrie de bruit sans câble avec microphone incassable MEMS.
+              Station de surveillance continue du bruit extérieur étanche (IP65) avec modem 4G.
             </p>
             <div className="flex justify-center gap-4 pt-1">
-              <Link href="/produits/svantek/dosimetre-bruit-sv-104a" className="text-xs font-bold text-cyan-400 hover:underline">En savoir plus</Link>
-              <Link href="/produits/svantek/dosimetre-bruit-sv-104a" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
+              <Link href="/produits/svantek/station-bruit-outdoor-sv-307" className="text-xs font-bold text-cyan-400 hover:underline">En savoir plus</Link>
+              <Link href="/produits/svantek/station-bruit-outdoor-sv-307" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
             </div>
           </div>
           
           <div className="w-full flex justify-center z-10 mt-6">
             <div className="w-28 h-40 bg-slate-950 border border-slate-800 rounded-2xl p-3 flex flex-col justify-between">
-              <div className="w-6 h-6 rounded-full bg-brand-red/10 border border-brand-red/30 flex items-center justify-center mx-auto">
-                <Volume2 className="h-3 w-3 text-brand-red" />
+              <div className="w-6 h-6 rounded-full bg-brand-green/10 border border-brand-green/30 flex items-center justify-center mx-auto">
+                <Volume2 className="h-3 w-3 text-brand-green" />
               </div>
               <div className="h-10 w-full bg-slate-900 rounded border border-slate-850" />
             </div>

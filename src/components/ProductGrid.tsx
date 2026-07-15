@@ -68,12 +68,12 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
         <div className="border border-slate-900 bg-slate-900/10 p-5 rounded-2xl space-y-6">
           <div className="flex items-center justify-between pb-4 border-b border-slate-900">
             <h2 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-              <SlidersHorizontal className="h-4 w-4 text-cyan-400" /> Filtres
+              <SlidersHorizontal className="h-4 w-4 text-brand-green" /> Filtres
             </h2>
             {(selectedBrand || selectedCategory || search) && (
               <button
                 onClick={resetFilters}
-                className="text-[10px] text-slate-500 hover:text-cyan-400 font-bold uppercase transition-colors"
+                className="text-[10px] text-slate-500 hover:text-brand-green font-bold uppercase transition-colors"
               >
                 Réinitialiser
               </button>
@@ -88,7 +88,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                 onClick={() => setSelectedCategory('')}
                 className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold text-left transition-colors ${
                   !selectedCategory
-                    ? 'text-cyan-400 bg-slate-900/50'
+                    ? 'text-brand-green bg-slate-900/50'
                     : 'text-slate-400 hover:text-white hover:bg-slate-900/20'
                 }`}
               >
@@ -101,7 +101,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                   onClick={() => setSelectedCategory(c.slug)}
                   className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold text-left transition-colors ${
                     selectedCategory === c.slug
-                      ? 'text-cyan-400 bg-slate-900/50'
+                      ? 'text-brand-green bg-slate-900/50'
                       : 'text-slate-400 hover:text-white hover:bg-slate-900/20'
                   }`}
                 >
@@ -120,7 +120,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                 onClick={() => setSelectedBrand('')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold text-left transition-colors ${
                   !selectedBrand
-                    ? 'text-cyan-400 bg-slate-900/50'
+                    ? 'text-brand-green bg-slate-900/50'
                     : 'text-slate-400 hover:text-white hover:bg-slate-900/20'
                 }`}
               >
@@ -132,7 +132,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                   onClick={() => setSelectedBrand(b.slug)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-semibold text-left transition-colors ${
                     selectedBrand === b.slug
-                      ? 'text-cyan-400 bg-slate-900/50'
+                      ? 'text-brand-green bg-slate-900/50'
                       : 'text-slate-400 hover:text-white hover:bg-slate-900/20'
                   }`}
                 >
@@ -155,7 +155,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
               placeholder="Nom, modèle, mot-clé..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-950 border border-slate-900 text-slate-200 text-xs focus:outline-none focus:border-cyan-500 transition-colors"
+              className="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-950 border border-slate-900 text-slate-200 text-xs focus:outline-none focus:border-brand-green transition-colors"
             />
             <Search className="absolute left-3 top-3 h-3.5 w-3.5 text-slate-500" />
             {search && (
@@ -181,7 +181,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
             {selectedCategory && (
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-900 border border-slate-800 text-slate-300">
                 Catégorie: {activeCategoryName}
-                <button onClick={() => setSelectedCategory('')} className="hover:text-cyan-400 ml-1">
+                <button onClick={() => setSelectedCategory('')} className="hover:text-brand-green ml-1">
                   <X className="h-3 w-3" />
                 </button>
               </span>
@@ -189,7 +189,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
             {selectedBrand && (
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-900 border border-slate-800 text-slate-300">
                 Marque: {activeBrandName}
-                <button onClick={() => setSelectedBrand('')} className="hover:text-cyan-400 ml-1">
+                <button onClick={() => setSelectedBrand('')} className="hover:text-brand-green ml-1">
                   <X className="h-3 w-3" />
                 </button>
               </span>
@@ -197,7 +197,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
             {search && (
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-900 border border-slate-800 text-slate-300">
                 Recherche: &quot;{search}&quot;
-                <button onClick={() => setSearch('')} className="hover:text-cyan-400 ml-1">
+                <button onClick={() => setSearch('')} className="hover:text-brand-green ml-1">
                   <X className="h-3 w-3" />
                 </button>
               </span>
@@ -218,12 +218,16 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                 >
                   <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                     <div className="space-y-2">
-                      <div className="flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase">
-                        <span>{brand?.name}</span>
-                        <span className="text-cyan-500">{product.model}</span>
+                      <div className="flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase h-6">
+                        {brand?.logo.startsWith('/') ? (
+                          <img src={brand.logo} alt={brand.name} className="h-4 object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+                        ) : (
+                          <span>{brand?.name}</span>
+                        )}
+                        <span className="text-brand-green">{product.model}</span>
                       </div>
 
-                      <h3 className="text-base font-bold text-white group-hover:text-cyan-400 transition-colors">
+                      <h3 className="text-base font-bold text-white group-hover:text-brand-green transition-colors">
                         {product.name}
                       </h3>
 
@@ -239,7 +243,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                       </div>
 
                       <div className="flex justify-between items-center">
-                        <span className="text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wide bg-cyan-950 text-cyan-400 border border-cyan-500/20">
+                        <span className="text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wide bg-emerald-950/40 text-brand-green border border-brand-green/20">
                           Prix sur demande
                         </span>
                         
@@ -261,7 +265,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
             <p className="text-slate-400 text-sm">Aucun produit ne correspond à vos filtres.</p>
             <button
               onClick={resetFilters}
-              className="text-xs text-cyan-400 font-bold hover:underline"
+              className="text-xs text-brand-green font-bold hover:underline"
             >
               Effacer tous les filtres
             </button>

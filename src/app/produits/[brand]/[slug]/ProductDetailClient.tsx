@@ -42,9 +42,13 @@ export default function ProductDetailClient({ product, brand, category }: Produc
       <div className="lg:col-span-7 space-y-10">
         <div className="space-y-3">
           <div className="flex flex-wrap gap-2 items-center text-xs">
-            <span className="px-2 py-0.5 rounded font-bold bg-slate-900 border border-slate-800 text-cyan-400">
-              {brand.name}
-            </span>
+            {brand.logo.startsWith('/') ? (
+              <img src={brand.logo} alt={brand.name} className="h-6 object-contain bg-slate-900 border border-slate-800 px-2 py-0.5 rounded" />
+            ) : (
+              <span className="px-2 py-0.5 rounded font-bold bg-slate-900 border border-slate-800 text-brand-green">
+                {brand.name}
+              </span>
+            )}
             {category && (
               <span className="px-2 py-0.5 rounded font-bold bg-slate-900 border border-slate-800 text-slate-400">
                 {category.name}

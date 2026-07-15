@@ -86,7 +86,7 @@ export const BRANDS: Brand[] = [
     id: 'brand-svantek',
     name: 'SVANTEK',
     slug: 'svantek',
-    logo: 'Svantek logo',
+    logo: '/brands/svantek-logo.png',
     description: 'Leader mondial de la mesure acoustique et vibratoire de précision pour la santé au travail et l\'environnement.'
   },
   {
@@ -141,114 +141,200 @@ export const CATEGORIES: Category[] = [
 
 export const PRODUCTS: Product[] = [
   {
-    id: 'prod-sv-977d',
+    id: 'prod-sv-958',
     brand_id: 'brand-svantek',
     category_id: 'cat-noise',
-    name: 'Sonomètre de classe 1 et Analyseur de vibrations',
-    model: 'SV 977D',
-    manufacturer_reference: 'SV977D-STD',
-    slug: 'sonometre-sv-977d',
-    short_description: 'Sonomètre de précision ultime pour l\'acoustique du bâtiment, la sécurité au travail et l\'analyse des vibrations corporelles.',
-    long_description: 'Le SV 977D est le fleuron des sonomètres de classe 1. Doté de capacités avancées de mesure des vibrations, d\'enregistrement audio en temps réel et de connectivité Bluetooth intégrée, il est conçu pour les professionnels exigeant le maximum de précision et de conformité réglementaire (CEI 61672-1). Grâce à son boîtier robuste, il convient aux environnements industriels difficiles comme les mines, la pétrochimie et la construction lourde.',
+    name: 'Analyseur de vibrations et de bruit à 4 canaux',
+    model: 'SV 958',
+    manufacturer_reference: 'SV958-STD',
+    slug: 'analyseur-vibrations-sv-958',
+    short_description: 'Analyseur de vibrations à quatre canaux de classe 1, idéal pour l\'hygiène au travail et la mesure des vibrations corporelles.',
+    long_description: 'Le SV 958 est le standard mondial des analyseurs de vibrations à quatre canaux. Il permet de mesurer simultanément les vibrations mains-bras, corps entier et le bruit. Doté d\'une bande passante exceptionnelle de 20 kHz et d\'analyses FFT en temps réel, cet instrument est indispensable aux cabinets HSE, aux mines et à l\'industrie lourde.',
     availability_status: 'disponible',
     status: 'actif',
     applications: [
-      'Cartographie sonore de sites industriels',
-      'Mesure du bruit environnemental urbain',
-      'Mesure de vibrations mains-bras et corps entier',
-      'Acoustique du bâtiment et isolation'
+      'Évaluation de l\'exposition humaine aux vibrations',
+      'Mesures acoustiques à 4 canaux indépendants',
+      'Analyses spectrales FFT en temps réel'
     ],
-    sectors: ['Mines', 'BTP', 'Cabinets HSE', 'Laboratoires de recherche'],
+    sectors: ['Mines', 'BTP & Génie Civil', 'Industrie Lourde', 'Laboratoires de recherche'],
     advantages: [
-      'Garantie constructeur de 3 ans',
-      'Génération automatique de rapports conformes aux normes ISO',
-      'Robustesse extrême aux chocs et intempéries (IP65 en mallette)',
-      'Connectivité Bluetooth et USB'
+      '4 canaux de mesure indépendants simultanés',
+      'Analyse fréquentielle 1/1, 1/3 octave et FFT',
+      'Mesure simultanée bruit et vibrations',
+      'Conformité totale ISO 8041-1'
     ],
     standards_certifications: [
-      'CEI 61672-1:2013 (Classe 1)',
-      'CEI 61260-1:2014 (Filtres d\'octave)',
-      'ISO 8041-1:2017 (Vibrations)'
+      'CEI 61672-1 (Classe 1)',
+      'ISO 8041-1:2017 (Vibrations)',
+      'ISO 2631 (Corps Entier)'
     ],
-    images: ['/products/sv977d.jpg'],
+    images: ['/products/sv-958.jpg'],
     public_documents: [
-      { name: 'Brochure technique SV 977D.pdf', url: '#', size: '2.4 MB' },
-      { name: 'Guide d\'utilisation rapide.pdf', url: '#', size: '1.1 MB' }
-    ],
-    technical_specifications: [
-      {
-        group: 'Mesure Acoustique',
-        items: [
-          { key: 'Plage de mesure', value: '25 dBA à 140 dBA Peak' },
-          { key: 'Pondérations fréquentielles', value: 'A, C, Z, G' },
-          { key: 'Pondérations temporelles', value: 'Lente, Rapide, Impulsion' },
-          { key: 'Filtres en temps réel', value: '1/1 d\'octave ou 1/3 d\'octave (options)' }
-        ]
-      },
-      {
-        group: 'Alimentation & Autonomie',
-        items: [
-          { key: 'Piles / Batterie', value: '4x AA rechargeables ou alimentation externe USB' },
-          { key: 'Autonomie', value: 'Jusqu\'à 24 heures en fonctionnement continu' }
-        ]
-      },
-      {
-        group: 'Mémoire & Connectivité',
-        items: [
-          { key: 'Stockage', value: 'Carte MicroSD amovible jusqu\'à 128 Go' },
-          { key: 'Communication', value: 'USB 2.0, Bluetooth Low Energy (BLE)' }
-        ]
-      }
-    ]
-  },
-  {
-    id: 'prod-sv-104a',
-    brand_id: 'brand-svantek',
-    category_id: 'cat-noise',
-    name: 'Dosimètre de bruit individuel',
-    model: 'SV 104A',
-    manufacturer_reference: 'SV104A-DOS',
-    slug: 'dosimetre-bruit-sv-104a',
-    short_description: 'Dosimètre de bruit compact avec microphone incassable en technologie MEMS et écran couleur OLED haute visibilité.',
-    long_description: 'Le SV 104A révolutionne la dosimétrie du bruit au travail. Fini les câbles fragiles : le dosimètre s\'attache directement sur l\'épaule du travailleur. Doté d\'un microphone MEMS breveté garanti à vie contre les dommages mécaniques, il offre des analyses fréquentielles en temps réel (1/1 octave) et un enregistrement audio complet pour valider la nature des pics de bruit.',
-    availability_status: 'disponible',
-    status: 'actif',
-    applications: [
-      'Évaluation de l\'exposition individuelle au bruit au travail',
-      'Contrôle de l\'efficacité des protecteurs auditifs (casques/bouchons)',
-      'Mesures de conformité OSHA, MSHA et ACGIH'
-    ],
-    sectors: ['Mines & Carrières', 'Manufacture & Métallurgie', 'Secteur Pétrole/Gaz'],
-    advantages: [
-      'Microphone MEMS indestructible garanti à vie',
-      'Pas de câble d\'interconnexion pour une sécurité totale de l\'opérateur',
-      'Détection automatique de retrait du dosimètre par accéléromètre',
-      'Écran couleur OLED lisible en plein soleil ou sous terre'
-    ],
-    standards_certifications: [
-      'CEI 61252',
-      'ANSI S1.25',
-      'Intrinsèquement Sûr (ATEX / IECEx)'
-    ],
-    images: ['/products/sv104a.jpg'],
-    public_documents: [
-      { name: 'Fiche technique SV 104A.pdf', url: '#', size: '1.8 MB' }
+      { name: 'Brochure technique SV 958.pdf', url: '#', size: '2.8 MB' }
     ],
     technical_specifications: [
       {
         group: 'Mesure',
         items: [
-          { key: 'Plage dynamique', value: '60 dBA à 140 dBA Peak' },
-          { key: 'Pondérations', value: 'A, C et Z simultanés' },
-          { key: 'Résolution fréquentielle', value: 'Analyse en bande d\'octave 1/1 (option)' }
+          { key: 'Canaux de mesure', value: '4 canaux indépendants (bruit ou vibrations)' },
+          { key: 'Filtres', value: '1/1 octave, 1/3 octave, FFT' },
+          { key: 'Bande passante', value: '0.5 Hz à 20 kHz' }
         ]
       },
       {
-        group: 'Physique & Ergonomie',
+        group: 'Alimentation & Autonomie',
         items: [
-          { key: 'Poids', value: '117 grammes' },
-          { key: 'Affichage', value: 'OLED couleur haute résolution 128x64' },
-          { key: 'Fixation', value: 'Double pince robuste pour vêtements' }
+          { key: 'Batterie', value: '4x AA rechargeables ou alimentation USB' },
+          { key: 'Autonomie', value: 'Jusqu\'à 15 heures' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-sv-971',
+    brand_id: 'brand-svantek',
+    category_id: 'cat-noise',
+    name: 'Sonomètre de classe 1 compact',
+    model: 'SV 971',
+    manufacturer_reference: 'SV971-STD',
+    slug: 'sonometre-compact-sv-971',
+    short_description: 'Le plus petit sonomètre de classe 1 au monde, idéal pour l\'évaluation du bruit en milieu industriel.',
+    long_description: 'Le SV 971 est un sonomètre de Classe 1 révolutionnaire par sa compacité. Il tient dans la main tout en offrant des mesures acoustiques d\'une précision de laboratoire. Avec enregistrement audio, filtres en bandes d\'octave et connectivité Bluetooth intégrée, il est l\'outil privilégié des préventeurs HSE sur le terrain.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Évaluation réglementaire du bruit au travail',
+      'Contrôle des protections auditives',
+      'Mesures environnementales de base'
+    ],
+    sectors: ['HSE en usine & mines', 'Bureaux d\'études', 'Collectivités locales'],
+    advantages: [
+      'Format de poche ultra-léger (225g)',
+      'Microphone de classe 1 de précision',
+      'Enregistrement audio des événements sonores',
+      'Connectivité Bluetooth BLE intégrée'
+    ],
+    standards_certifications: [
+      'CEI 61672-1:2013 (Classe 1)',
+      'CEI 61260-1 (Filtres d\'octave)'
+    ],
+    images: ['/products/sv-971.jpg'],
+    public_documents: [
+      { name: 'Brochure Svantek SV 971.pdf', url: '#', size: '1.9 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Mesure',
+        items: [
+          { key: 'Plage de mesure', value: '25 dBA à 140 dBA Peak' },
+          { key: 'Filtres', value: 'Filtres en temps réel 1/1 ou 1/3 octave' }
+        ]
+      },
+      {
+        group: 'Alimentation',
+        items: [
+          { key: 'Batterie', value: '4x AAA piles ou USB' },
+          { key: 'Autonomie', value: 'Jusqu\'à 24 heures' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-sv-307',
+    brand_id: 'brand-svantek',
+    category_id: 'cat-noise',
+    name: 'Station de surveillance du bruit extérieur',
+    model: 'SV 307',
+    manufacturer_reference: 'SV307-OUTDOOR',
+    slug: 'station-bruit-outdoor-sv-307',
+    short_description: 'Station de surveillance acoustique tout-en-un étanche avec modem 4G intégré et calibrage à distance.',
+    long_description: 'Le SV 307 est une station de surveillance du bruit environnemental tout-en-un révolutionnaire. Conçue pour résister aux intempéries (IP65) et dotée d\'une technologie d\'étalonnage acoustique automatique intégrée, elle transmet en temps réel les niveaux sonores mesurés via sa carte SIM 4G intégrée vers la plateforme Cloud.',
+    availability_status: 'sur_commande',
+    status: 'actif',
+    applications: [
+      'Surveillance du bruit de chantier',
+      'Mesures de bruit aéroportuaire et routier',
+      'Suivi du bruit environnemental industriel'
+    ],
+    sectors: ['BTP & Travaux Publics', 'Ports & Aéroports', 'Exploitations Minières', 'Collectivités'],
+    advantages: [
+      'Boîtier étanche tout-en-un (IP65)',
+      'Autocalibrage breveté à distance',
+      'Modem 4G / GPS intégré pour alertes en temps réel',
+      'Batterie intégrée longue autonomie et alimentation solaire optionnelle'
+    ],
+    standards_certifications: [
+      'CEI 61672-1 (Classe 1)',
+      'Indice d\'étanchéité IP65'
+    ],
+    images: ['/products/sv-307.jpg'],
+    public_documents: [
+      { name: 'Fiche technique SV 307.pdf', url: '#', size: '3.5 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Mesure',
+        items: [
+          { key: 'Plage de mesure', value: '30 dBA à 120 dBA' },
+          { key: 'Étalonnage', value: 'Calibrage électrostatique automatique intégré' }
+        ]
+      },
+      {
+        group: 'Boîtier & Alimentation',
+        items: [
+          { key: 'Protection', value: 'IP65 étanche aux pluies tropicales' },
+          { key: 'Autonomie', value: 'Jusqu\'à 6 jours sur batterie interne' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-sv-803',
+    brand_id: 'brand-svantek',
+    category_id: 'cat-noise',
+    name: 'Terminal de surveillance des vibrations en temps réel',
+    model: 'SV 803',
+    manufacturer_reference: 'SV803-VIB',
+    slug: 'terminal-vibrations-sv-803',
+    short_description: 'Terminal de surveillance des vibrations des bâtiments avec accéléromètre triaxial et modem cellulaire 4G.',
+    long_description: 'Le SV 803 est un terminal de mesure et de surveillance continue des vibrations subies par les structures de bâtiments ou d\'infrastructures sensibles lors de dynamitages miniers, de chantiers de BTP ou de passages ferroviaires. Équipé d\'un capteur triaxial de haute sensibilité et d\'un modem 4G, il envoie des alertes SMS/E-mail immédiates en cas de dépassement de seuil réglementaire.',
+    availability_status: 'sur_commande',
+    status: 'actif',
+    applications: [
+      'Surveillance des vibrations de dynamitage (mines/carrières)',
+      'Suivi d\'impact de battage de pieux (BTP)',
+      'Préservation des monuments historiques'
+    ],
+    sectors: ['Mines & Carrières', 'Génie Civil & BTP', 'Bureaux d\'études géotechniques'],
+    advantages: [
+      'Mesure triaxiale simultanée X, Y, Z',
+      'Alertes temps réel par SMS et e-mail',
+      'Modem 4G et récepteur GPS intégrés',
+      'Boîtier durci étanche IP66'
+    ],
+    standards_certifications: [
+      'DIN 4150-3',
+      'BS 7385-2',
+      'Indice IP66'
+    ],
+    images: ['/products/sv-803.jpg'],
+    public_documents: [
+      { name: 'Fiche technique SV 803.pdf', url: '#', size: '2.1 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Capteur de Vibration',
+        items: [
+          { key: 'Type de capteur', value: 'Accéléromètre MEMS triaxial haute sensibilité' },
+          { key: 'Bande passante', value: '1 Hz à 800 Hz' }
+        ]
+      },
+      {
+        group: 'Alimentation',
+        items: [
+          { key: 'Batterie', value: 'Interne Li-Ion rechargeable' },
+          { key: 'Autonomie', value: 'Jusqu\'à 10 jours en transmission continue' }
         ]
       }
     ]
