@@ -50,7 +50,7 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------------- */}
-      {/* SPOTLIGHT 2: SENSIDYNE GilAir Plus (Apple Style Hero 2 - Light Contrast) */}
+      {/* SPOTLIGHT 2: SENSIDYNE Gilian Dustlight (Apple Style Hero 2 - Light Contrast) */}
       {/* ------------------------------------------------------------- */}
       <section className="relative w-full min-h-[640px] flex flex-col justify-between items-center text-center py-16 bg-slate-100 overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,130,57,0.06),transparent_60%)] pointer-events-none" />
@@ -58,21 +58,21 @@ export default function Home() {
         {/* Text Group */}
         <div className="space-y-4 max-w-2xl px-4 z-10 text-slate-900">
           <p className="text-xs font-bold uppercase tracking-widest text-brand-blue">SENSIDYNE</p>
-          <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight leading-none text-slate-900">
-            Gamme GilAir Plus
+          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-none text-slate-900">
+            Gilian Dustlight Personal Dust Monitor
           </h1>
-          <p className="text-lg sm:text-xl text-slate-600 max-w-lg mx-auto font-medium">
-            L\'échantillonnage d\'air individuel intelligent. Zéro compromis.
+          <p className="text-lg sm:text-xl text-slate-600 max-w-xl mx-auto font-medium">
+            Le premier moniteur individuel de poussières en temps réel pour la protection directe des travailleurs.
           </p>
           <div className="flex justify-center gap-6 pt-2">
             <Link
-              href="/produits/sensidyne/pompe-echantillonnage-gilair-plus"
+              href="/produits/sensidyne/moniteur-poussieres-dustlight"
               className="inline-flex items-center gap-1 text-sm font-bold text-brand-blue hover:underline group"
             >
               En savoir plus <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/produits/sensidyne/pompe-echantillonnage-gilair-plus"
+              href="/demande-de-prix"
               className="inline-flex items-center gap-1 text-sm font-bold text-brand-green hover:underline"
             >
               Demander un prix
@@ -80,27 +80,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Hardware Showcase */}
-        <div className="relative mt-12 w-full max-w-md px-4 flex justify-center z-10">
-          {/* Air Pump Device Illustration */}
-          <div className="relative w-44 h-60 rounded-3xl border-4 border-slate-200 bg-white p-4 shadow-xl flex flex-col justify-between items-center">
-            {/* Screen */}
-            <div className="w-full h-20 bg-slate-950 rounded-xl p-2.5 flex flex-col justify-between">
-              <div className="flex justify-between items-center text-[7px] text-slate-600 font-bold uppercase">
-                <span>GILAIR PLUS</span>
-                <span className="text-brand-blue font-black font-mono">FLOW: OK</span>
-              </div>
-              <div className="text-xl font-bold text-white font-mono text-center my-auto flex items-end justify-center gap-0.5">
-                2.000 <span className="text-[9px] text-slate-400">LPM</span>
-              </div>
-            </div>
-            {/* Control buttons */}
-            <div className="flex gap-2 w-full justify-center mb-2">
-              <div className="h-7 w-7 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[8px] font-bold text-slate-500 font-mono">&larr;</div>
-              <div className="h-7 w-7 rounded-full bg-brand-blue flex items-center justify-center text-[8px] font-bold text-white font-mono">ok</div>
-              <div className="h-7 w-7 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-[8px] font-bold text-slate-500 font-mono">&rarr;</div>
-            </div>
-          </div>
+        {/* Real Product Image Showcase */}
+        <div className="relative mt-8 w-full max-w-md px-4 flex justify-center z-10">
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-brand-green/5 blur-[65px] pointer-events-none" />
+          <img
+            src="/products/dustlight.jpg"
+            alt="Gilian Dustlight Personal Dust Monitor"
+            className="h-80 w-auto object-contain hover:scale-102 transition-transform duration-500"
+          />
         </div>
       </section>
 
