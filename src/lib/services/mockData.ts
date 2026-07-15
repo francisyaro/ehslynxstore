@@ -107,7 +107,7 @@ export const BRANDS: Brand[] = [
     id: 'brand-ohd',
     name: 'OHD',
     slug: 'ohd',
-    logo: '/brands/ohd-logo.png',
+    logo: '/brands/ohd-logo.jpg',
     description: 'Le standard mondial pour les essais d\'ajustement quantitatifs rapides et précis des masques de protection respiratoire.'
   }
 ];
@@ -1216,7 +1216,7 @@ export const PRODUCTS: Product[] = [
       'Indice de protection IP65',
       'CE / RoHS'
     ],
-    images: ['/products/tiger-xt.jpg'],
+    images: ['/products/tiger-xt.png'],
     public_documents: [
       { name: 'Fiche technique Tiger XT Kit.pdf', url: '#', size: '2.5 MB' }
     ],
