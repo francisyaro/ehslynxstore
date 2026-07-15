@@ -19,6 +19,8 @@ export default function ProductDetailClient({ product, brand, category }: Produc
   const [comment, setComment] = useState('');
   const [added, setAdded] = useState(false);
 
+  const [activeImageIdx, setActiveImageIdx] = useState(0);
+
   const handleIncrement = () => setQuantity((q) => q + 1);
   const handleDecrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
@@ -69,10 +71,40 @@ export default function ProductDetailClient({ product, brand, category }: Produc
           <p className="text-sm text-slate-600 font-bold">Référence constructeur : {product.manufacturer_reference} (Modèle: {product.model})</p>
         </div>
 
+        {/* Product Images Gallery */}
+        {product.images && product.images.length > 0 && (
+          <div className="border border-slate-200 bg-white p-6 rounded-3xl flex flex-col items-center justify-center shadow-sm relative group">
+            <div className="w-full h-80 flex items-center justify-center relative overflow-hidden bg-slate-50/50 rounded-2xl border border-slate-100">
+              <img
+                src={product.images[activeImageIdx]}
+                alt={product.name}
+                className="max-h-full max-w-full object-contain p-4 hover:scale-102 transition-transform duration-500"
+              />
+            </div>
+            {/* Thumbnails list if multiple images */}
+            {product.images.length > 1 && (
+              <div className="flex gap-2 mt-4 overflow-x-auto pb-1 w-full justify-center">
+                {product.images.map((img, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setActiveImageIdx(i)}
+                    className={`h-16 w-16 rounded-xl border p-1.5 bg-slate-50 shrink-0 transition-all ${
+                      activeImageIdx === i ? 'border-brand-blue ring-2 ring-brand-blue/20' : 'border-slate-200 hover:border-slate-400'
+                    }`}
+                  >
+                    <img src={img} alt={`${product.name} - ${i}`} className="h-full w-full object-contain rounded-lg" />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Detailed description */}
         <div className="space-y-4">
           <h2 className="text-lg font-bold text-slate-900 border-b border-slate-200 pb-2">Description</h2>
-          <p className="text-sm text-slate-655 leading-relaxed whitespace-pre-line">
+          <p className="text-sm text-slate-600 leading-relaxed whitespace-pre-line">
             {product.long_description}
           </p>
         </div>
