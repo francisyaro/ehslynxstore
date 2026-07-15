@@ -92,50 +92,57 @@ export default function Home() {
       </section>
 
       {/* ------------------------------------------------------------- */}
-      {/* SPOTLIGHT 3: SLATESAFETY BAND V2 (Apple Style Hero 3 - Light Gradient) */}
+      {/* PROMO SECTION: DECEMBER 2026 PROMO (Apple Style Promo - Light/Premium) */}
       {/* ------------------------------------------------------------- */}
-      <section className="relative w-full min-h-[640px] flex flex-col justify-between items-center text-center py-16 bg-gradient-to-br from-slate-100 via-white to-green-50 overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0 bg-white/10 pointer-events-none" />
+      <section className="relative w-full min-h-[580px] flex flex-col justify-between items-center text-center py-16 bg-gradient-to-br from-red-50 via-white to-amber-50 overflow-hidden border-b border-slate-200">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(166,27,27,0.04),transparent_60%)] pointer-events-none" />
         
         {/* Text Group */}
         <div className="space-y-4 max-w-2xl px-4 z-10 text-slate-900">
-          <p className="text-xs font-bold uppercase tracking-widest text-brand-blue">SLATESAFETY</p>
-          <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight leading-none text-slate-900">
-            SlateSafety BAND V2
+          <p className="text-xs font-bold uppercase tracking-widest text-brand-red bg-red-100/60 border border-brand-red/10 px-3 py-1 rounded-full inline-block">
+            OFFRE DE FIN D\'ANNÉE
+          </p>
+          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-none text-slate-900">
+            -30% sur tous nos produits
           </h1>
-          <p className="text-lg sm:text-xl text-slate-600 max-w-md mx-auto font-medium">
-            La biosurveillance connectée en temps réel. Protégez vos équipes du stress thermique.
+          <p className="text-lg sm:text-xl text-slate-700 max-w-xl mx-auto font-medium leading-relaxed">
+            À partir de <span className="font-bold text-brand-blue">Décembre 2026</span>, bénéficiez d\'une réduction exceptionnelle de 30% sur l\'ensemble de notre catalogue d\'équipements de métrologie et de santé-sécurité.
           </p>
           <div className="flex justify-center gap-6 pt-2">
             <Link
-              href="/produits/slatesafety/bracelet-biosurveillance-band-v2"
+              href="/produits"
               className="inline-flex items-center gap-1 text-sm font-bold text-brand-blue hover:text-blue-700 transition-colors group"
             >
-              En savoir plus <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              Découvrir le catalogue <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/produits/slatesafety/bracelet-biosurveillance-band-v2"
+              href="/demande-de-prix"
               className="inline-flex items-center gap-1 text-sm font-bold text-brand-green hover:text-green-700 transition-colors"
             >
-              Demander un prix
+              Planifier ma demande
             </Link>
           </div>
         </div>
 
-        {/* Bracelet Showcase */}
-        <div className="relative mt-12 w-full max-w-md px-4 flex justify-center z-10 mb-8">
-          {/* Smart Band Visualisation */}
-          <div className="relative w-64 h-24 rounded-full border-8 border-slate-200 bg-white flex items-center justify-between px-6 shadow-2xl">
-            {/* Glowing Sensor Center */}
-            <div className="absolute inset-0 bg-brand-green/5 rounded-full animate-pulse" />
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 border border-slate-200">
-              <Thermometer className="h-5 w-5 text-brand-red animate-pulse" />
+        {/* Promo Visual Badge */}
+        <div className="relative mt-8 w-full max-w-md px-4 flex justify-center z-10 mb-8">
+          <div className="relative w-72 h-36 rounded-3xl border border-brand-red/10 bg-white shadow-xl flex items-center justify-between p-6 overflow-hidden">
+            <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-brand-red/5 rounded-full blur-xl pointer-events-none" />
+            <div className="absolute -left-6 -top-6 w-24 h-24 bg-brand-green/5 rounded-full blur-xl pointer-events-none" />
+            
+            <div className="flex flex-col justify-between h-full text-left">
+              <span className="text-[10px] text-slate-400 uppercase font-extrabold tracking-wider">Lancement</span>
+              <div>
+                <span className="text-2xl font-black text-slate-900 block leading-tight">Décembre</span>
+                <span className="text-sm font-bold text-brand-blue">2026</span>
+              </div>
             </div>
-            <div className="text-center font-mono space-y-0.5">
-              <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">TEMP INTERNE</span>
-              <span className="text-base font-black text-slate-900 block">37.2 &deg;C</span>
+            
+            {/* Big percentage badge */}
+            <div className="h-20 w-20 rounded-2xl bg-gradient-to-br from-brand-red to-red-700 flex flex-col items-center justify-center text-white shadow-lg shadow-brand-red/20 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+              <span className="text-3xl font-black leading-none">-30%</span>
+              <span className="text-[9px] uppercase font-bold tracking-widest mt-1">PROMO</span>
             </div>
-            <div className="h-4 w-4 rounded-full bg-brand-green animate-ping" />
           </div>
         </div>
       </section>
