@@ -587,6 +587,56 @@ export const PRODUCTS: Product[] = [
     ]
   },
   {
+    id: 'prod-sv-36',
+    brand_id: 'brand-svantek',
+    category_id: 'cat-noise',
+    name: 'Calibrateur acoustique de Classe 1',
+    model: 'SV 36',
+    manufacturer_reference: 'SV36-CAL',
+    slug: 'calibrateur-acoustique-sv-36',
+    short_description: 'Calibrateur acoustique de Classe 1 portable (94 dB / 114 dB à 1 kHz) pour le contrôle sur site des sonomètres.',
+    long_description: 'Le SV 36 est un calibrateur acoustique de Classe 1 portable et extrêmement robuste, conçu pour la vérification réglementaire sur site de la sensibilité des sonomètres et dosimètres de bruit avant et après chaque session de mesure. Doté d\'un capteur de pression atmosphérique et de température interne, il auto-corrige le signal sonore généré pour garantir une précision absolue conforme à la norme CEI 60942:2017.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Calibrage de terrain de sonomètres de Classe 1 & 2',
+      'Calibrage de dosimètres de bruit individuel',
+      'Assurance qualité métrologique sur site'
+    ],
+    sectors: ['Cabinets d\'études acoustiques', 'Préventeurs HSE', 'Laboratoires de métrologie'],
+    advantages: [
+      'Précision de Classe 1 métrologique',
+      'Double niveau de sortie : 94 dB et 114 dB à 1 kHz',
+      'Correction automatique de température et pression',
+      'Facibilité d\'utilisation avec un seul bouton de mise en marche'
+    ],
+    standards_certifications: [
+      'CEI 60942:2017 (Classe 1)',
+      'CE'
+    ],
+    images: ['/products/sv-36.jpg'],
+    public_documents: [
+      { name: 'Fiche technique SV 36.pdf', url: '#', size: '1.4 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Sortie Acoustique',
+        items: [
+          { key: 'Niveaux de pression', value: '94 dB et 114 dB' },
+          { key: 'Fréquence de sortie', value: '1000 Hz' },
+          { key: 'Précision', value: '± 0.25 dB' }
+        ]
+      },
+      {
+        group: 'Alimentation',
+        items: [
+          { key: 'Piles', value: '2x piles AAA' },
+          { key: 'Autonomie', value: 'Jusqu\'à 30 heures' }
+        ]
+      }
+    ]
+  },
+  {
     id: 'prod-gilair-plus',
     brand_id: 'brand-sensidyne',
     category_id: 'cat-air',
