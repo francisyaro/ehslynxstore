@@ -100,7 +100,7 @@ export const BRANDS: Brand[] = [
     id: 'brand-slatesafety',
     name: 'SLATESAFETY',
     slug: 'slatesafety',
-    logo: 'SlateSafety logo',
+    logo: '/brands/slatesafety-logo.png',
     description: 'Pionnier des solutions de biosurveillance connectées en temps réel pour prévenir le stress thermique des équipes de terrain.'
   },
   {
@@ -965,7 +965,7 @@ export const PRODUCTS: Product[] = [
       'Normes FCC/CE',
       'Certifications de biocompatibilité des matériaux'
     ],
-    images: ['/products/bandv2.jpg'],
+    images: ['/products/band-v2.jpg'],
     public_documents: [
       { name: 'Présentation SlateSafety BAND V2.pdf', url: '#', size: '1.5 MB' }
     ],
@@ -983,6 +983,105 @@ export const PRODUCTS: Product[] = [
         items: [
           { key: 'Réseau cellulaire', value: 'LTE-M / NB-IoT intégré' },
           { key: 'Autonomie', value: '24 à 48 heures selon la fréquence d\'émission' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-slatesafety-starter-kit',
+    brand_id: 'brand-slatesafety',
+    category_id: 'cat-thermal',
+    name: 'Kit de démarrage de biosurveillance industrielle',
+    model: 'Starter Kit Case V2',
+    manufacturer_reference: 'SS-KIT-V2',
+    slug: 'kit-demarrage-biosurveillance-v2',
+    short_description: 'Mallette de transport étanche contenant un kit complet de 4 à 8 bracelets BAND V2, la passerelle cellular Gateway V2 et les accessoires.',
+    long_description: 'Le SlateSafety Starter Kit Case V2 est une solution de déploiement autonome clé en main pour la protection thermique de vos équipes. Logé dans une mallette de transport renforcée et étanche, ce kit contient des bracelets connectés BAND V2, une passerelle de communication Gateway V2 locale (pour remonter les alertes même sans réseau cellulaire), des stations de recharge individuelles et multiples, un guide de démarrage rapide et tous les câbles nécessaires.',
+    availability_status: 'sur_commande',
+    status: 'actif',
+    applications: [
+      'Déploiement rapide de biosurveillance sur nouveaux chantiers',
+      'Protection thermique temporaire lors d\'arrêts techniques d\'usines',
+      'Kit d\'intervention d\'urgence pour équipes de secours'
+    ],
+    sectors: ['Mines & Carrières', 'Métallurgie & Aciéries', 'Secours & Pompiers'],
+    advantages: [
+      'Mallette de transport de chantier ultra-robuste avec mousse pré-découpée',
+      'Système de communication Gateway V2 inclus',
+      'Multi-chargeur haute vitesse intégré pour recharger tous les bracelets en même temps',
+      'Autonomie totale du kit sur batterie externe optionnelle'
+    ],
+    standards_certifications: [
+      'IP67 (Mallette fermée)',
+      'Normes CE/FCC'
+    ],
+    images: ['/products/starter-kit-v2.jpg'],
+    public_documents: [
+      { name: 'Guide de démarrage rapide Starter Kit.pdf', url: '#', size: '2.8 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Contenu du Kit',
+        items: [
+          { key: 'Bracelets inclus', value: '4 ou 8x bracelets connectés BAND V2' },
+          { key: 'Passerelle', value: '1x Gateway V2 avec alimentation' },
+          { key: 'Recharge', value: '1x Multi-chargeur V2 + chargeurs individuels' }
+        ]
+      },
+      {
+        group: 'Boîtier physique',
+        items: [
+          { key: 'Dimensions', value: '45 x 35 x 18 cm' },
+          { key: 'Poids total du kit', value: 'Environ 4.5 kg' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-slatesafety-beacon',
+    brand_id: 'brand-slatesafety',
+    category_id: 'cat-thermal',
+    name: 'Balise de localisation et relais réseau',
+    model: 'BEACON V2',
+    manufacturer_reference: 'SS-BEACON-V2',
+    slug: 'balise-relais-beacon-v2',
+    short_description: 'Balise Bluetooth étanche pour la localisation précise en intérieur/souterrain et le relais des signaux des bracelets.',
+    long_description: 'La balise SlateSafety BEACON V2 est un appareil compact destiné à étendre la couverture de localisation et à relayer les données physiologiques des bracelets BAND V2 dans les zones difficiles d\'accès comme les mines souterraines, les cales de navires ou les structures industrielles massives en béton et acier. Dotée d\'une autonomie de plusieurs années sur pile interne, elle est totalement autonome et étanche.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Localisation de précision des travailleurs en intérieur',
+      'Relais réseau Bluetooth dans les galeries souterraines',
+      'Délimitation de zones de danger / alertes de proximité'
+    ],
+    sectors: ['Mines Souterraines', 'Chantiers de BTP Souterrains', 'Maintenance Industrielle complexe'],
+    advantages: [
+      'Boîtier ultra-compact et robuste',
+      'Autonomie de 3 à 5 ans sur pile interne',
+      'Installation simplifiée sans câblage nécessaire (sans fil)',
+      'Indice de protection IP67 étanche à la poussière minérale'
+    ],
+    standards_certifications: [
+      'IP67',
+      'CE/FCC'
+    ],
+    images: ['/products/beacon-v2.jpg'],
+    public_documents: [
+      { name: 'Fiche technique BEACON V2.pdf', url: '#', size: '1.2 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Spécifications',
+        items: [
+          { key: 'Portée Bluetooth', value: 'Jusqu\'à 50 mètres en champ libre' },
+          { key: 'Fréquence d\'émission', value: 'Bluetooth Low Energy 5.0' }
+        ]
+      },
+      {
+        group: 'Physique',
+        items: [
+          { key: 'Dimensions', value: '5.5 x 5.5 x 1.8 cm' },
+          { key: 'Température de service', value: '-20°C à +60°C' }
         ]
       }
     ]
