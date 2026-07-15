@@ -93,7 +93,7 @@ export const BRANDS: Brand[] = [
     id: 'brand-sensidyne',
     name: 'SENSIDYNE',
     slug: 'sensidyne',
-    logo: 'Sensidyne logo',
+    logo: '/brands/sensidyne-logo.png',
     description: 'Expert incontournable des pompes de prélèvement d\'air individuelles et de la détection de gaz industrielle.'
   },
   {
@@ -832,6 +832,106 @@ export const PRODUCTS: Product[] = [
         items: [
           { key: 'Affichage', value: 'Écran tactile couleur 4.3 pouces' },
           { key: 'Connectivité', value: 'Port USB de transfert de données de calibrage' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-gilian-800i',
+    brand_id: 'brand-sensidyne',
+    category_id: 'cat-air',
+    name: 'Pompe d\'échantillonnage d\'air individuelle bas débit',
+    model: 'Gilian 800i',
+    manufacturer_reference: 'Gilian-800i',
+    slug: 'pompe-echantillonnage-gilian-800i',
+    short_description: 'Pompe de prélèvement d\'air individuelle de haute performance couvrant des débits de 20 à 800 mL/min.',
+    long_description: 'La Gilian 800i est une pompe d\'échantillonnage d\'air individuelle bas débit certifiée ATEX/IECEx (Intrinsèquement Sûre). Spécialement conçue pour les prélèvements de gaz et vapeurs sur charbon actif ou gels de silice avec des débits stables entre 20 et 800 mL/min, elle offre une régulation électronique de débit extrêmement précise et compense les pertes de charges élevées.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Échantillonnage de gaz et vapeurs à bas débit sur tubes réactifs',
+      'Mesures d\'exposition individuelle aux solvants organiques',
+      'Hygiène du travail en raffineries et industrie chimique'
+    ],
+    sectors: ['Pétrole & Gaz', 'Industries Chimiques', 'Bureaux d\'études HSE'],
+    advantages: [
+      'Régulation de débit électronique ultra-précise',
+      'Homologation ATEX zone 0 intrinsèquement sûre',
+      'Écran LCD affichant le débit et le temps de prélèvement',
+      'Indicateur de défaut de débit avec arrêt automatique sécurisé'
+    ],
+    standards_certifications: [
+      'Certifié ATEX / IECEx Zone 0',
+      'ISO 13137',
+      'CE'
+    ],
+    images: ['/products/gilian-800i.png'],
+    public_documents: [
+      { name: 'Fiche technique Gilian 800i.pdf', url: '#', size: '1.9 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Plage de Débit',
+        items: [
+          { key: 'Plage de débit', value: '20 à 800 mL/min' },
+          { key: 'Contrôle du débit', value: 'Électronique à débit constant avec compensation de charge' }
+        ]
+      },
+      {
+        group: 'Alimentation',
+        items: [
+          { key: 'Batterie', value: 'Bloc NiMH rechargeable intégré' },
+          { key: 'Autonomie', value: 'Jusqu\'à 12 heures de fonctionnement à débit max.' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-gilibrator-2',
+    brand_id: 'brand-sensidyne',
+    category_id: 'cat-air',
+    name: 'Calibrateur de débit d\'air primaire à bulles',
+    model: 'Gilibrator 2',
+    manufacturer_reference: 'GILIBRATOR-2',
+    slug: 'calibrateur-bulles-gilibrator-2',
+    short_description: 'Système de calibrage de débit d\'air primaire à bulles de savon de référence pour pompes de prélèvement.',
+    long_description: 'Le Gilibrator 2 est le système d\'étalonnage de débit d\'air de référence standard de l\'industrie. Basé sur le principe de la bulle de savon montante dans une cellule de verre graduée par détection optique, il permet de certifier avec une précision primaire absolue le débit des pompes individuelles et haut débit. Il est livré avec trois cellules interchangeables (bas, standard et haut débit).',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Certification primaire métrologique en laboratoire',
+      'Étalonnage périodique réglementaire de pompes de prélèvement',
+      'Vérification de chaînes d\'échantillonnage d\'hygiène du travail'
+    ],
+    sectors: ['Laboratoires d\'étalonnage', 'Organismes de contrôle HSE', 'Universités & Centres de recherche'],
+    advantages: [
+      'Principe physique de calibrage primaire indiscutable',
+      '3 cellules de débit interchangeables (de 1 cc/min à 30 LPM)',
+      'Calcul et moyennage automatique des échantillons de test',
+      'Sortie imprimante et liaison PC pour rapports métrologiques'
+    ],
+    standards_certifications: [
+      'Traçabilité primaire NIST',
+      'Conforme aux normes ISO 17025'
+    ],
+    images: ['/products/gilibrator-2.jpg'],
+    public_documents: [
+      { name: 'Manuel d\'utilisation Gilibrator 2.pdf', url: '#', size: '3.1 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Cellules de Débit',
+        items: [
+          { key: 'Cellule Bas Débit', value: '1 à 250 cc/min' },
+          { key: 'Cellule Débit Standard', value: '20 cc/min à 6 LPM' },
+          { key: 'Cellule Haut Débit', value: '2 à 30 LPM' }
+        ]
+      },
+      {
+        group: 'Base Métrologique',
+        items: [
+          { key: 'Précision', value: 'Supérieure à ± 0.5% du débit' },
+          { key: 'Alimentation', value: 'Secteur ou batterie interne rechargeable' }
         ]
       }
     ]
