@@ -340,6 +340,253 @@ export const PRODUCTS: Product[] = [
     ]
   },
   {
+    id: 'prod-sv-258-pro',
+    brand_id: 'brand-svantek',
+    category_id: 'cat-noise',
+    name: 'Station de surveillance des vibrations et du bruit',
+    model: 'SV 258 PRO',
+    manufacturer_reference: 'SV258-PRO',
+    slug: 'station-surveillance-vibrations-sv-258-pro',
+    short_description: 'Station de surveillance des vibrations de chantier et du bruit avec modem 4G intégré, conforme à la norme DIN 4150-3.',
+    long_description: 'Le SV 258 PRO est une station de surveillance outdoor complète logée dans une valise ultra-robuste et étanche. Elle intègre un accéléromètre triaxial haute performance fixé sur une embase à trois pointes pour la mesure des vibrations au sol et des structures (bâtiments, tunnels). Elle permet également la connexion d\'un microphone de classe 1 pour le suivi acoustique simultané, avec alertes instantanées par SMS et e-mail.',
+    availability_status: 'sur_commande',
+    status: 'actif',
+    applications: [
+      'Suivi d\'impact vibratoire de chantiers de BTP',
+      'Surveillance des structures historiques',
+      'Mesure simultanée bruit et vibrations au sol'
+    ],
+    sectors: ['BTP & Génie Civil', 'Mines & Carrières', 'Cabinets géotechniques'],
+    advantages: [
+      'Valise étanche de protection IP65',
+      'Embase de sol triaxiale lourde incluse',
+      'Autonomie sur batterie externe de plusieurs semaines',
+      'Transmission automatique Cloud'
+    ],
+    standards_certifications: [
+      'DIN 4150-3 (Vibrations structures)',
+      'BS 7385-2',
+      'CEI 61672-1 (Classe 1)'
+    ],
+    images: ['/products/sv-258.jpg'],
+    public_documents: [
+      { name: 'Fiche technique SV 258 PRO.pdf', url: '#', size: '2.5 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Vibrations',
+        items: [
+          { key: 'Nombre d\'axes', value: '3 axes (X, Y, Z)' },
+          { key: 'Plage de fréquence', value: '1 Hz à 120 Hz' }
+        ]
+      },
+      {
+        group: 'Physique & Connectivité',
+        items: [
+          { key: 'Protection', value: 'IP65' },
+          { key: 'Communication', value: 'Modem LTE (4G), Wi-Fi, GPS' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-sv-104',
+    brand_id: 'brand-svantek',
+    category_id: 'cat-noise',
+    name: 'Dosimètre de bruit individuel',
+    model: 'SV 104',
+    manufacturer_reference: 'SV104-DOS',
+    slug: 'dosimetre-individuel-sv-104',
+    short_description: 'Dosimètre de bruit compact avec microphone MEMS et écran couleur OLED, idéal pour l\'évaluation de l\'exposition professionnelle.',
+    long_description: 'Le SV 104 est un dosimètre de bruit robuste conçu pour s\'attacher directement à l\'épaule des travailleurs sans aucun fil encombrant. Il intègre un microphone MEMS très résistant aux chocs et une batterie longue durée pour couvrir l\'exposition des équipes sur toute leur journée de travail.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Évaluation de l\'exposition individuelle au bruit',
+      'Mesures de conformité en usine et mines',
+      'Cartographie de dose de bruit'
+    ],
+    sectors: ['Mines & Carrières', 'Industrie lourde', 'Manufacture', 'Cabinets HSE'],
+    advantages: [
+      'Format compact sans fil d\'épaule',
+      'Écran couleur OLED ultra-lisible',
+      'Microphone MEMS haute performance',
+      'Autonomie supérieure à 20 heures'
+    ],
+    standards_certifications: [
+      'CEI 61252',
+      'ANSI S1.25'
+    ],
+    images: ['/products/sv-104.jpg'],
+    public_documents: [
+      { name: 'Fiche technique SV 104.pdf', url: '#', size: '1.6 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Spécifications',
+        items: [
+          { key: 'Plage de mesure', value: '60 dBA à 140 dBA Peak' },
+          { key: 'Microphone', value: 'MEMS 1/2 pouce incassable' }
+        ]
+      },
+      {
+        group: 'Autonomie & Poids',
+        items: [
+          { key: 'Autonomie', value: '20 heures en continu' },
+          { key: 'Poids', value: '115 grammes' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-sv-102',
+    brand_id: 'brand-svantek',
+    category_id: 'cat-noise',
+    name: 'Dosimètre acoustique double canal',
+    model: 'SV 102A',
+    manufacturer_reference: 'SV102A-STD',
+    slug: 'dosimetre-double-canal-sv-102a',
+    short_description: 'Dosimètre de bruit à double canal permettant de mesurer simultanément l\'exposition dans l\'oreille gauche et droite.',
+    long_description: 'Le SV 102A est un dosimètre acoustique double canal de Classe 1 qui redéfinit les mesures de bruit d\'exposition. Il est idéal pour l\'évaluation binaurale (oreille gauche / oreille droite) ou pour mesurer simultanément le niveau sonore à l\'intérieur et à l\'extérieur d\'un casque de protection auditive afin d\'en vérifier l\'atténuation réelle sur le terrain.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Mesures d\'exposition binaurale (gauche/droite)',
+      'Vérification de l\'efficacité réelle des casques antibruit (méthode MIRE)',
+      'Mesure de bruit de Classe 1'
+    ],
+    sectors: ['Industrie navale & aéronautique', 'Mines', 'Laboratoires de recherche HSE'],
+    advantages: [
+      'Double canal de mesure simultané',
+      'Méthode MIRE de microphone dans l\'oreille',
+      'Classe 1 métrologique de précision',
+      'Analyse par bande d\'octave 1/1 ou 1/3 octave'
+    ],
+    standards_certifications: [
+      'CEI 61252 (Classe 1)',
+      'CEI 61672-1 (Classe 1)'
+    ],
+    images: ['/products/sv-102.jpg'],
+    public_documents: [
+      { name: 'Fiche technique SV 102A.pdf', url: '#', size: '2.3 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Acoustique',
+        items: [
+          { key: 'Nombre de canaux', value: '2 canaux de mesure indépendants' },
+          { key: 'Filtres', value: '1/1 octave et 1/3 octave en temps réel' }
+        ]
+      },
+      {
+        group: 'Alimentation',
+        items: [
+          { key: 'Piles', value: '2x piles AA ou alimentation externe USB' },
+          { key: 'Autonomie', value: 'Jusqu\'à 30 heures' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-sv-111',
+    brand_id: 'brand-svantek',
+    category_id: 'cat-noise',
+    name: 'Calibrateur de vibrations portable',
+    model: 'SV 111',
+    manufacturer_reference: 'SV111-STD',
+    slug: 'calibrateur-vibrations-sv-111',
+    short_description: 'Calibrateur de vibrations triaxial portable de terrain pour la vérification rapide des capteurs et accéléromètres.',
+    long_description: 'Le SV 111 est un calibrateur vibratoire portable de précision conçu pour le contrôle de l\'ensemble de la chaîne de mesure (capteurs de vibrations corporelles, mains-bras ou géophones) sur le terrain avant et après chaque campagne de mesure. Il génère une accélération stable à plusieurs fréquences sélectionnables.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Calibrage de terrain de capteurs de vibrations triaxiaux',
+      'Vérification métrologique sur site de chantiers',
+      'Assurance qualité des mesures vibratoires'
+    ],
+    sectors: ['Bureaux d\'études géotechniques', 'Cabinets de diagnostic HSE', 'Laboratoires'],
+    advantages: [
+      'Génération vibratoire triaxiale automatique',
+      'Plusieurs niveaux d\'accélération et fréquences',
+      'Écran LCD de contrôle',
+      'Valise de transport autonome sur batterie'
+    ],
+    standards_certifications: [
+      'ISO 8041-1',
+      'CE'
+    ],
+    images: ['/products/sv-111.jpg'],
+    public_documents: [
+      { name: 'Fiche technique SV 111.pdf', url: '#', size: '1.7 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Calibrage',
+        items: [
+          { key: 'Fréquences de test', value: '16 Hz, 79.58 Hz, 159.2 Hz' },
+          { key: 'Amplitude d\'accélération', value: '1 m/s² à 10 m/s²' }
+        ]
+      },
+      {
+        group: 'Physique',
+        items: [
+          { key: 'Charge maximale', value: 'Jusqu\'à 1 kg de capteur' },
+          { key: 'Alimentation', value: 'Batterie rechargeable intégrée' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-sv-103',
+    brand_id: 'brand-svantek',
+    category_id: 'cat-noise',
+    name: 'Dosimètre de vibrations mains-bras',
+    model: 'SV 103',
+    manufacturer_reference: 'SV103-STD',
+    slug: 'dosimetre-vibrations-mains-bras-sv-103',
+    short_description: 'Dosimètre de vibrations individuelles mains-bras en temps réel fixé directement sur la main de l\'opérateur.',
+    long_description: 'Le SV 103 est un dosimètre de vibrations corporelles révolutionnaire pour le suivi de l\'exposition mains-bras (norme ISO 5349). Fixé confortablement à la main et au poignet de l\'opérateur, il enregistre en continu les vibrations générées par les outils portatifs (marteaux-piqueurs, meuleuses) directement à la source d\'entrée.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Évaluation de l\'exposition aux vibrations mains-bras',
+      'Évaluation d\'impact des outils vibrants industriels',
+      'Prévention des troubles musculo-squelettiques (TMS)'
+    ],
+    sectors: ['BTP', 'Mines & Carrières', 'Manufacture & Construction Navale', 'HSE'],
+    advantages: [
+      'Fixation directe sur la main via sangle ajustable',
+      'Mesure triaxiale en direct de l\'exposition',
+      'Détection automatique de force de contact de l\'outil',
+      'Conformité totale ISO 5349'
+    ],
+    standards_certifications: [
+      'ISO 5349-1',
+      'ISO 5349-2',
+      'ISO 8041-1'
+    ],
+    images: ['/products/sv-103.jpg'],
+    public_documents: [
+      { name: 'Fiche technique SV 103.pdf', url: '#', size: '2.0 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Mesure',
+        items: [
+          { key: 'Axes de mesure', value: 'Triaxial (X, Y, Z)' },
+          { key: 'Normes de pondération', value: 'Wh conforme ISO 5349' }
+        ]
+      },
+      {
+        group: 'Physique',
+        items: [
+          { key: 'Interface capteur', value: 'Capteur MEMS léger sur sangle de doigt' },
+          { key: 'Autonomie', value: 'Jusqu\'à 24 heures' }
+        ]
+      }
+    ]
+  },
+  {
     id: 'prod-gilair-plus',
     brand_id: 'brand-sensidyne',
     category_id: 'cat-air',
