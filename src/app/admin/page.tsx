@@ -64,7 +64,7 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
+    <div className="mx-auto max-w-7xl px-2 py-8 sm:px-4 lg:px-4 space-y-8">
       {/* Dashboard Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4 border-b border-slate-200">
         <div>
@@ -81,7 +81,7 @@ export default function AdminDashboard() {
 
       {/* Metrics Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="p-6 rounded-2xl border border-slate-200 bg-white space-y-2 shadow-sm">
+        <div className="p-6 rounded-2xl border border-slate-200 bg-white space-y-2 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
           <div className="flex justify-between items-center text-slate-500">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Total Demandes</span>
             <FileText className="h-5 w-5 text-brand-blue" />
@@ -90,7 +90,7 @@ export default function AdminDashboard() {
           <p className="text-[10px] text-slate-500">Historique complet du site</p>
         </div>
 
-        <div className="p-6 rounded-2xl border border-slate-200 bg-white space-y-2 shadow-sm">
+        <div className="p-6 rounded-2xl border border-slate-200 bg-white space-y-2 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
           <div className="flex justify-between items-center text-slate-500">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Nouvelles Demandes</span>
             <TrendingUp className="h-5 w-5 text-blue-500" />
@@ -99,7 +99,7 @@ export default function AdminDashboard() {
           <p className="text-[10px] text-slate-500">À qualifier rapidement</p>
         </div>
 
-        <div className="p-6 rounded-2xl border border-slate-200 bg-white space-y-2 shadow-sm">
+        <div className="p-6 rounded-2xl border border-slate-200 bg-white space-y-2 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
           <div className="flex justify-between items-center text-slate-500">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400">En cours</span>
             <Activity className="h-5 w-5 text-amber-500" />
@@ -108,7 +108,7 @@ export default function AdminDashboard() {
           <p className="text-[10px] text-slate-500">Devis et négociations en cours</p>
         </div>
 
-        <div className="p-6 rounded-2xl border border-slate-200 bg-white space-y-2 shadow-sm">
+        <div className="p-6 rounded-2xl border border-slate-200 bg-white space-y-2 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
           <div className="flex justify-between items-center text-slate-500">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Pays Couverts</span>
             <MapPin className="h-5 w-5 text-brand-green" />
@@ -120,7 +120,7 @@ export default function AdminDashboard() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Recent requests list */}
-        <div className="lg:col-span-2 border border-slate-200 bg-white p-6 rounded-3xl space-y-6 shadow-md">
+        <div className="lg:col-span-2 border border-slate-200 bg-white p-6 rounded-3xl space-y-6 shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
           <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider border-b border-slate-100 pb-3">
             Demandes Récentes
           </h2>
@@ -160,7 +160,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Brand popularity charts */}
-        <div className="border border-slate-200 bg-white p-6 rounded-3xl space-y-6 shadow-md">
+        <div className="border border-slate-200 bg-white p-6 rounded-3xl space-y-6 shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
           <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider border-b border-slate-100 pb-3">
             Demande par Marques
           </h2>

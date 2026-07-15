@@ -178,20 +178,20 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
+    <div className="mx-auto max-w-7xl px-2 py-8 sm:px-4 lg:px-4 space-y-8">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-slate-900">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-slate-200">
         <div className="space-y-1">
-          <Link href="/admin/demandes" className="inline-flex items-center gap-1 text-[10px] uppercase font-bold text-slate-500 hover:text-cyan-400">
+          <Link href="/admin/demandes" className="inline-flex items-center gap-1 text-[10px] uppercase font-bold text-slate-500 hover:text-brand-blue transition-colors">
             <ArrowLeft className="h-3 w-3" /> Retour aux demandes
           </Link>
-          <h1 className="text-2xl font-black text-white flex items-center gap-2">
-            Fiche Demande <span className="font-mono text-cyan-400">{request.reference}</span>
+          <h1 className="text-2xl font-black text-slate-900 flex items-center gap-2">
+            Fiche Demande <span className="font-mono text-brand-blue">{request.reference}</span>
           </h1>
         </div>
 
         {success && (
-          <div className="px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold text-emerald-400 flex items-center gap-1.5 animate-pulse">
+          <div className="px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-100 text-xs font-bold text-brand-green flex items-center gap-1.5 animate-pulse">
             <Check className="h-4 w-4" /> {success}
           </div>
         )}
@@ -202,64 +202,64 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
         <div className="lg:col-span-8 space-y-6">
           
           {/* Client & Org Info */}
-          <div className="border border-slate-900 bg-slate-950 p-6 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="border border-slate-200 bg-white p-6 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6 shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
             <div className="space-y-4">
-              <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-900 pb-2">
-                <Building className="h-4 w-4 text-cyan-400" /> Entreprise
+              <h2 className="text-xs font-bold text-slate-700 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-100 pb-2">
+                <Building className="h-4 w-4 text-brand-blue" /> Entreprise
               </h2>
               <div className="space-y-1 text-xs">
-                <p className="text-white font-extrabold text-sm">{request.company_name}</p>
-                <p className="text-slate-400">Secteur : {request.sector || 'Non renseigné'}</p>
-                <p className="text-slate-400">Lieu de livraison : {request.delivery_location || `${request.city}, ${request.country}`}</p>
+                <p className="text-slate-900 font-extrabold text-sm">{request.company_name}</p>
+                <p className="text-slate-600">Secteur : {request.sector || 'Non renseigné'}</p>
+                <p className="text-slate-600">Lieu de livraison : {request.delivery_location || `${request.city}, ${request.country}`}</p>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-900 pb-2">
-                <User className="h-4 w-4 text-cyan-400" /> Contact Client
+              <h2 className="text-xs font-bold text-slate-700 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-100 pb-2">
+                <User className="h-4 w-4 text-brand-blue" /> Contact Client
               </h2>
               <div className="space-y-1 text-xs">
-                <p className="text-white font-extrabold text-sm">{request.contact_name}</p>
-                <p className="text-slate-400">Fonction : {request.job_title || 'Non renseignée'}</p>
-                <p className="text-slate-400">E-mail : {request.email}</p>
-                <p className="text-slate-400">Téléphone : {request.phone}</p>
-                {request.whatsapp && <p className="text-slate-400">WhatsApp : {request.whatsapp}</p>}
+                <p className="text-slate-900 font-extrabold text-sm">{request.contact_name}</p>
+                <p className="text-slate-600">Fonction : {request.job_title || 'Non renseignée'}</p>
+                <p className="text-slate-600">E-mail : {request.email}</p>
+                <p className="text-slate-600">Téléphone : {request.phone}</p>
+                {request.whatsapp && <p className="text-slate-600">WhatsApp : {request.whatsapp}</p>}
               </div>
             </div>
           </div>
 
           {/* Delivery & Logistics */}
-          <div className="border border-slate-900 bg-slate-950 p-6 rounded-3xl space-y-4">
-            <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-900 pb-2">
-              <Calendar className="h-4 w-4 text-cyan-400" /> Logistique & Commentaires
+          <div className="border border-slate-200 bg-white p-6 rounded-3xl space-y-4 shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
+            <h2 className="text-xs font-bold text-slate-700 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-100 pb-2">
+              <Calendar className="h-4 w-4 text-brand-blue" /> Logistique & Commentaires
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div className="space-y-1">
                 <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-bold">Délai de livraison souhaité</span>
-                <span className="text-slate-300 font-semibold">{request.desired_delivery_date ? new Date(request.desired_delivery_date).toLocaleDateString('fr-FR') : 'Non spécifié'}</span>
+                <span className="text-slate-800 font-semibold">{request.desired_delivery_date ? new Date(request.desired_delivery_date).toLocaleDateString('fr-FR') : 'Non spécifié'}</span>
               </div>
               <div className="space-y-1">
                 <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-bold">Canal privilégié de réponse</span>
-                <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-300 text-[10px] uppercase font-bold tracking-wider inline-block mt-0.5">{request.preferred_contact_channel}</span>
+                <span className="px-2 py-0.5 rounded bg-slate-50 border border-slate-200 text-slate-700 text-[10px] uppercase font-bold tracking-wider inline-block mt-0.5">{request.preferred_contact_channel}</span>
               </div>
             </div>
             {request.general_comment && (
-              <div className="pt-2 border-t border-slate-900 text-xs">
+              <div className="pt-2 border-t border-slate-100 text-xs">
                 <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-bold mb-1">Commentaire client</span>
-                <p className="text-slate-300 leading-relaxed bg-slate-900/40 p-3 rounded-xl border border-slate-900">{request.general_comment}</p>
+                <p className="text-slate-700 leading-relaxed bg-slate-50 p-3 rounded-xl border border-slate-100">{request.general_comment}</p>
               </div>
             )}
           </div>
 
           {/* Items requested */}
-          <div className="border border-slate-900 bg-slate-950 p-6 rounded-3xl space-y-4">
-            <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-900 pb-2">
-              <ClipboardList className="h-4 w-4 text-cyan-400" /> Spécifications Articles commandés
+          <div className="border border-slate-200 bg-white p-6 rounded-3xl space-y-4 shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
+            <h2 className="text-xs font-bold text-slate-700 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-100 pb-2">
+              <ClipboardList className="h-4 w-4 text-brand-blue" /> Spécifications Articles commandés
             </h2>
 
-            <div className="border border-slate-900 rounded-xl overflow-hidden">
-              <table className="min-w-full divide-y divide-slate-900 text-left">
-                <thead className="bg-slate-900/50 text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+            <div className="border border-slate-200 rounded-xl overflow-hidden">
+              <table className="min-w-full divide-y divide-slate-100 text-left">
+                <thead className="bg-slate-50 text-[10px] text-slate-500 font-bold uppercase tracking-wider">
                   <tr>
                     <th className="px-4 py-3">Marque / Modèle</th>
                     <th className="px-4 py-3">Désignation</th>
@@ -267,23 +267,23 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                     <th className="px-4 py-3 text-center">Quantité</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-900 text-xs text-slate-300">
+                <tbody className="divide-y divide-slate-100 text-xs text-slate-700">
                   {request.items.map((item, idx) => (
-                    <tr key={idx} className="hover:bg-slate-900/10 transition-colors">
+                    <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
                       <td className="px-4 py-3">
-                        <span className="font-bold text-white block">{item.product_brand}</span>
-                        <span className="text-[10px] font-mono text-cyan-400 font-bold">{item.product_model}</span>
+                        <span className="font-bold text-slate-900 block">{item.product_brand}</span>
+                        <span className="text-[10px] font-mono text-brand-blue font-bold">{item.product_model}</span>
                       </td>
                       <td className="px-4 py-3">
-                        <div>{item.product_name}</div>
+                        <div className="font-medium text-slate-900">{item.product_name}</div>
                         {item.comment && (
                           <div className="text-[10px] text-slate-500 mt-1 italic">Note client : {item.comment}</div>
                         )}
                       </td>
-                      <td className="px-4 py-3 font-medium text-slate-400">
+                      <td className="px-4 py-3 text-slate-600">
                         {item.configuration}
                       </td>
-                      <td className="px-4 py-3 text-center font-bold text-white">
+                      <td className="px-4 py-3 text-center font-bold text-slate-900">
                         {item.quantity}
                       </td>
                     </tr>
@@ -298,8 +298,8 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
         <div className="lg:col-span-4 space-y-6">
           
           {/* Status and assignee update */}
-          <div className="border border-slate-900 bg-slate-950 p-6 rounded-3xl space-y-4">
-            <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest border-b border-slate-900 pb-2">
+          <div className="border border-slate-200 bg-white p-6 rounded-3xl space-y-4 shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
+            <h2 className="text-xs font-bold text-slate-700 uppercase tracking-widest border-b border-slate-100 pb-2">
               Statut du Workflow
             </h2>
 
@@ -309,7 +309,7 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                 <select
                   value={status}
                   onChange={(e) => handleStatusChange(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 font-semibold"
+                  className="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:border-brand-blue font-semibold"
                 >
                   {statusList.map((s) => (
                     <option key={s.value} value={s.value}>{s.label}</option>
@@ -322,7 +322,7 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                 <select
                   value={assignedTo}
                   onChange={(e) => handleAssigneeChange(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 focus:outline-none focus:border-cyan-500"
+                  className="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:border-brand-blue"
                 >
                   <option value="">Non assigné</option>
                   {salesAgents.map((a) => (
@@ -345,9 +345,9 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
           </div>
 
           {/* Activity Logs (Timeline) */}
-          <div className="border border-slate-900 bg-slate-950 p-6 rounded-3xl space-y-6">
-            <h2 className="text-xs font-bold text-slate-500 uppercase tracking-widest border-b border-slate-900 pb-2 flex items-center gap-1.5">
-              <CheckSquare className="h-4 w-4 text-cyan-400" /> Historique d'Activité
+          <div className="border border-slate-200 bg-white p-6 rounded-3xl space-y-6 shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
+            <h2 className="text-xs font-bold text-slate-700 uppercase tracking-widest border-b border-slate-100 pb-2 flex items-center gap-1.5">
+              <CheckSquare className="h-4 w-4 text-brand-blue" /> Historique d'Activité
             </h2>
 
             {/* Form to add note */}
@@ -356,7 +356,7 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                 <select
                   value={newLogAction}
                   onChange={(e) => setNewLogAction(e.target.value)}
-                  className="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-[10px] text-slate-300 focus:outline-none focus:border-cyan-500"
+                  className="px-2 py-1 rounded bg-slate-50 border border-slate-200 text-[10px] text-slate-700 focus:outline-none focus:border-brand-blue"
                 >
                   <option value="note_interne">Note Interne</option>
                   <option value="relance">Relance effectuée</option>
@@ -370,11 +370,11 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                   value={newLogComment}
                   onChange={(e) => setNewLogComment(e.target.value)}
                   placeholder="Écrire une note ou consigne de suivi..."
-                  className="w-full pl-3 pr-10 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 placeholder:text-slate-700 focus:outline-none focus:border-cyan-500"
+                  className="w-full pl-3 pr-10 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-brand-blue"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 bottom-3 p-1.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 rounded-lg transition-colors"
+                  className="absolute right-2 bottom-3 p-1.5 bg-brand-blue hover:bg-blue-700 text-white rounded-lg transition-colors"
                   title="Ajouter"
                 >
                   <Send className="h-3 w-3" />
@@ -389,17 +389,17 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                   <li key={log.id}>
                     <div className="relative pb-8">
                       {idx !== request.activity_logs.length - 1 ? (
-                        <span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-900" aria-hidden="true" />
+                        <span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-100" aria-hidden="true" />
                       ) : null}
                       <div className="relative flex space-x-3">
                         <div>
-                          <span className="h-8 w-8 rounded-full bg-slate-900 border border-slate-850 flex items-center justify-center ring-8 ring-slate-950">
-                            <MessageSquare className="h-3.5 w-3.5 text-cyan-400" />
+                          <span className="h-8 w-8 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center ring-8 ring-white">
+                            <MessageSquare className="h-3.5 w-3.5 text-brand-blue" />
                           </span>
                         </div>
                         <div className="flex-1 min-w-0 pt-1.5">
-                          <div className="text-xs text-slate-300 leading-normal">
-                            <p className="font-semibold text-slate-200">{log.comment}</p>
+                          <div className="text-xs text-slate-700 leading-normal">
+                            <p className="font-semibold text-slate-900">{log.comment}</p>
                             <p className="text-[10px] text-slate-500 mt-1 flex items-center gap-1.5">
                               <span>Par : {log.actor}</span>
                               <span>&bull;</span>
