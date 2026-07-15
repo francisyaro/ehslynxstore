@@ -32,18 +32,13 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-blue to-brand-green border border-brand-red/30 shadow-md shadow-brand-blue/20 group-hover:scale-105 transition-transform duration-200">
-                <Sparkles className="h-5 w-5 text-white" />
-              </div>
-              <span className="font-extrabold text-xl tracking-wider text-white">
-                EHS-LYNX <span className="text-brand-green">AFRIK</span>
-              </span>
+              <img src="/brands/ehslynxafrik-logo.png" alt="EHS-LYNX AFRIK Logo" className="h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-102" />
             </Link>
           </div>
 
@@ -53,10 +48,10 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-3 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   isActive(item.href)
-                    ? 'text-brand-green bg-slate-900/50'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-900/30'
+                    ? 'text-brand-green bg-slate-100'
+                    : 'text-slate-600 hover:text-brand-blue hover:bg-slate-50'
                 }`}
               >
                 {item.name}
@@ -71,9 +66,9 @@ export default function Header() {
               placeholder="Rechercher un produit..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs focus:outline-none focus:border-cyan-500 transition-colors"
+              className="w-full pl-9 pr-4 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 text-xs focus:outline-none focus:border-brand-blue transition-colors"
             />
-            <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-slate-500" />
+            <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-slate-400" />
           </form>
 
           {/* Actions */}
@@ -81,12 +76,12 @@ export default function Header() {
             {/* Cart / RFQ Selection Button */}
             <Link
               href="/demande-de-prix"
-              className="relative p-2 text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
+              className="relative p-2 text-slate-600 hover:text-brand-blue hover:bg-slate-50 rounded-lg transition-colors"
               aria-label="Demande de prix"
             >
               <FileText className="h-5.5 w-5.5" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500 text-[10px] font-bold text-slate-950 animate-pulse">
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand-red text-[10px] font-bold text-white animate-pulse">
                   {cartCount}
                 </span>
               )}
@@ -95,7 +90,7 @@ export default function Header() {
             {/* Admin Backoffice Quick Link */}
             <Link
               href="/admin"
-              className="p-2 text-emerald-400 hover:text-emerald-300 hover:bg-slate-900 rounded-lg transition-colors"
+              className="p-2 text-brand-green hover:text-green-700 hover:bg-slate-50 rounded-lg transition-colors"
               title="Console Admin"
             >
               <ShieldAlert className="h-5.5 w-5.5" />
@@ -104,7 +99,7 @@ export default function Header() {
             {/* User Account */}
             <Link
               href="/compte/demandes"
-              className="p-2 text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
+              className="p-2 text-slate-600 hover:text-brand-blue hover:bg-slate-50 rounded-lg transition-colors"
               title="Espace Client"
             >
               <User className="h-5.5 w-5.5" />
@@ -113,7 +108,7 @@ export default function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg md:hidden transition-colors"
+              className="p-2 text-slate-600 hover:text-brand-blue hover:bg-slate-50 rounded-lg md:hidden transition-colors"
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -123,16 +118,16 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-800 bg-slate-950 px-4 py-4 space-y-3">
+        <div className="md:hidden border-b border-slate-200 bg-white px-4 py-4 space-y-3 shadow-md">
           <form onSubmit={handleSearchSubmit} className="relative w-full mb-4">
             <input
               type="text"
               placeholder="Rechercher un produit..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-sm focus:outline-none focus:border-cyan-500"
+              className="w-full pl-9 pr-4 py-2 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:outline-none focus:border-brand-blue"
             />
-            <Search className="absolute left-3 top-3 h-4 w-4 text-slate-500" />
+            <Search className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
           </form>
 
           <nav className="flex flex-col space-y-1">
@@ -141,10 +136,10 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`px-3 py-2.5 rounded-lg text-base font-medium transition-colors ${
+                className={`px-3 py-2.5 rounded-lg text-base font-semibold transition-colors ${
                   isActive(item.href)
-                    ? 'text-brand-green bg-slate-900/50'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-900/30'
+                    ? 'text-brand-green bg-slate-100'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 {item.name}

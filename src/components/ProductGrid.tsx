@@ -65,9 +65,9 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
       {/* Sidebar Filter Panel */}
       <div className="lg:col-span-1 space-y-6">
-        <div className="border border-slate-900 bg-slate-900/10 p-5 rounded-2xl space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-slate-900">
-            <h2 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+        <div className="border border-slate-200 bg-white p-5 rounded-2xl shadow-sm space-y-6">
+          <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+            <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
               <SlidersHorizontal className="h-4 w-4 text-brand-green" /> Filtres
             </h2>
             {(selectedBrand || selectedCategory || search) && (
@@ -88,8 +88,8 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                 onClick={() => setSelectedCategory('')}
                 className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold text-left transition-colors ${
                   !selectedCategory
-                    ? 'text-brand-green bg-slate-900/50'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-900/20'
+                    ? 'text-brand-green bg-slate-100'
+                    : 'text-slate-600 hover:text-brand-blue hover:bg-slate-50'
                 }`}
               >
                 <Activity className="h-3.5 w-3.5" />
@@ -101,8 +101,8 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                   onClick={() => setSelectedCategory(c.slug)}
                   className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold text-left transition-colors ${
                     selectedCategory === c.slug
-                      ? 'text-brand-green bg-slate-900/50'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-900/20'
+                      ? 'text-brand-green bg-slate-100'
+                      : 'text-slate-600 hover:text-brand-blue hover:bg-slate-50'
                   }`}
                 >
                   <span className="shrink-0">{getCategoryIcon(c.slug)}</span>
@@ -120,8 +120,8 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                 onClick={() => setSelectedBrand('')}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold text-left transition-colors ${
                   !selectedBrand
-                    ? 'text-brand-green bg-slate-900/50'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-900/20'
+                    ? 'text-brand-green bg-slate-100'
+                    : 'text-slate-600 hover:text-brand-blue hover:bg-slate-50'
                 }`}
               >
                 Toutes les marques
@@ -132,8 +132,8 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                   onClick={() => setSelectedBrand(b.slug)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-semibold text-left transition-colors ${
                     selectedBrand === b.slug
-                      ? 'text-brand-green bg-slate-900/50'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-900/20'
+                      ? 'text-brand-green bg-slate-100'
+                      : 'text-slate-600 hover:text-brand-blue hover:bg-slate-50'
                   }`}
                 >
                   {b.name}
@@ -147,7 +147,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
       {/* Main product panel */}
       <div className="lg:col-span-3 space-y-6">
         {/* Search input and status */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-between items-center bg-slate-900/20 border border-slate-900 p-4 rounded-2xl">
+        <div className="flex flex-col sm:flex-row gap-4 justify-between items-center bg-white border border-slate-200 p-4 rounded-2xl shadow-sm">
           {/* Search bar */}
           <div className="relative w-full sm:max-w-xs">
             <input
@@ -155,13 +155,13 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
               placeholder="Nom, modèle, mot-clé..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-950 border border-slate-900 text-slate-200 text-xs focus:outline-none focus:border-brand-green transition-colors"
+              className="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-xs focus:outline-none focus:border-brand-blue transition-colors"
             />
-            <Search className="absolute left-3 top-3 h-3.5 w-3.5 text-slate-500" />
+            <Search className="absolute left-3 top-3 h-3.5 w-3.5 text-slate-400" />
             {search && (
               <button
                 onClick={() => setSearch('')}
-                className="absolute right-3 top-3 hover:text-white text-slate-500"
+                className="absolute right-3 top-3 hover:text-slate-900 text-slate-400"
               >
                 <X className="h-3.5 w-3.5" />
               </button>
@@ -179,7 +179,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
           <div className="flex flex-wrap gap-2 items-center">
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider mr-1">Filtres actifs:</span>
             {selectedCategory && (
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-900 border border-slate-800 text-slate-300">
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-100 border border-slate-200 text-slate-700">
                 Catégorie: {activeCategoryName}
                 <button onClick={() => setSelectedCategory('')} className="hover:text-brand-green ml-1">
                   <X className="h-3 w-3" />
@@ -187,7 +187,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
               </span>
             )}
             {selectedBrand && (
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-900 border border-slate-800 text-slate-300">
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-100 border border-slate-200 text-slate-700">
                 Marque: {activeBrandName}
                 <button onClick={() => setSelectedBrand('')} className="hover:text-brand-green ml-1">
                   <X className="h-3 w-3" />
@@ -195,7 +195,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
               </span>
             )}
             {search && (
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-900 border border-slate-800 text-slate-300">
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-100 border border-slate-200 text-slate-700">
                 Recherche: &quot;{search}&quot;
                 <button onClick={() => setSearch('')} className="hover:text-brand-green ml-1">
                   <X className="h-3 w-3" />
@@ -214,42 +214,42 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
               return (
                 <div
                   key={product.id}
-                  className="flex flex-col border border-slate-900 bg-slate-900/10 rounded-2xl overflow-hidden hover:border-slate-800 hover:bg-slate-900/30 transition-all duration-200 group relative"
+                  className="flex flex-col border border-slate-200 bg-white rounded-2xl overflow-hidden hover:border-brand-blue/35 hover:shadow-lg hover:shadow-slate-100 transition-all duration-300 group relative"
                 >
                   <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                     <div className="space-y-2">
                       <div className="flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase h-6">
                         {brand?.logo.startsWith('/') ? (
-                          <img src={brand.logo} alt={brand.name} className="h-4 object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+                          <img src={brand.logo} alt={brand.name} className="h-4 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                         ) : (
                           <span>{brand?.name}</span>
                         )}
                         <span className="text-brand-green">{product.model}</span>
                       </div>
 
-                      <h3 className="text-base font-bold text-white group-hover:text-brand-green transition-colors">
+                      <h3 className="text-base font-bold text-slate-900 group-hover:text-brand-blue transition-colors">
                         {product.name}
                       </h3>
 
-                      <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">
+                      <p className="text-xs text-slate-500 leading-relaxed line-clamp-3">
                         {product.short_description}
                       </p>
                     </div>
 
-                    <div className="space-y-3 pt-3 border-t border-slate-900">
+                    <div className="space-y-3 pt-3 border-t border-slate-100">
                       {/* Technical specifications quick view */}
-                      <div className="text-[10px] text-slate-500 font-semibold uppercase">
+                      <div className="text-[10px] text-slate-400 font-semibold uppercase">
                         {category?.name}
                       </div>
 
                       <div className="flex justify-between items-center">
-                        <span className="text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wide bg-emerald-950/40 text-brand-green border border-brand-green/20">
+                        <span className="text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wide bg-emerald-50 text-brand-green border border-brand-green/20">
                           Prix sur demande
                         </span>
                         
                         <Link
                           href={`/produits/${brand?.slug}/${product.slug}`}
-                          className="inline-flex items-center justify-center h-8 px-3 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 text-xs font-bold text-slate-300 hover:text-white transition-all"
+                          className="inline-flex items-center justify-center h-8 px-3 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-slate-950 transition-all"
                         >
                           Détails
                         </Link>
@@ -261,8 +261,8 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
             })}
           </div>
         ) : (
-          <div className="text-center py-16 border border-dashed border-slate-900 rounded-3xl space-y-3">
-            <p className="text-slate-400 text-sm">Aucun produit ne correspond à vos filtres.</p>
+          <div className="text-center py-16 border border-dashed border-slate-200 rounded-3xl space-y-3">
+            <p className="text-slate-500 text-sm">Aucun produit ne correspond à vos filtres.</p>
             <button
               onClick={resetFilters}
               className="text-xs text-brand-green font-bold hover:underline"
