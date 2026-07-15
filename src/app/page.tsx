@@ -17,20 +17,20 @@ export default function Home() {
         <div className="space-y-4 max-w-2xl px-4 z-10">
           <p className="text-xs font-bold uppercase tracking-widest text-brand-green">SVANTEK</p>
           <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight text-slate-900 leading-none">
-            Sonomètre SV 971
+            Noise Monitoring Solutions
           </h1>
-          <p className="text-lg sm:text-xl text-slate-600 max-w-lg mx-auto font-medium">
-            Le plus petit sonomètre de Classe 1 de précision au monde.
+          <p className="text-lg sm:text-xl text-slate-600 max-w-xl mx-auto font-medium">
+            Sonomètres de Classe 1 de haute précision et stations connectées de surveillance acoustique pour l\'industrie.
           </p>
           <div className="flex justify-center gap-6 pt-2">
             <Link
-              href="/produits/svantek/sonometre-compact-sv-971"
+              href="/produits?brand=svantek"
               className="inline-flex items-center gap-1 text-sm font-bold text-brand-blue hover:text-blue-700 transition-colors group"
             >
-              En savoir plus <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              Consulter la gamme <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/produits/svantek/sonometre-compact-sv-971"
+              href="/demande-de-prix"
               className="inline-flex items-center gap-1 text-sm font-bold text-brand-green hover:text-green-700 transition-colors"
             >
               Demander un prix
@@ -38,39 +38,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Apple Style Hardware Mockup Showcase (CSS Graphic) */}
-        <div className="relative mt-12 w-full max-w-xl px-4 flex justify-center z-10">
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-brand-blue/5 blur-[60px] pointer-events-none" />
-          {/* Sonometer device mockup */}
-          <div className="relative w-48 h-80 rounded-[32px] border-4 border-slate-200 bg-white p-4 shadow-2xl flex flex-col justify-between items-center">
-            {/* Display screen */}
-            <div className="w-full h-32 bg-slate-950 rounded-xl border border-slate-900 p-3 flex flex-col justify-between relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-20 h-20 bg-brand-green/5 rounded-full blur-md" />
-              <div className="flex justify-between items-center text-[8px] text-slate-500 font-bold uppercase">
-                <span>SV 971</span>
-                <span className="text-brand-green">RUNNING</span>
-              </div>
-              <div className="text-2xl font-black text-white font-mono text-center my-auto flex items-end justify-center gap-1">
-                <span>72.4</span> <span className="text-[10px] text-brand-green uppercase">dBA</span>
-              </div>
-              <div className="flex gap-1 items-end h-6 w-full">
-                <div className="bg-brand-green/40 w-full h-[30%] rounded-sm" />
-                <div className="bg-brand-green/60 w-full h-[50%] rounded-sm" />
-                <div className="bg-brand-green/80 w-full h-[80%] rounded-sm" />
-                <div className="bg-brand-green w-full h-[95%] rounded-sm" />
-                <div className="bg-brand-green/70 w-full h-[60%] rounded-sm" />
-              </div>
-            </div>
-            {/* Buttons */}
-            <div className="grid grid-cols-3 gap-2 w-full px-2 mb-4">
-              <div className="h-6 rounded-md bg-slate-50 border border-slate-200 flex items-center justify-center text-[7px] font-bold text-slate-500 uppercase">esc</div>
-              <div className="h-6 rounded-md bg-slate-50 border border-slate-200 flex items-center justify-center text-[7px] font-bold text-slate-500 uppercase">&uarr;</div>
-              <div className="h-6 rounded-md bg-brand-blue border border-brand-blue flex items-center justify-center text-[7px] font-bold text-white uppercase">enter</div>
-              <div className="h-6 rounded-md bg-slate-50 border border-slate-200 flex items-center justify-center text-[7px] font-bold text-slate-500 uppercase">&larr;</div>
-              <div className="h-6 rounded-md bg-slate-50 border border-slate-200 flex items-center justify-center text-[7px] font-bold text-slate-500 uppercase">&darr;</div>
-              <div className="h-6 rounded-md bg-slate-50 border border-slate-200 flex items-center justify-center text-[7px] font-bold text-slate-500 uppercase">&rarr;</div>
-            </div>
-          </div>
+        {/* Real Svantek Product Image */}
+        <div className="relative mt-8 w-full max-w-lg px-4 flex justify-center z-10">
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-brand-blue/5 blur-[65px] pointer-events-none" />
+          <img
+            src="/products/svantek-noise-monitoring.png"
+            alt="SVANTEK Noise Monitoring Solutions"
+            className="h-80 w-auto object-contain hover:scale-102 transition-transform duration-500"
+          />
         </div>
       </section>
 
