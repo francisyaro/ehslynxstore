@@ -149,9 +149,9 @@ export default function Home() {
         <div className="relative min-h-[500px] flex flex-col justify-between items-center text-center p-8 bg-white border border-slate-200 rounded-3xl overflow-hidden hover:shadow-lg hover:shadow-slate-100 transition-all">
           <div className="space-y-2 z-10">
             <p className="text-[10px] font-bold uppercase tracking-widest text-brand-green">OHD</p>
-            <h2 className="text-3xl font-extrabold text-slate-900">Fit Testing QuantiFit2</h2>
+            <h2 className="text-3xl font-extrabold text-slate-900">QuantiFit2™ Respirator Fit Tester</h2>
             <p className="text-xs text-slate-500 max-w-xs mx-auto">
-              Essai d\'ajustement quantitatif des masques en moins de 2 minutes par pression négative.
+              L\'appareil de test d\'ajustement quantitatif des masques le plus rapide au monde par pression négative contrôlée (PNC).
             </p>
             <div className="flex justify-center gap-4 pt-1">
               <Link href="/produits/ohd/fit-test-quantifit2" className="text-xs font-bold text-brand-blue hover:underline">En savoir plus</Link>
@@ -159,38 +159,27 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="w-full flex justify-center z-10 mt-6">
-            <div className="w-48 h-32 bg-slate-50 border border-slate-200 rounded-2xl p-4 flex flex-col justify-between shadow-inner">
-              <div className="text-[8px] text-slate-500 font-bold uppercase">OHD PNC TEST</div>
-              <div className="h-2 w-full bg-slate-200 rounded-full overflow-hidden">
-                <div className="h-full bg-brand-green w-3/4 rounded-full" />
-              </div>
-              <span className="text-[10px] text-brand-green font-bold">FACTEUR FIT: 10,000+</span>
-            </div>
+          <div className="w-full flex justify-center z-10 mt-6 h-56 items-center">
+            <img src="/products/quantifit2-bento.jpg" alt="OHD QuantiFit2" className="max-h-full object-contain hover:scale-105 transition-transform duration-300" />
           </div>
         </div>
 
-        {/* Bento Box 2: SVANTEK SV 307 (Light Theme) */}
+        {/* Bento Box 2: SLATESAFETY BAND V2 (Light Theme) */}
         <div className="relative min-h-[500px] flex flex-col justify-between items-center text-center p-8 bg-white border border-slate-200 rounded-3xl overflow-hidden hover:shadow-lg hover:shadow-slate-100 transition-all">
           <div className="space-y-2 z-10">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-green">SVANTEK</p>
-            <h2 className="text-3xl font-extrabold text-slate-900">Station SV 307</h2>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-green">SLATESAFETY</p>
+            <h2 className="text-3xl font-extrabold text-slate-900">BAND V2</h2>
             <p className="text-xs text-slate-500 max-w-xs mx-auto">
-              Station de surveillance continue du bruit extérieur étanche (IP65) avec modem 4G.
+              Bracelet connecté industriel de suivi de la fréquence cardiaque et de prévention du stress thermique en temps réel.
             </p>
             <div className="flex justify-center gap-4 pt-1">
-              <Link href="/produits/svantek/station-bruit-outdoor-sv-307" className="text-xs font-bold text-brand-blue hover:underline">En savoir plus</Link>
-              <Link href="/produits/svantek/station-bruit-outdoor-sv-307" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
+              <Link href="/produits/slatesafety/bracelet-biosurveillance-band-v2" className="text-xs font-bold text-brand-blue hover:underline">En savoir plus</Link>
+              <Link href="/produits/slatesafety/bracelet-biosurveillance-band-v2" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
             </div>
           </div>
           
-          <div className="w-full flex justify-center z-10 mt-6">
-            <div className="w-28 h-40 bg-slate-50 border border-slate-200 rounded-2xl p-3 flex flex-col justify-between">
-              <div className="w-6 h-6 rounded-full bg-brand-green/10 border border-brand-green/30 flex items-center justify-center mx-auto">
-                <Volume2 className="h-3 w-3 text-brand-green" />
-              </div>
-              <div className="h-10 w-full bg-white rounded border border-slate-100" />
-            </div>
+          <div className="w-full flex justify-center z-10 mt-6 h-56 items-center">
+            <img src="/products/band-v2-bento.png" alt="SlateSafety BAND V2" className="max-h-full object-contain hover:scale-105 transition-transform duration-300" />
           </div>
         </div>
 
