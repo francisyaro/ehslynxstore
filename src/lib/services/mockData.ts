@@ -665,7 +665,7 @@ export const PRODUCTS: Product[] = [
       'Certifié ATEX II 1 G Ex ia IIC T4 Ga',
       'CE, RoHS'
     ],
-    images: ['/products/gilairplus.jpg'],
+    images: ['/products/gilair-plus.png'],
     public_documents: [
       { name: 'Brochure GilAir Plus (FR).pdf', url: '#', size: '3.2 MB' }
     ],
@@ -683,6 +683,155 @@ export const PRODUCTS: Product[] = [
         items: [
           { key: 'Batterie', value: 'NiMH rechargeable haute capacité' },
           { key: 'Autonomie', value: 'Min. 8 heures à 4000 mL/min sous forte perte de charge' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-ap-20s',
+    brand_id: 'brand-sensidyne',
+    category_id: 'cat-air',
+    name: 'Pompe de détection de gaz par tubes colorimétriques',
+    model: 'AP-20S',
+    manufacturer_reference: 'AP-20S-KIT',
+    slug: 'pompe-detection-gaz-ap-20s',
+    short_description: 'Pompe de prélèvement manuelle à piston pour la détection rapide de gaz toxiques à l\'aide de tubes réactifs colorimétriques.',
+    long_description: 'La pompe Sensidyne AP-20S est un système d\'échantillonnage de gaz manuel ultra-précis par aspiration à piston. Idéale pour les diagnostics rapides sur site ou les situations d\'urgence, elle permet de détecter et quantifier instantanément plus de 300 gaz et vapeurs toxiques grâce à une large gamme de tubes réactifs gradués à lecture directe.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Détection rapide de fuites de gaz toxiques',
+      'Contrôle instantané de la qualité de l\'air en espace confiné',
+      'Mesures d\'urgence environnementales'
+    ],
+    sectors: ['Pétrole & Gaz', 'Assainissement & Eau', 'Industrie Chimique', 'Protection Civile'],
+    advantages: [
+      'Mécanisme à piston de précision (100 mL de course)',
+      'Poignée ergonomique avec indicateur de fin d\'aspiration',
+      'Coupe-tube intégré sur le corps de la pompe',
+      'Aucune alimentation électrique requise (totalement autonome)'
+    ],
+    standards_certifications: [
+      'Conformité EN 1231',
+      'Certifié ATEX (Sécurité Intrinsèque manuelle)'
+    ],
+    images: ['/products/ap-20s.jpg'],
+    public_documents: [
+      { name: 'Guide des tubes réactifs Sensidyne.pdf', url: '#', size: '4.8 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Prélèvement',
+        items: [
+          { key: 'Volume d\'aspiration', value: '50 mL ou 100 mL (demi-course ou pleine course)' },
+          { key: 'Principe physique', value: 'Aspiration par vide sous piston' }
+        ]
+      },
+      {
+        group: 'Poids & Dimensions',
+        items: [
+          { key: 'Poids', value: '280 grammes' },
+          { key: 'Accessoires inclus', value: 'Pompe AP-20S, graisse silicone, embouts de rechange, étui' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-dustlight',
+    brand_id: 'brand-sensidyne',
+    category_id: 'cat-air',
+    name: 'Moniteur de poussières individuel en temps réel',
+    model: 'Gilian Dustlight',
+    manufacturer_reference: 'DUSTLIGHT-STD',
+    slug: 'moniteur-poussieres-dustlight',
+    short_description: 'Appareil portable de mesure continue de la concentration en poussières fines inhalables (PM10, PM2.5, PM1.0, fraction alvéolaire).',
+    long_description: 'Le Gilian Dustlight est un moniteur de poussières individuel en temps réel compact et robuste. Il mesure en continu les concentrations de poussières inhalables et alvéolaires en utilisant le principe de la diffusion de lumière laser. Conçu pour le port à la ceinture ou sur l\'épaule, il émet des alertes visuelles (barre lumineuse verte/orange/rouge) et vibrantes lorsque les limites de santé au travail sont dépassées.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Suivi en temps réel de l\'exposition individuelle aux poussières',
+      'Détection immédiate de pics de pollution de l\'air de travail',
+      'Vérification de l\'efficacité des extracteurs de poussières'
+    ],
+    sectors: ['BTP & Cimenteries', 'Mines & Carrières', 'Menuiseries & Agroalimentaire'],
+    advantages: [
+      'Rendu des mesures instantané (PM1, PM2.5, PM4/Alvéolaires, PM10)',
+      'Indicateur lumineux tricolore de statut de qualité de l\'air',
+      'Poids plume et format ultra-robuste antichoc',
+      'Connectivité Bluetooth avec application mobile HSE'
+    ],
+    standards_certifications: [
+      'Conformité CE',
+      'Indice de protection IP54'
+    ],
+    images: ['/products/dustlight.jpg'],
+    public_documents: [
+      { name: 'Fiche produit Gilian Dustlight.pdf', url: '#', size: '2.2 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Technologie de Mesure',
+        items: [
+          { key: 'Détecteur', value: 'Photomètre laser à diffusion de lumière' },
+          { key: 'Plage de mesure', value: '0 à 20 000 µg/m³' },
+          { key: 'Canaux mesurés', value: 'PM1.0, PM2.5, PM4.0 (Alvéolaire), PM10' }
+        ]
+      },
+      {
+        group: 'Physique & Batterie',
+        items: [
+          { key: 'Batterie', value: 'Lithium-Polymère rechargeable' },
+          { key: 'Autonomie', value: 'Jusqu\'à 16 heures de mesure continue' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'prod-gocal-pro',
+    brand_id: 'brand-sensidyne',
+    category_id: 'cat-air',
+    name: 'Calibrateur de débit d\'air primaire de précision',
+    model: 'Go-Cal Pro',
+    manufacturer_reference: 'GOCAL-PRO-KIT',
+    slug: 'calibrateur-debit-air-gocal-pro',
+    short_description: 'Calibrateur de débit primaire portable à écran tactile pour l\'étalonnage précis des pompes d\'échantillonnage d\'air.',
+    long_description: 'Le Gilian Go-Cal Pro est un calibrateur de débit d\'air primaire portable de haute précision. Doté d\'un écran tactile couleur et d\'un capteur de débit à déplacement thermique breveté, il permet d\'étalonner rapidement les pompes d\'échantillonnage individuelles et haut débit. Il compense automatiquement les variations de pression et de température pour fournir des débits standardisés (STP) d\'une précision inégalée de ± 0.75 %.',
+    availability_status: 'disponible',
+    status: 'actif',
+    applications: [
+      'Étalonnage quotidien obligatoire de terrain des pompes d\'échantillonnage',
+      'Certification métrologique de laboratoire des débits d\'air',
+      'Contrôle d\'intégrité des lignes de prélèvement'
+    ],
+    sectors: ['Laboratoires de métrologie', 'Cabinets d\'audit HSE', 'Services de maintenance industrielle'],
+    advantages: [
+      'Précision de débit primaire de ± 0.75% de la mesure',
+      'Écran tactile couleur intuitif avec graphiques intégrés',
+      'Trois plages de débits disponibles couvrant de 10 mL/min à 20 L/min',
+      'Correction automatique STP de la pression et de la température'
+    ],
+    standards_certifications: [
+      'Traçabilité NIST',
+      'Conforme aux exigences d\'étalonnage ISO 13137'
+    ],
+    images: ['/products/gocal-pro.png'],
+    public_documents: [
+      { name: 'Fiche technique Gilian Go-Cal Pro.pdf', url: '#', size: '2.6 MB' }
+    ],
+    technical_specifications: [
+      {
+        group: 'Métrologie',
+        items: [
+          { key: 'Plage de débit', value: 'Modèle High: 4 000 à 20 000 cc/min (autres modèles dispo)' },
+          { key: 'Précision', value: '± 0.75% ou ± 0.005 LPM' },
+          { key: 'Unités de mesure', value: 'cc/min, mL/min, LPM' }
+        ]
+      },
+      {
+        group: 'Interface & Physique',
+        items: [
+          { key: 'Affichage', value: 'Écran tactile couleur 4.3 pouces' },
+          { key: 'Connectivité', value: 'Port USB de transfert de données de calibrage' }
         ]
       }
     ]
