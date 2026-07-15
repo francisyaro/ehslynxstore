@@ -84,7 +84,7 @@ export default function Home() {
         <div className="relative mt-8 w-full max-w-md px-4 flex justify-center z-10">
           <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-brand-green/5 blur-[65px] pointer-events-none" />
           <img
-            src="/products/dustlight.jpg"
+            src="/products/dustlight.png"
             alt="Gilian Dustlight Personal Dust Monitor"
             className="h-80 w-auto object-contain hover:scale-102 transition-transform duration-500"
           />

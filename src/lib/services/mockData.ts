@@ -764,7 +764,7 @@ export const PRODUCTS: Product[] = [
       'Conformité CE',
       'Indice de protection IP54'
     ],
-    images: ['/products/dustlight.jpg'],
+    images: ['/products/dustlight.png'],
     public_documents: [
       { name: 'Fiche produit Gilian Dustlight.pdf', url: '#', size: '2.2 MB' }
     ],
