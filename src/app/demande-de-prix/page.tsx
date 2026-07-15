@@ -269,13 +269,13 @@ export default function DemandeDePrixPage() {
 
               {/* Block Contact */}
               <div className="space-y-4">
-                <h3 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1.5">
+                <h3 className="text-[10px] font-bold text-slate-700 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-100 pb-1">
                   <User className="h-3.5 w-3.5 text-brand-blue" /> Vos Coordonnées
                 </h3>
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Nom complet *</label>
+                    <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Nom complet *</label>
                     <input
                       type="text"
                       required
@@ -286,7 +286,7 @@ export default function DemandeDePrixPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Fonction</label>
+                    <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Fonction</label>
                     <input
                       type="text"
                       value={jobTitle}
@@ -299,7 +299,7 @@ export default function DemandeDePrixPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Téléphone Mobile *</label>
+                    <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Téléphone Mobile *</label>
                     <input
                       type="tel"
                       required
@@ -310,7 +310,7 @@ export default function DemandeDePrixPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Numéro WhatsApp</label>
+                    <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Numéro WhatsApp</label>
                     <input
                       type="tel"
                       value={whatsapp}
@@ -322,7 +322,7 @@ export default function DemandeDePrixPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Email Professionnel *</label>
+                  <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Email Professionnel *</label>
                   <input
                     type="email"
                     required
@@ -336,13 +336,13 @@ export default function DemandeDePrixPage() {
 
               {/* Block Organisation */}
               <div className="space-y-4 pt-2 border-t border-slate-100">
-                <h3 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1.5">
+                <h3 className="text-[10px] font-bold text-slate-700 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-100 pb-1">
                   <Building2 className="h-3.5 w-3.5 text-brand-blue" /> Votre Entreprise
                 </h3>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Raison Sociale *</label>
+                    <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Raison Sociale *</label>
                     <input
                       type="text"
                       required
@@ -353,7 +353,7 @@ export default function DemandeDePrixPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Secteur d\'Activité</label>
+                    <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Secteur d\'Activité</label>
                     <select
                       value={sector}
                       onChange={(e) => setSector(e.target.value)}
@@ -369,7 +369,7 @@ export default function DemandeDePrixPage() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Pays de livraison *</label>
+                    <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Pays de livraison *</label>
                     <select
                       required
                       value={country}
@@ -383,7 +383,7 @@ export default function DemandeDePrixPage() {
                     </select>
                   </div>
                   <div className="space-y-1">
-                    <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Ville / Localité</label>
+                    <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Ville / Localité</label>
                     <input
                       type="text"
                       value={city}
@@ -397,13 +397,13 @@ export default function DemandeDePrixPage() {
 
               {/* Block Besoins & Logistique */}
               <div className="space-y-4 pt-2 border-t border-slate-100">
-                <h3 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1.5">
+                <h3 className="text-[10px] font-bold text-slate-700 uppercase tracking-widest flex items-center gap-1.5 border-b border-slate-100 pb-1">
                   <MapPin className="h-3.5 w-3.5 text-brand-blue" /> Logistique & Préférences
                 </h3>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Adresse / Port / Mine</label>
+                    <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Adresse / Port / Mine</label>
                     <input
                       type="text"
                       value={deliveryLocation}
@@ -413,7 +413,7 @@ export default function DemandeDePrixPage() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Délai souhaité</label>
+                    <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Délai souhaité</label>
                     <input
                       type="date"
                       value={desiredDeliveryDate}
@@ -424,7 +424,7 @@ export default function DemandeDePrixPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Commentaires Généraux</label>
+                  <label className="text-[9px] uppercase tracking-wider text-slate-700 font-bold">Commentaires Généraux</label>
                   <textarea
                     rows={2}
                     placeholder="Autres précisions d\'acheminement, informations douanières..."
@@ -435,10 +435,10 @@ export default function DemandeDePrixPage() {
                 </div>
 
                 {/* Canal de contact préféré */}
-                <div className="space-y-2">
-                  <span className="text-[9px] uppercase tracking-wider text-slate-500 font-bold block">Canal de contact privilégié</span>
+                <div className="space-y-2.5">
+                  <span className="text-[9px] uppercase tracking-wider text-slate-700 font-bold block">Canal de contact privilégié</span>
                   <div className="flex gap-4">
-                    <label className="flex items-center gap-1.5 text-xs text-slate-700 select-none cursor-pointer">
+                    <label className="flex items-center gap-1.5 text-xs text-slate-800 select-none cursor-pointer font-medium hover:text-slate-950">
                       <input
                         type="radio"
                         name="channel"
@@ -448,7 +448,7 @@ export default function DemandeDePrixPage() {
                       />
                       WhatsApp
                     </label>
-                    <label className="flex items-center gap-1.5 text-xs text-slate-700 select-none cursor-pointer">
+                    <label className="flex items-center gap-1.5 text-xs text-slate-800 select-none cursor-pointer font-medium hover:text-slate-950">
                       <input
                         type="radio"
                         name="channel"
@@ -458,7 +458,7 @@ export default function DemandeDePrixPage() {
                       />
                       E-mail
                     </label>
-                    <label className="flex items-center gap-1.5 text-xs text-slate-700 select-none cursor-pointer">
+                    <label className="flex items-center gap-1.5 text-xs text-slate-800 select-none cursor-pointer font-medium hover:text-slate-950">
                       <input
                         type="radio"
                         name="channel"
