@@ -1,321 +1,333 @@
 import React from 'react';
 import Link from 'next/link';
 import { BRANDS, CATEGORIES, PRODUCTS } from '@/lib/services/mockData';
-import { ShieldCheck, ArrowUpRight, Zap, Target, BookOpen, Award, ArrowRight, Activity, Volume2, Wind, Thermometer, UserCheck } from 'lucide-react';
+import { ArrowRight, Volume2, Wind, Thermometer, UserCheck, ShieldCheck, Award, BookOpen, Share2, HelpCircle, Activity } from 'lucide-react';
 
 export default function Home() {
-  // Map categories to icons for representation
-  const categoryIcons: Record<string, React.ReactNode> = {
-    'cat-noise': <Volume2 className="h-6 w-6 text-cyan-400" />,
-    'cat-air': <Wind className="h-6 w-6 text-emerald-400" />,
-    'cat-thermal': <Thermometer className="h-6 w-6 text-orange-400" />,
-    'cat-respiratory': <UserCheck className="h-6 w-6 text-purple-400" />,
-  };
-
-  const getBrandLogoText = (name: string) => {
-    return name;
-  };
-
   return (
-    <div className="relative min-h-screen bg-slate-950 overflow-hidden">
-      {/* Background radial glowing effects */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-cyan-900/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-emerald-900/10 blur-[120px] pointer-events-none" />
-
-      {/* Hero Section */}
-      <section className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28 text-center sm:text-left">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-xs text-cyan-400 font-semibold animate-pulse">
-              <Award className="h-3.5 w-3.5" /> Partenaire Agréé Officiel Afrique
-            </div>
-            
-            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
-              Sécurisez vos équipes, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-500">
-                Maîtrisez vos mesures
-              </span>
-            </h1>
-
-            <p className="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed">
-              Importateur et distributeur exclusif de matériel métrologique et de solutions d\'hygiène du travail de pointe en Afrique de l\'Ouest et Centrale.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center sm:justify-start">
-              <Link
-                href="/produits"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 shadow-lg shadow-cyan-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-              >
-                Explorer le catalogue
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold border border-slate-800 bg-slate-900/40 hover:bg-slate-900 text-slate-200 hover:text-white transition-all duration-200"
-              >
-                Nos expertises HSE
-              </Link>
-            </div>
-
-            {/* Quick Metrics */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-slate-900 text-left">
-              <div>
-                <p className="text-2xl sm:text-3xl font-black text-white">4</p>
-                <p className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest font-semibold">Marques leaders</p>
-              </div>
-              <div>
-                <p className="text-2xl sm:text-3xl font-black text-white">100%</p>
-                <p className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest font-semibold">Garantie & Support</p>
-              </div>
-              <div>
-                <p className="text-2xl sm:text-3xl font-black text-white">10+</p>
-                <p className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-widest font-semibold">Pays couverts</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Hero visual card */}
-          <div className="lg:col-span-5 relative hidden lg:block">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 rounded-3xl blur-2xl opacity-60" />
-            <div className="relative border border-slate-800 bg-slate-900/60 p-8 rounded-3xl backdrop-blur-xl shadow-2xl space-y-6">
-              <div className="flex justify-between items-center">
-                <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Produit Vedette</span>
-                <span className="px-2 py-0.5 rounded-full text-[9px] font-bold bg-cyan-500/10 text-cyan-400">DISPONIBLE</span>
-              </div>
-              
-              <div className="space-y-2">
-                <p className="text-xs text-cyan-400 font-bold tracking-wide">SVANTEK</p>
-                <h3 className="text-2xl font-black text-white">Sonomètre SV 977D</h3>
-                <p className="text-xs text-slate-400">Sonomètre classe 1 haute précision et analyseur de vibrations.</p>
-              </div>
-
-              {/* Fake diagram/chart */}
-              <div className="h-28 w-full bg-slate-950 border border-slate-800 rounded-xl p-4 flex flex-col justify-between">
-                <div className="flex justify-between items-center text-[10px] text-slate-500">
-                  <span>Plage de mesure</span>
-                  <span className="text-emerald-400 font-semibold">Conforme CEI 61672</span>
-                </div>
-                <div className="flex gap-1.5 items-end h-12">
-                  <div className="bg-cyan-500/40 w-full h-[40%] rounded-sm" />
-                  <div className="bg-cyan-500/60 w-full h-[65%] rounded-sm" />
-                  <div className="bg-cyan-500/80 w-full h-[85%] rounded-sm" />
-                  <div className="bg-emerald-400 w-full h-[95%] rounded-sm" />
-                  <div className="bg-cyan-500/80 w-full h-[70%] rounded-sm" />
-                  <div className="bg-cyan-500/50 w-full h-[45%] rounded-sm" />
-                </div>
-              </div>
-
-              <div className="flex justify-between items-center">
-                <span className="text-xs text-slate-500">Évaluation HSE & Mines</span>
-                <Link
-                  href="/produits/svantek/sonometre-sv-977d"
-                  className="inline-flex items-center gap-1 text-xs text-cyan-400 font-bold hover:underline"
-                >
-                  Fiche produit <ArrowUpRight className="h-3 w-3" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Brands logos/partner banner */}
-      <section className="border-y border-slate-900 bg-slate-950/50 py-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-xs font-bold uppercase tracking-widest text-slate-500 mb-8">
-            Distributeur agréé exclusif des marques leaders
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center text-center">
-            {BRANDS.map((brand) => (
-              <Link
-                key={brand.id}
-                href={`/produits?brand=${brand.slug}`}
-                className="group relative px-6 py-4 rounded-xl border border-slate-900 bg-slate-900/20 hover:border-slate-800 transition-all w-full max-w-[200px]"
-              >
-                <p className="text-lg font-black tracking-widest text-slate-400 group-hover:text-white transition-colors">
-                  {brand.name}
-                </p>
-                <p className="text-[9px] text-slate-600 group-hover:text-cyan-400 transition-colors uppercase tracking-widest mt-1">
-                  Voir la gamme
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Categories Grid */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-cyan-400">Expertise Métier</h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Catégories d\'Équipements Techniques
+    <div className="bg-slate-950 text-slate-100 min-h-screen font-sans">
+      
+      {/* ------------------------------------------------------------- */}
+      {/* SPOTLIGHT 1: SVANTEK SV 977D (Apple Style Hero 1 - Dark/Premium) */}
+      {/* ------------------------------------------------------------- */}
+      <section className="relative w-full min-h-[640px] flex flex-col justify-between items-center text-center py-16 bg-gradient-to-b from-slate-950 to-slate-900 overflow-hidden border-b border-slate-900">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(18,67,140,0.15),transparent_60%)] pointer-events-none" />
+        
+        {/* Text Group */}
+        <div className="space-y-4 max-w-2xl px-4 z-10">
+          <p className="text-xs font-bold uppercase tracking-widest text-brand-green">SVANTEK</p>
+          <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-none">
+            Sonomètre SV 977D
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-400 max-w-lg mx-auto font-medium">
+            La précision ultime pour la métrologie acoustique de Classe 1.
           </p>
-          <p className="text-slate-400 text-sm">
-            Découvrez nos gammes spécialisées d\'instruments de mesure calibrés répondant aux normes internationales les plus exigeantes.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {CATEGORIES.map((category) => (
+          <div className="flex justify-center gap-6 pt-2">
             <Link
-              key={category.id}
-              href={`/produits?category=${category.slug}`}
-              className="group border border-slate-900 bg-slate-900/30 p-6 rounded-2xl hover:border-slate-800 hover:bg-slate-900/50 hover:scale-[1.01] transition-all duration-200"
+              href="/produits/svantek/sonometre-sv-977d"
+              className="inline-flex items-center gap-1 text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors group"
             >
-              <div className="mb-4 inline-block p-3 rounded-xl bg-slate-950 border border-slate-800 group-hover:border-slate-700 transition-colors">
-                {categoryIcons[category.id] || <Activity className="h-6 w-6 text-cyan-400" />}
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-                {category.name}
-              </h3>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                {category.description}
-              </p>
+              En savoir plus <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-          ))}
+            <Link
+              href="/produits/svantek/sonometre-sv-977d"
+              className="inline-flex items-center gap-1 text-sm font-bold text-brand-green hover:text-green-400 transition-colors"
+            >
+              Demander un prix
+            </Link>
+          </div>
+        </div>
+
+        {/* Apple Style Hardware Mockup Showcase (CSS Graphic) */}
+        <div className="relative mt-12 w-full max-w-xl px-4 flex justify-center z-10">
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-brand-blue/10 blur-[60px] pointer-events-none" />
+          {/* Sonometer device mockup */}
+          <div className="relative w-48 h-80 rounded-[32px] border-4 border-slate-800 bg-slate-950 p-4 shadow-2xl flex flex-col justify-between items-center">
+            {/* Display screen */}
+            <div className="w-full h-32 bg-slate-900 rounded-xl border border-slate-800 p-3 flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-brand-green/5 rounded-full blur-md" />
+              <div className="flex justify-between items-center text-[8px] text-slate-500 font-bold uppercase">
+                <span>SV 977D</span>
+                <span className="text-brand-green">RUNNING</span>
+              </div>
+              <div className="text-2xl font-black text-white font-mono text-center my-auto flex items-end justify-center gap-1">
+                <span>72.4</span> <span className="text-[10px] text-brand-green uppercase">dBA</span>
+              </div>
+              <div className="flex gap-1 items-end h-6 w-full">
+                <div className="bg-brand-green/40 w-full h-[30%] rounded-sm" />
+                <div className="bg-brand-green/60 w-full h-[50%] rounded-sm" />
+                <div className="bg-brand-green/80 w-full h-[80%] rounded-sm" />
+                <div className="bg-brand-green w-full h-[95%] rounded-sm" />
+                <div className="bg-brand-green/70 w-full h-[60%] rounded-sm" />
+              </div>
+            </div>
+            {/* Buttons */}
+            <div className="grid grid-cols-3 gap-2 w-full px-2 mb-4">
+              <div className="h-6 rounded-md bg-slate-900 border border-slate-800 flex items-center justify-center text-[7px] font-bold text-slate-500 uppercase">esc</div>
+              <div className="h-6 rounded-md bg-slate-900 border border-slate-800 flex items-center justify-center text-[7px] font-bold text-slate-500 uppercase">&uarr;</div>
+              <div className="h-6 rounded-md bg-brand-blue border border-brand-blue/30 flex items-center justify-center text-[7px] font-bold text-white uppercase">enter</div>
+              <div className="h-6 rounded-md bg-slate-900 border border-slate-800 flex items-center justify-center text-[7px] font-bold text-slate-500 uppercase">&larr;</div>
+              <div className="h-6 rounded-md bg-slate-900 border border-slate-800 flex items-center justify-center text-[7px] font-bold text-slate-500 uppercase">&darr;</div>
+              <div className="h-6 rounded-md bg-slate-900 border border-slate-800 flex items-center justify-center text-[7px] font-bold text-slate-500 uppercase">&rarr;</div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="bg-slate-950/40 border-y border-slate-900 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-16">
-            <div className="space-y-2 text-center sm:text-left">
-              <h2 className="text-xs font-bold uppercase tracking-widest text-cyan-400">Équipements Phares</h2>
-              <p className="text-3xl font-extrabold text-white">Sélection de Produits Vedettes</p>
+      {/* ------------------------------------------------------------- */}
+      {/* SPOTLIGHT 2: SENSIDYNE GilAir Plus (Apple Style Hero 2 - Light Contrast) */}
+      {/* ------------------------------------------------------------- */}
+      <section className="relative w-full min-h-[640px] flex flex-col justify-between items-center text-center py-16 bg-slate-100 overflow-hidden border-b border-slate-200">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,130,57,0.06),transparent_60%)] pointer-events-none" />
+        
+        {/* Text Group */}
+        <div className="space-y-4 max-w-2xl px-4 z-10 text-slate-950">
+          <p className="text-xs font-bold uppercase tracking-widest text-brand-blue">SENSIDYNE</p>
+          <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight leading-none">
+            Gamme GilAir Plus
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-lg mx-auto font-medium">
+            L\'échantillonnage d\'air individuel intelligent. Zéro compromis.
+          </p>
+          <div className="flex justify-center gap-6 pt-2">
+            <Link
+              href="/produits/sensidyne/pompe-echantillonnage-gilair-plus"
+              className="inline-flex items-center gap-1 text-sm font-bold text-brand-blue hover:underline group"
+            >
+              En savoir plus <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              href="/produits/sensidyne/pompe-echantillonnage-gilair-plus"
+              className="inline-flex items-center gap-1 text-sm font-bold text-brand-green hover:underline"
+            >
+              Demander un prix
+            </Link>
+          </div>
+        </div>
+
+        {/* Hardware Showcase */}
+        <div className="relative mt-12 w-full max-w-md px-4 flex justify-center z-10">
+          {/* Air Pump Device Illustration */}
+          <div className="relative w-44 h-60 rounded-3xl border-4 border-slate-300 bg-white p-4 shadow-xl flex flex-col justify-between items-center">
+            {/* Screen */}
+            <div className="w-full h-20 bg-slate-950 rounded-xl p-2.5 flex flex-col justify-between">
+              <div className="flex justify-between items-center text-[7px] text-slate-600 font-bold uppercase">
+                <span>GILAIR PLUS</span>
+                <span className="text-brand-blue font-black font-mono">FLOW: OK</span>
+              </div>
+              <div className="text-xl font-bold text-white font-mono text-center my-auto flex items-end justify-center gap-0.5">
+                2.000 <span className="text-[9px] text-slate-400">LPM</span>
+              </div>
             </div>
+            {/* Control buttons */}
+            <div className="flex gap-2 w-full justify-center mb-2">
+              <div className="h-7 w-7 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-[8px] font-bold text-slate-500 font-mono">&larr;</div>
+              <div className="h-7 w-7 rounded-full bg-brand-blue flex items-center justify-center text-[8px] font-bold text-white font-mono">ok</div>
+              <div className="h-7 w-7 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-[8px] font-bold text-slate-500 font-mono">&rarr;</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------- */}
+      {/* SPOTLIGHT 3: SLATESAFETY BAND V2 (Apple Style Hero 3 - Colorful Gradient) */}
+      {/* ------------------------------------------------------------- */}
+      <section className="relative w-full min-h-[640px] flex flex-col justify-between items-center text-center py-16 bg-gradient-to-br from-brand-blue via-indigo-950 to-brand-green overflow-hidden">
+        <div className="absolute inset-0 bg-slate-950/20 pointer-events-none" />
+        
+        {/* Text Group */}
+        <div className="space-y-4 max-w-2xl px-4 z-10">
+          <p className="text-xs font-bold uppercase tracking-widest text-brand-green">SLATESAFETY</p>
+          <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-none">
+            SlateSafety BAND V2
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-300 max-w-md mx-auto font-medium">
+            La biosurveillance connectée en temps réel. Protégez vos équipes du stress thermique.
+          </p>
+          <div className="flex justify-center gap-6 pt-2">
+            <Link
+              href="/produits/slatesafety/bracelet-biosurveillance-band-v2"
+              className="inline-flex items-center gap-1 text-sm font-bold text-cyan-300 hover:text-cyan-200 transition-colors group"
+            >
+              En savoir plus <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              href="/produits/slatesafety/bracelet-biosurveillance-band-v2"
+              className="inline-flex items-center gap-1 text-sm font-bold text-brand-green hover:text-green-400 transition-colors"
+            >
+              Demander un prix
+            </Link>
+          </div>
+        </div>
+
+        {/* Bracelet Showcase */}
+        <div className="relative mt-12 w-full max-w-md px-4 flex justify-center z-10 mb-8">
+          {/* Smart Band Visualisation */}
+          <div className="relative w-64 h-24 rounded-full border-8 border-slate-900 bg-slate-950 flex items-center justify-between px-6 shadow-2xl">
+            {/* Glowing Sensor Center */}
+            <div className="absolute inset-0 bg-brand-green/5 rounded-full animate-pulse" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 border border-slate-800">
+              <Thermometer className="h-5 w-5 text-brand-red animate-pulse" />
+            </div>
+            <div className="text-center font-mono space-y-0.5">
+              <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">TEMP INTERNAL</span>
+              <span className="text-base font-black text-white block">37.2 &deg;C</span>
+            </div>
+            <div className="h-4 w-4 rounded-full bg-brand-green animate-ping" />
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------- */}
+      {/* 2x2 BENTO GRID SECTION (Apple Style Grid of spotlights) */}
+      {/* ------------------------------------------------------------- */}
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        {/* Bento Box 1: OHD QuantiFit2 (Dark Theme) */}
+        <div className="relative min-h-[500px] flex flex-col justify-between items-center text-center p-8 bg-slate-900/60 border border-slate-900 rounded-3xl overflow-hidden hover:border-slate-850 transition-all">
+          <div className="space-y-2 z-10">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-green">OHD</p>
+            <h2 className="text-3xl font-extrabold text-white">Fit Testing QuantiFit2</h2>
+            <p className="text-xs text-slate-400 max-w-xs mx-auto">
+              Essai d\'ajustement quantitatif des masques en moins de 2 minutes par pression négative.
+            </p>
+            <div className="flex justify-center gap-4 pt-1">
+              <Link href="/produits/ohd/fit-test-quantifit2" className="text-xs font-bold text-cyan-400 hover:underline">En savoir plus</Link>
+              <Link href="/produits/ohd/fit-test-quantifit2" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
+            </div>
+          </div>
+          
+          <div className="w-full flex justify-center z-10 mt-6">
+            <div className="w-48 h-32 bg-slate-950 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between">
+              <div className="text-[8px] text-slate-500 font-bold uppercase">OHD PNC TEST</div>
+              <div className="h-2 w-full bg-slate-900 rounded-full overflow-hidden">
+                <div className="h-full bg-brand-green w-3/4 rounded-full" />
+              </div>
+              <span className="text-[10px] text-brand-green font-bold">FACTEUR FIT: 10,000+</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bento Box 2: SVANTEK SV 104A (Dark Theme) */}
+        <div className="relative min-h-[500px] flex flex-col justify-between items-center text-center p-8 bg-slate-900/60 border border-slate-900 rounded-3xl overflow-hidden hover:border-slate-850 transition-all">
+          <div className="space-y-2 z-10">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-green">SVANTEK</p>
+            <h2 className="text-3xl font-extrabold text-white">Dosimètre SV 104A</h2>
+            <p className="text-xs text-slate-400 max-w-xs mx-auto">
+              Dosimétrie de bruit sans câble avec microphone incassable MEMS.
+            </p>
+            <div className="flex justify-center gap-4 pt-1">
+              <Link href="/produits/svantek/dosimetre-bruit-sv-104a" className="text-xs font-bold text-cyan-400 hover:underline">En savoir plus</Link>
+              <Link href="/produits/svantek/dosimetre-bruit-sv-104a" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
+            </div>
+          </div>
+          
+          <div className="w-full flex justify-center z-10 mt-6">
+            <div className="w-28 h-40 bg-slate-950 border border-slate-800 rounded-2xl p-3 flex flex-col justify-between">
+              <div className="w-6 h-6 rounded-full bg-brand-red/10 border border-brand-red/30 flex items-center justify-center mx-auto">
+                <Volume2 className="h-3 w-3 text-brand-red" />
+              </div>
+              <div className="h-10 w-full bg-slate-900 rounded border border-slate-850" />
+            </div>
+          </div>
+        </div>
+
+        {/* Bento Box 3: Services HSE & Diagnostics (Light Theme) */}
+        <div className="relative min-h-[500px] flex flex-col justify-between items-center text-center p-8 bg-slate-100 rounded-3xl overflow-hidden transition-all">
+          <div className="space-y-2 z-10 text-slate-950">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-blue">SERVICES & CONSEIL</p>
+            <h2 className="text-3xl font-extrabold">Ingénierie HSE & Étalonnage</h2>
+            <p className="text-xs text-slate-600 max-w-xs mx-auto">
+              Calibrage d\'appareils, audits de bruit, diagnostics de ventilation et QAI.
+            </p>
+            <div className="flex justify-center pt-1">
+              <Link href="/services" className="text-xs font-bold text-brand-blue hover:underline">Découvrir nos services</Link>
+            </div>
+          </div>
+          
+          <div className="w-full max-w-xs text-left z-10 mt-6 space-y-2.5">
+            <div className="flex items-center gap-2 p-3 bg-white rounded-xl shadow-sm border border-slate-200">
+              <ShieldCheck className="h-4 w-4 text-brand-green shrink-0" />
+              <span className="text-[11px] text-slate-700 font-bold">Étalonnage certifié constructeur</span>
+            </div>
+            <div className="flex items-center gap-2 p-3 bg-white rounded-xl shadow-sm border border-slate-200">
+              <ShieldCheck className="h-4 w-4 text-brand-green shrink-0" />
+              <span className="text-[11px] text-slate-700 font-bold">Diagnostics d\'air et amiante</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bento Box 4: Lynx Academy (Rust Accent Theme) */}
+        <div className="relative min-h-[500px] flex flex-col justify-between items-center text-center p-8 bg-gradient-to-br from-brand-red/90 to-amber-950 rounded-3xl overflow-hidden">
+          <div className="space-y-2 z-10">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-amber-400">FORMATION PROFESSIONNELLE</p>
+            <h2 className="text-3xl font-extrabold text-white">Lynx Academy</h2>
+            <p className="text-xs text-slate-300 max-w-xs mx-auto">
+              Ateliers et formations certifiantes à la métrologie et à la prévention des expositions.
+            </p>
+            <div className="flex justify-center pt-1">
+              <Link href="/info-contact" className="text-xs font-bold text-white hover:underline">S'inscrire à une session</Link>
+            </div>
+          </div>
+
+          <div className="w-full flex justify-center z-10 mt-6">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 border border-slate-900 shadow-2xl">
+              <BookOpen className="h-6 w-6 text-brand-green" />
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      {/* ------------------------------------------------------------- */}
+      {/* SECTORS TRUST BANNER (Apple TV Carousel Style) */}
+      {/* ------------------------------------------------------------- */}
+      <section className="bg-slate-950 py-16 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl font-extrabold text-white tracking-tight mb-8">
+            Partenaire de confiance des industries africaines.
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="h-40 rounded-2xl bg-gradient-to-br from-slate-900 to-brand-blue/30 border border-slate-900 p-5 flex flex-col justify-between hover:border-slate-800 transition-colors">
+              <span className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">SECTEUR 01</span>
+              <span className="text-base font-extrabold text-white leading-tight">Exploitations Minières & Carrières</span>
+            </div>
+            <div className="h-40 rounded-2xl bg-gradient-to-br from-slate-900 to-brand-green/30 border border-slate-900 p-5 flex flex-col justify-between hover:border-slate-800 transition-colors">
+              <span className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">SECTEUR 02</span>
+              <span className="text-base font-extrabold text-white leading-tight">Pétrole, Gaz & Raffineries</span>
+            </div>
+            <div className="h-40 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-900 p-5 flex flex-col justify-between hover:border-slate-800 transition-colors">
+              <span className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">SECTEUR 03</span>
+              <span className="text-base font-extrabold text-white leading-tight">Bâtiments & Chantiers BTP</span>
+            </div>
+            <div className="h-40 rounded-2xl bg-gradient-to-br from-slate-900 to-brand-red/20 border border-slate-900 p-5 flex flex-col justify-between hover:border-slate-800 transition-colors">
+              <span className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">SECTEUR 04</span>
+              <span className="text-base font-extrabold text-white leading-tight">Laboratoires & Cabinets HSE</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------- */}
+      {/* FINAL B2B CTA BANNER */}
+      {/* ------------------------------------------------------------- */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="border border-slate-900 bg-slate-900/10 p-12 rounded-3xl text-center space-y-6 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-extrabold text-white">Démarrez votre projet de métrologie</h2>
+          <p className="text-xs sm:text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
+            Parcourez notre catalogue technique, ajoutez vos instruments au panier, et demandez votre devis personnalisé en 1 clic.
+          </p>
+          <div className="pt-2">
             <Link
               href="/produits"
-              className="inline-flex items-center gap-1 text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold bg-brand-blue hover:bg-blue-700 text-white text-xs transition-colors shadow-lg shadow-brand-blue/20"
             >
-              Voir tout le catalogue <ArrowRight className="h-4 w-4" />
+              Consulter le catalogue
             </Link>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PRODUCTS.slice(0, 3).map((product) => {
-              const brand = BRANDS.find((b) => b.id === product.brand_id);
-              return (
-                <div
-                  key={product.id}
-                  className="flex flex-col border border-slate-900 bg-slate-950 rounded-2xl overflow-hidden hover:border-slate-850 transition-colors group"
-                >
-                  <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <div className="space-y-2">
-                      <div className="flex justify-between items-center text-[10px] text-slate-500 font-bold">
-                        <span>{brand?.name}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-slate-900 border border-slate-800 text-slate-400 uppercase tracking-widest">
-                          {product.model}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">
-                        {product.name}
-                      </h3>
-                      <p className="text-xs text-slate-400 line-clamp-3 leading-relaxed">
-                        {product.short_description}
-                      </p>
-                    </div>
-
-                    <div className="pt-4 border-t border-slate-900 flex justify-between items-center">
-                      <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold uppercase tracking-wider">
-                        Prix sur demande
-                      </span>
-                      <Link
-                        href={`/produits/${brand?.slug}/${product.slug}`}
-                        className="inline-flex items-center gap-1 text-xs font-bold text-cyan-400 hover:text-white"
-                      >
-                        Fiche technique <ArrowUpRight className="h-3 w-3" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5 space-y-4">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-cyan-400">Plus qu\'un distributeur</h2>
-            <h3 className="text-3xl font-extrabold text-white tracking-tight">
-              Expertise & Services d\'Accompagnement
-            </h3>
-            <p className="text-sm text-slate-400 leading-relaxed">
-              Nous soutenons les directions HSE, bureaux d\'études et industries en Afrique avec des prestations d\'ingénierie et de maintenance certifiées.
-            </p>
-            <div className="pt-2">
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-slate-800 bg-slate-900/40 text-slate-200 text-xs font-bold hover:text-white transition-colors"
-              >
-                Découvrir nos services
-              </Link>
-            </div>
-          </div>
-
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="p-6 border border-slate-900 bg-slate-900/20 rounded-2xl space-y-2">
-              <ShieldCheck className="h-6 w-6 text-emerald-400" />
-              <h4 className="font-bold text-white">Étalonnage & Maintenance</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Centre de service qualifié pour l\'entretien périodique et le calibrage de vos sonomètres et pompes de prélèvement.
-              </p>
-            </div>
-
-            <div className="p-6 border border-slate-900 bg-slate-900/20 rounded-2xl space-y-2">
-              <Zap className="h-6 w-6 text-cyan-400" />
-              <h4 className="font-bold text-white">Lynx Academy</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Formations certifiantes à l\'utilisation du matériel d\'hygiène industrielle et à l\'interprétation des relevés.
-              </p>
-            </div>
-
-            <div className="p-6 border border-slate-900 bg-slate-900/20 rounded-2xl space-y-2">
-              <Target className="h-6 w-6 text-orange-400" />
-              <h4 className="font-bold text-white">Assistance terrain</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Ingénieurs HSE disponibles pour vous assister sur site lors de campagnes de mesures de bruit ou d\'air.
-              </p>
-            </div>
-
-            <div className="p-6 border border-slate-900 bg-slate-900/20 rounded-2xl space-y-2">
-              <BookOpen className="h-6 w-6 text-purple-400" />
-              <h4 className="font-bold text-white">Conseil Réglementaire</h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                Veille et conformité aux législations nationales et internationales sur les limites d\'expositions professionnelles.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Conversion Banner */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 mb-20">
-        <div className="relative rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-cyan-950 border border-slate-800 p-8 sm:p-12 overflow-hidden shadow-2xl">
-          <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-8 space-y-4">
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white">Prêt à équiper vos chantiers ?</h3>
-              <p className="text-slate-400 text-xs sm:text-sm max-w-xl">
-                Sélectionnez vos articles dans notre catalogue, complétez vos spécifications et transmettez-nous votre demande en 1 clic. Offre commerciale rédigée sous 24-48h.
-              </p>
-            </div>
-            <div className="md:col-span-4 flex justify-end">
-              <Link
-                href="/produits"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold bg-white text-slate-950 hover:bg-slate-100 transition-colors shadow-xl"
-              >
-                Commencer ma demande
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

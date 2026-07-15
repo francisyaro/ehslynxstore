@@ -38,11 +38,11 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-emerald-500 shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-200">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-blue to-brand-green border border-brand-red/30 shadow-md shadow-brand-blue/20 group-hover:scale-105 transition-transform duration-200">
                 <Sparkles className="h-5 w-5 text-white" />
               </div>
-              <span className="font-extrabold text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">
-                EHS LYNX<span className="text-cyan-400">AFRIK</span>
+              <span className="font-extrabold text-xl tracking-wider text-white">
+                EHS-LYNX <span className="text-brand-green">AFRIK</span>
               </span>
             </Link>
           </div>
@@ -55,7 +55,7 @@ export default function Header() {
                 href={item.href}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive(item.href)
-                    ? 'text-cyan-400 bg-slate-900/50'
+                    ? 'text-brand-green bg-slate-900/50'
                     : 'text-slate-300 hover:text-white hover:bg-slate-900/30'
                 }`}
               >
@@ -143,7 +143,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`px-3 py-2.5 rounded-lg text-base font-medium transition-colors ${
                   isActive(item.href)
-                    ? 'text-cyan-400 bg-slate-900/50'
+                    ? 'text-brand-green bg-slate-900/50'
                     : 'text-slate-300 hover:text-white hover:bg-slate-900/30'
                 }`}
               >
