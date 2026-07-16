@@ -136,36 +136,36 @@ export default function AdminLayout({
   // Guard page: if not authenticated, render split-screen login page
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex bg-[#090d16] text-slate-100 font-sans">
+      <div className="h-screen overflow-hidden flex bg-[#090d16] text-slate-100 font-sans">
         {/* Left Side: Login Form (Dark background matching mockup style) */}
-        <div className="w-full lg:w-[45%] flex flex-col justify-between p-8 sm:p-12 xl:p-16 z-10 bg-[#090d16] border-r border-slate-900/60 relative overflow-hidden">
+        <div className="w-full lg:w-[45%] h-full flex flex-col justify-between p-8 sm:p-12 xl:p-14 z-10 bg-[#090d16] border-r border-slate-900/60 relative overflow-hidden shrink-0">
           <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-brand-blue/10 rounded-full blur-[100px] pointer-events-none" />
           
-          {/* Header/Logo */}
+          {/* Header/Logo (Larger) */}
           <div className="flex items-center gap-2">
             <img 
               src="/brands/ehslynxafrik-logo.png" 
               alt="EHS-LYNX AFRIK Logo" 
-              className="h-12 w-auto object-contain brightness-110"
+              className="h-20 w-auto object-contain brightness-110"
             />
           </div>
 
-          {/* Form container */}
-          <div className="max-w-md w-full mx-auto my-auto py-10 space-y-8">
-            <div className="space-y-2 text-center lg:text-left">
-              <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white">Console LYNX CONTROL</h2>
-              <p className="text-slate-400 text-xs font-semibold">Connectez-vous pour accéder au suivi des ventes.</p>
+          {/* Form container (Compact to fit h-screen without scrollbar) */}
+          <div className="max-w-md w-full mx-auto my-auto py-4 space-y-5">
+            <div className="space-y-1 text-center lg:text-left">
+              <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white">Console LYNX CONTROL</h2>
+              <p className="text-slate-400 text-[11px] font-semibold">Connectez-vous pour accéder au suivi des ventes.</p>
             </div>
 
             {loginError && (
-              <div className="p-3.5 rounded-xl bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-bold">
+              <div className="p-3 rounded-xl bg-brand-red/10 border border-brand-red/30 text-brand-red text-[11px] font-bold">
                 {loginError}
               </div>
             )}
 
-            <form onSubmit={handleLogin} className="space-y-4">
-              <div className="space-y-1.5">
-                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Adresse E-mail</label>
+            <form onSubmit={handleLogin} className="space-y-3.5">
+              <div className="space-y-1">
+                <label className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block">Adresse E-mail</label>
                 <div className="relative">
                   <input
                     type="email"
@@ -178,8 +178,8 @@ export default function AdminLayout({
                 </div>
               </div>
 
-              <div className="space-y-1.5">
-                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Mot de passe</label>
+              <div className="space-y-1">
+                <label className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block">Mot de passe</label>
                 <div className="relative">
                   <input
                     type="password"
@@ -194,7 +194,7 @@ export default function AdminLayout({
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-blue hover:bg-blue-750 text-white text-xs font-black transition-all shadow-md mt-6 shadow-brand-blue/15"
+                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-brand-blue hover:bg-blue-750 text-white text-xs font-black transition-all shadow-md mt-4 shadow-brand-blue/15"
               >
                 <span>Se connecter</span>
                 <ArrowRight className="h-3.5 w-3.5" />
@@ -202,24 +202,24 @@ export default function AdminLayout({
             </form>
 
             {/* Quick Demo Connections to test agent filters */}
-            <div className="space-y-4 pt-4 border-t border-slate-900">
-              <p className="text-[9px] text-center font-bold text-slate-500 uppercase tracking-wider">Connexion Rapide Commercial (Démo)</p>
+            <div className="space-y-3 pt-3.5 border-t border-slate-900">
+              <p className="text-[9px] text-center font-bold text-slate-550 uppercase tracking-wider">Connexion Rapide Commercial (Démo)</p>
               <div className="grid grid-cols-3 gap-2">
                 <button
                   onClick={() => handleQuickLogin('Yao Koffi')}
-                  className="px-2 py-2 rounded-xl bg-slate-900/40 border border-slate-850 hover:border-brand-blue text-[10px] text-slate-300 font-bold transition-all text-center leading-tight hover:text-white"
+                  className="px-1.5 py-1.5 rounded-xl bg-slate-900/40 border border-slate-850 hover:border-brand-blue text-[9px] text-slate-350 font-bold transition-all text-center leading-tight hover:text-white"
                 >
                   Yao Koffi (Abidjan)
                 </button>
                 <button
                   onClick={() => handleQuickLogin('Moussa Diallo')}
-                  className="px-2 py-2 rounded-xl bg-slate-900/40 border border-slate-850 hover:border-brand-blue text-[10px] text-slate-300 font-bold transition-all text-center leading-tight hover:text-white"
+                  className="px-1.5 py-1.5 rounded-xl bg-slate-900/40 border border-slate-850 hover:border-brand-blue text-[9px] text-slate-350 font-bold transition-all text-center leading-tight hover:text-white"
                 >
                   Moussa Diallo (Dakar)
                 </button>
                 <button
                   onClick={() => handleQuickLogin('Marc Dubois')}
-                  className="px-2 py-2 rounded-xl bg-slate-900/40 border border-slate-850 hover:border-brand-blue text-[10px] text-slate-300 font-bold transition-all text-center leading-tight hover:text-white"
+                  className="px-1.5 py-1.5 rounded-xl bg-slate-900/40 border border-slate-850 hover:border-brand-blue text-[9px] text-slate-355 font-bold transition-all text-center leading-tight hover:text-white"
                 >
                   Marc Dubois (Paris)
                 </button>
@@ -228,7 +228,7 @@ export default function AdminLayout({
           </div>
 
           {/* Footer links */}
-          <div className="flex justify-between text-[10px] text-slate-550 border-t border-slate-900/60 pt-4">
+          <div className="flex justify-between text-[9px] text-slate-550 border-t border-slate-900/60 pt-3">
             <span className="cursor-default">© EHS LYNX AFRIK 2026</span>
             <div className="flex gap-3">
               <span className="hover:underline cursor-pointer">Confidentialité</span>
@@ -237,18 +237,18 @@ export default function AdminLayout({
           </div>
         </div>
 
-        {/* Right Side: Generated Premium Hero Image (Split-screen) */}
+        {/* Right Side: Attached Hero Image (Split-screen) */}
         <div className="hidden lg:block lg:flex-1 relative overflow-hidden bg-slate-950">
           <img 
             src="/brands/admin_login_hero.jpg" 
             alt="EHS Metrology and Safety"
-            className="w-full h-full object-cover opacity-80"
+            className="w-full h-full object-cover opacity-75"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#090d16] via-transparent to-transparent pointer-events-none" />
-          <div className="absolute bottom-12 left-12 max-w-lg space-y-2">
-            <span className="px-3 py-1 rounded-full bg-brand-green/20 border border-brand-green/30 text-brand-green text-[10px] uppercase font-bold tracking-widest inline-block">Métrologie & HSE</span>
-            <h3 className="text-2xl font-black text-white leading-tight">Garantir la sécurité au travail à travers l'Afrique.</h3>
-            <p className="text-slate-350 text-xs leading-relaxed">Distributeur officiel des plus grandes marques d'hygiène industrielle et environnementale : Svantek, Sensidyne, Slatesafety, OHD.</p>
+          <div className="absolute bottom-10 left-10 max-w-lg space-y-1.5 z-10">
+            <span className="px-3 py-1 rounded-full bg-brand-green/20 border border-brand-green/30 text-brand-green text-[9px] uppercase font-bold tracking-widest inline-block">Métrologie & HSE</span>
+            <h3 className="text-xl font-black text-white leading-tight">Garantir la sécurité au travail à travers l'Afrique.</h3>
+            <p className="text-slate-400 text-[11px] leading-relaxed">Distributeur officiel des plus grandes marques d'hygiène industrielle et environnementale : Svantek, Sensidyne, Slatesafety, OHD.</p>
           </div>
         </div>
       </div>
