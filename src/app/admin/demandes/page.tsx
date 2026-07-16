@@ -92,7 +92,7 @@ export default function AdminRequestsList() {
       </div>
 
       {/* Filter panel (Light theme) */}
-      <div className="flex flex-col md:flex-row gap-4 justify-between items-center bg-white border border-slate-200 p-4 rounded-2xl shadow-xs">
+      <div className="flex flex-col md:flex-row gap-4 justify-between items-center bg-white border border-slate-200 p-4 rounded-2xl shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
         
         {/* Search */}
         <div className="relative w-full md:max-w-md">
@@ -123,7 +123,7 @@ export default function AdminRequestsList() {
       </div>
 
       {/* Requests table list (Light theme) */}
-      <div className="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-xs">
+      <div className="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-slate-100 text-left">
             <thead className="bg-slate-50 text-[10px] text-slate-500 font-bold uppercase tracking-wider">

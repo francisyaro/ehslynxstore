@@ -184,7 +184,7 @@ export default function AdminDashboard() {
         <div className="flex gap-3 w-full md:w-auto">
           <button 
             onClick={loadData}
-            className="p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-all duration-200 shadow-2xs"
+            className="p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-all duration-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
             title="Rafraîchir les données"
           >
             <RefreshCw className="h-4.5 w-4.5" />
@@ -202,7 +202,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
         {/* Metric 1 - Total (Bleu Roi) */}
-        <div className="relative group overflow-hidden p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-brand-blue/40 transition-all duration-300">
+        <div className="relative group overflow-hidden p-6 rounded-2xl bg-white border border-slate-200 shadow-[0_1px_2px_rgba(18,67,140,0.02)] hover:border-brand-blue/30 transition-all duration-300">
           <div className="flex justify-between items-start">
             <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">Total Demandes</span>
             <div className="p-2 rounded-lg bg-blue-50 border border-blue-100">
@@ -214,7 +214,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Metric 2 - Nouvelles (Rouge Rouille - Action requise) */}
-        <div className="relative group overflow-hidden p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-brand-red/40 transition-all duration-300">
+        <div className="relative group overflow-hidden p-6 rounded-2xl bg-white border border-slate-200 shadow-[0_1px_2px_rgba(166,27,27,0.02)] hover:border-brand-red/30 transition-all duration-300">
           <div className="flex justify-between items-start">
             <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">Nouvelles Demandes</span>
             <div className="p-2 rounded-lg bg-red-50 border border-red-100">
@@ -226,7 +226,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Metric 3 - En Qualification (Vert Feuille) */}
-        <div className="relative group overflow-hidden p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-brand-green/40 transition-all duration-300">
+        <div className="relative group overflow-hidden p-6 rounded-2xl bg-white border border-slate-200 shadow-[0_1px_2px_rgba(16,130,57,0.02)] hover:border-brand-green/30 transition-all duration-300">
           <div className="flex justify-between items-start">
             <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">En Qualification</span>
             <div className="p-2 rounded-lg bg-green-50 border border-green-100">
@@ -238,7 +238,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Metric 4 - Pays (Bleu Roi) */}
-        <div className="relative group overflow-hidden p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-brand-blue/40 transition-all duration-300">
+        <div className="relative group overflow-hidden p-6 rounded-2xl bg-white border border-slate-200 shadow-[0_1px_2px_rgba(18,67,140,0.02)] hover:border-brand-blue/30 transition-all duration-300">
           <div className="flex justify-between items-start">
             <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">Pays Couverts</span>
             <div className="p-2 rounded-lg bg-blue-50 border border-blue-100">
@@ -255,7 +255,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         {/* Recent requests list */}
-        <div className="lg:col-span-2 bg-white border border-slate-200 p-6 rounded-3xl space-y-6 shadow-sm">
+        <div className="lg:col-span-2 bg-white border border-slate-200 p-6 rounded-3xl space-y-6 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
           <div className="flex justify-between items-center border-b border-slate-100 pb-4">
             <h2 className="text-xs font-black uppercase tracking-widest text-brand-blue flex items-center gap-2">
               <FolderDot className="h-4 w-4 text-brand-blue" /> Demandes Récentes
@@ -317,7 +317,7 @@ export default function AdminDashboard() {
         <div className="space-y-8">
           
           {/* Brand popularity */}
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-6 shadow-sm">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-6 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
             <h2 className="text-xs font-black uppercase tracking-widest text-brand-green border-b border-slate-100 pb-4 flex items-center gap-2">
               <Percent className="h-4 w-4 text-brand-green" /> Demande par Marques
             </h2>
@@ -348,7 +348,7 @@ export default function AdminDashboard() {
           </div>
 
           {/* Activity Log feed */}
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-5 shadow-sm">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-5 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
             <h2 className="text-xs font-black uppercase tracking-widest text-brand-red border-b border-slate-100 pb-4 flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-brand-red" /> Flux d'Activité Récent
             </h2>

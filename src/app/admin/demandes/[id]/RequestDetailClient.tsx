@@ -255,14 +255,14 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
         </div>
 
         {success && (
-          <div className="px-4 py-2.5 rounded-xl bg-green-50 border border-green-150 text-xs font-bold text-brand-green flex items-center gap-1.5 animate-pulse shadow-xs">
+          <div className="px-4 py-2.5 rounded-xl bg-green-50 border border-green-150 text-xs font-bold text-brand-green flex items-center gap-1.5 animate-pulse shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
             <Check className="h-4.5 w-4.5" /> {success}
           </div>
         )}
       </div>
 
       {/* WORKFLOW PIPELINE stepper (Light theme) */}
-      <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-5 shadow-xs">
+      <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-5 shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
         <div className="flex items-center justify-between">
           <h2 className="text-xs font-black uppercase tracking-widest text-brand-blue flex items-center gap-2">
             <Workflow className="h-4.5 w-4.5 text-brand-blue" /> Pipeline du Workflow Commercial
@@ -325,7 +325,7 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
         <div className="lg:col-span-8 space-y-8">
           
           {/* Client & Org Info Card */}
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6 shadow-xs">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6 shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
             
             <div className="space-y-4">
               <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest flex items-center gap-2 border-b border-slate-100 pb-3.5">
@@ -365,7 +365,7 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
           </div>
 
           {/* Quick Communication Tool Panel */}
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-xs">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
             <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest flex items-center gap-2 border-b border-slate-100 pb-3.5">
               <Phone className="h-4 w-4 text-brand-green" /> Actions de Contact Commercial Direct
             </h2>
@@ -391,7 +391,7 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
           </div>
 
           {/* Delivery & Logistics */}
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-xs">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
             <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest flex items-center gap-2 border-b border-slate-100 pb-3.5">
               <Calendar className="h-4 w-4 text-brand-blue" /> Logistique & Exigences
             </h2>
@@ -414,7 +414,7 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
           </div>
 
           {/* Items requested */}
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-xs">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
             <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest flex items-center gap-2 border-b border-slate-100 pb-3.5">
               <ClipboardList className="h-4 w-4 text-brand-blue" /> Spécifications Articles demandés
             </h2>
@@ -461,7 +461,7 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
         <div className="lg:col-span-4 space-y-8">
           
           {/* Status & assignment configuration panel */}
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-xs">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
             <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest border-b border-slate-100 pb-3.5">
               Paramètres Dossier Commercial
             </h2>
@@ -513,7 +513,7 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
           </div>
 
           {/* Interactive PDF quote preview */}
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-xs">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
             <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest border-b border-slate-100 pb-3.5 flex items-center justify-between">
               <span>Aperçu du Devis de Vente</span>
               <span className="text-[9px] text-brand-green font-bold flex items-center gap-0.5"><Sparkles className="h-3 w-3" /> Fictif</span>
@@ -570,7 +570,7 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
           </div>
 
           {/* Activity Logs Timeline */}
-          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-6 shadow-xs">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-6 shadow-[0_1px_2px_rgba(0,0,0,0.01)]">
             <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest border-b border-slate-100 pb-3.5 flex items-center gap-2">
               <Activity className="h-4.5 w-4.5 text-brand-blue" /> Journal d'Activité Interne
             </h2>
