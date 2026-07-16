@@ -262,7 +262,7 @@ export default function ProductGrid({ initialSearch = '', initialBrand = '', ini
                         
                         <Link
                           href={`/produits/${brand?.slug}/${product.slug}`}
-                          className="inline-flex items-center justify-center h-8 px-3 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-slate-950 transition-all"
+                          className="inline-flex items-center justify-center h-8 px-4 rounded-full bg-brand-blue hover:bg-blue-750 text-xs font-bold text-white shadow-sm shadow-brand-blue/10 hover:scale-[1.02] active:scale-[0.98] transition-all"
                         >
                           Détails
                         </Link>

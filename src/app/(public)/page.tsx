@@ -22,16 +22,16 @@ export default function Home() {
           <p className="text-lg sm:text-xl text-slate-600 max-w-xl mx-auto font-medium">
             Sonomètres de Classe 1 de haute précision et stations connectées de surveillance acoustique pour l\'industrie.
           </p>
-          <div className="flex justify-center gap-6 pt-2">
+          <div className="flex justify-center gap-4 pt-2">
             <Link
               href="/produits?brand=svantek"
-              className="inline-flex items-center gap-1 text-sm font-bold text-brand-blue hover:text-blue-700 transition-colors group"
+              className="inline-flex items-center justify-center px-6 py-2 rounded-full text-xs sm:text-sm font-black text-white bg-brand-blue hover:bg-blue-750 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md shadow-brand-blue/10 group"
             >
-              Consulter la gamme <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              Consulter la gamme <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform ml-1" />
             </Link>
             <Link
               href="/demande-de-prix"
-              className="inline-flex items-center gap-1 text-sm font-bold text-brand-green hover:text-green-700 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-2 rounded-full text-xs sm:text-sm font-black text-brand-blue border-2 border-brand-blue hover:bg-brand-blue/5 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 bg-transparent"
             >
               Demander un prix
             </Link>
@@ -64,16 +64,16 @@ export default function Home() {
           <p className="text-lg sm:text-xl text-slate-600 max-w-xl mx-auto font-medium">
             Le premier moniteur individuel de poussières en temps réel pour la protection directe des travailleurs.
           </p>
-          <div className="flex justify-center gap-6 pt-2">
+          <div className="flex justify-center gap-4 pt-2">
             <Link
               href="/produits/sensidyne/moniteur-poussieres-dustlight"
-              className="inline-flex items-center gap-1 text-sm font-bold text-brand-blue hover:underline group"
+              className="inline-flex items-center justify-center px-6 py-2 rounded-full text-xs sm:text-sm font-black text-white bg-brand-blue hover:bg-blue-750 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md shadow-brand-blue/10 group"
             >
-              En savoir plus <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              En savoir plus <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform ml-1" />
             </Link>
             <Link
               href="/demande-de-prix"
-              className="inline-flex items-center gap-1 text-sm font-bold text-brand-green hover:underline"
+              className="inline-flex items-center justify-center px-6 py-2 rounded-full text-xs sm:text-sm font-black text-brand-blue border-2 border-brand-blue hover:bg-brand-blue/5 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 bg-transparent"
             >
               Demander un prix
             </Link>
@@ -108,16 +108,16 @@ export default function Home() {
           <p className="text-lg sm:text-xl text-slate-700 max-w-xl mx-auto font-medium leading-relaxed">
             À partir de <span className="font-bold text-brand-blue">Décembre 2026</span>, bénéficiez d\'une réduction exceptionnelle de 30% sur l\'ensemble de notre catalogue d\'équipements de métrologie et de santé-sécurité.
           </p>
-          <div className="flex justify-center gap-6 pt-2">
+          <div className="flex justify-center gap-4 pt-2">
             <Link
               href="/produits"
-              className="inline-flex items-center gap-1 text-sm font-bold text-brand-blue hover:text-blue-700 transition-colors group"
+              className="inline-flex items-center justify-center px-6 py-2 rounded-full text-xs sm:text-sm font-black text-white bg-brand-blue hover:bg-blue-750 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md shadow-brand-blue/10 group"
             >
-              Découvrir le catalogue <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              Découvrir le catalogue <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform ml-1" />
             </Link>
             <Link
               href="/demande-de-prix"
-              className="inline-flex items-center gap-1 text-sm font-bold text-brand-green hover:text-green-700 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-2 rounded-full text-xs sm:text-sm font-black text-brand-blue border-2 border-brand-blue hover:bg-brand-blue/5 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 bg-transparent"
             >
               Planifier ma demande
             </Link>
@@ -160,9 +160,9 @@ export default function Home() {
             <p className="text-xs text-slate-500 max-w-xs mx-auto">
               L\'appareil de test d\'ajustement quantitatif des masques le plus rapide au monde par pression négative contrôlée (PNC).
             </p>
-            <div className="flex justify-center gap-4 pt-1">
-              <Link href="/produits/ohd/fit-test-quantifit2" className="text-xs font-bold text-brand-blue hover:underline">En savoir plus</Link>
-              <Link href="/produits/ohd/fit-test-quantifit2" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
+            <div className="flex justify-center gap-3 pt-2">
+              <Link href="/produits/ohd/fit-test-quantifit2" className="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[11px] font-extrabold text-white bg-brand-blue hover:bg-blue-750 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-sm">En savoir plus</Link>
+              <Link href="/produits/ohd/fit-test-quantifit2" className="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[11px] font-extrabold text-brand-blue border border-brand-blue hover:bg-brand-blue/5 transition-all bg-transparent">Demander un prix</Link>
             </div>
           </div>
           
@@ -179,9 +179,9 @@ export default function Home() {
             <p className="text-xs text-slate-500 max-w-xs mx-auto">
               Bracelet connecté industriel de suivi de la fréquence cardiaque et de prévention du stress thermique en temps réel.
             </p>
-            <div className="flex justify-center gap-4 pt-1">
-              <Link href="/produits/slatesafety/bracelet-biosurveillance-band-v2" className="text-xs font-bold text-brand-blue hover:underline">En savoir plus</Link>
-              <Link href="/produits/slatesafety/bracelet-biosurveillance-band-v2" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
+            <div className="flex justify-center gap-3 pt-2">
+              <Link href="/produits/slatesafety/bracelet-biosurveillance-band-v2" className="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[11px] font-extrabold text-white bg-brand-blue hover:bg-blue-750 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-sm">En savoir plus</Link>
+              <Link href="/produits/slatesafety/bracelet-biosurveillance-band-v2" className="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[11px] font-extrabold text-brand-blue border border-brand-blue hover:bg-brand-blue/5 transition-all bg-transparent">Demander un prix</Link>
             </div>
           </div>
           
@@ -198,9 +198,9 @@ export default function Home() {
             <p className="text-xs text-slate-500 max-w-xs mx-auto">
               Station de surveillance continue du bruit extérieur étanche (IP65) avec modem 4G intégré.
             </p>
-            <div className="flex justify-center gap-4 pt-1">
-              <Link href="/produits/svantek/station-bruit-outdoor-sv-307" className="text-xs font-bold text-brand-blue hover:underline">En savoir plus</Link>
-              <Link href="/produits/svantek/station-bruit-outdoor-sv-307" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
+            <div className="flex justify-center gap-3 pt-2">
+              <Link href="/produits/svantek/station-bruit-outdoor-sv-307" className="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[11px] font-extrabold text-white bg-brand-blue hover:bg-blue-750 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-sm">En savoir plus</Link>
+              <Link href="/produits/svantek/station-bruit-outdoor-sv-307" className="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[11px] font-extrabold text-brand-blue border border-brand-blue hover:bg-brand-blue/5 transition-all bg-transparent">Demander un prix</Link>
             </div>
           </div>
           
@@ -217,9 +217,9 @@ export default function Home() {
             <p className="text-xs text-slate-500 max-w-xs mx-auto">
               Moniteur individuel de poussières en temps réel pour la protection directe des travailleurs.
             </p>
-            <div className="flex justify-center gap-4 pt-1">
-              <Link href="/produits/sensidyne/moniteur-poussieres-dustlight" className="text-xs font-bold text-brand-blue hover:underline">En savoir plus</Link>
-              <Link href="/produits/sensidyne/moniteur-poussieres-dustlight" className="text-xs font-bold text-brand-green hover:underline">Demander un prix</Link>
+            <div className="flex justify-center gap-3 pt-2">
+              <Link href="/produits/sensidyne/moniteur-poussieres-dustlight" className="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[11px] font-extrabold text-white bg-brand-blue hover:bg-blue-750 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-sm">En savoir plus</Link>
+              <Link href="/produits/sensidyne/moniteur-poussieres-dustlight" className="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[11px] font-extrabold text-brand-blue border border-brand-blue hover:bg-brand-blue/5 transition-all bg-transparent">Demander un prix</Link>
             </div>
           </div>
           
