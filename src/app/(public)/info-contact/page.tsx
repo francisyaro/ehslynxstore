@@ -42,17 +42,17 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-slate-950 py-16 sm:py-24 relative overflow-hidden">
-      <div className="absolute top-[30%] right-[-10%] w-96 h-96 bg-cyan-950/10 rounded-full blur-[100px] pointer-events-none" />
+    <div className="bg-slate-50 py-16 sm:py-24 relative overflow-hidden">
+      <div className="absolute top-[30%] right-[-10%] w-96 h-96 bg-brand-blue/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-          <h1 className="text-xs font-bold uppercase tracking-widest text-cyan-400">Assistance Client</h1>
-          <p className="text-4xl font-extrabold text-white tracking-tight">
+          <h1 className="text-xs font-bold uppercase tracking-widest text-brand-blue">Assistance Client</h1>
+          <p className="text-4xl font-black text-slate-900 tracking-tight">
             Contactez un Expert Métier
           </p>
-          <p className="text-slate-400 text-sm">
+          <p className="text-slate-600 text-sm">
             Vous avez un projet ou besoin de spécifications sur un instrument ? Nos ingénieurs HSE vous répondent.
           </p>
         </div>
@@ -63,63 +63,98 @@ export default function ContactPage() {
           <div className="lg:col-span-6 space-y-12">
             {/* Coordinates */}
             <div className="space-y-6">
-              <h2 className="text-lg font-bold text-white">Bureau Principal Afrique</h2>
+              <h2 className="text-lg font-bold text-slate-900">Bureau Principal Afrique</h2>
               
               <div className="space-y-4">
                 <div className="flex gap-4 items-start">
-                  <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 shrink-0">
+                  <div className="p-2.5 rounded-lg bg-slate-100 border border-slate-200 text-brand-blue shrink-0">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Adresse</h3>
-                    <p className="text-xs text-slate-300 mt-1">Zone Industrielle Vridi, Abidjan, Côte d\'Ivoire</p>
+                    <p className="text-xs text-slate-800 mt-1 font-semibold">Rue de Saponé, Ouaga 2000, Ouagadougou, Burkina Faso</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4 items-start">
-                  <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 shrink-0">
+                  <div className="p-2.5 rounded-lg bg-slate-100 border border-slate-200 text-brand-blue shrink-0">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Téléphones</h3>
-                    <p className="text-xs text-slate-300 mt-1">+225 07 00 00 00 00 (Service Client)</p>
-                    <p className="text-xs text-slate-500">+225 21 00 00 00 (Standard)</p>
+                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Téléphones (WhatsApp)</h3>
+                    <p className="text-xs text-slate-800 mt-1 font-semibold">00226 05 - 18 - 18 - 81</p>
+                    <p className="text-xs text-slate-800 font-semibold">00226 63 - 62 - 71 - 71</p>
+                    <p className="text-xs text-slate-800 font-semibold">+1 - 646 - 269  - 8937</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4 items-start">
-                  <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 shrink-0">
+                  <div className="p-2.5 rounded-lg bg-slate-100 border border-slate-200 text-brand-blue shrink-0">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">E-mails</h3>
-                    <p className="text-xs text-slate-300 mt-1">contact@ehslynxafrik.com (Général)</p>
-                    <p className="text-xs text-slate-500">sales@ehslynxafrik.com (Service Devis)</p>
+                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">E-mail & Site</h3>
+                    <p className="text-xs text-slate-800 mt-1 font-semibold">info@ehslynx.com</p>
+                    <p className="text-xs text-slate-500 font-semibold">ehslynxafrik.com</p>
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* Social Networks */}
+            <div className="space-y-4 pt-2">
+              <h2 className="text-sm font-bold text-slate-900 uppercase tracking-widest border-b border-slate-200 pb-2">Suivez-nous sur les Réseaux</h2>
+              <div className="grid grid-cols-2 gap-4 text-xs font-semibold">
+                <a href="http://www.linkedin.com/in/ehs-lynx-322202225" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-650 hover:text-brand-blue transition-colors">
+                  <svg className="h-4.5 w-4.5 text-brand-blue shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                  <span>Facebook</span>
+                </a>
+                <a href="http://www.linkedin.com/in/ehs-lynx-322202225" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-650 hover:text-brand-blue transition-colors">
+                  <svg className="h-4.5 w-4.5 text-brand-blue shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://x.com/ehslynx" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-650 hover:text-brand-blue transition-colors">
+                  <svg className="h-4.5 w-4.5 text-brand-blue shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                  </svg>
+                  <span>X (Twitter)</span>
+                </a>
+                <a href="https://www.youtube.com/@EHSLYNX" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-655 hover:text-brand-red transition-colors">
+                  <svg className="h-4.5 w-4.5 text-brand-red shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                  </svg>
+                  <span>YouTube</span>
+                </a>
+              </div>
+            </div>
+
             {/* FAQ Accordion */}
             <div className="space-y-4">
-              <h2 className="text-lg font-bold text-white flex items-center gap-1.5">
-                <HelpCircle className="h-5 w-5 text-cyan-400" /> FAQ Commerciale & Technique
+              <h2 className="text-lg font-bold text-slate-900 flex items-center gap-1.5">
+                <HelpCircle className="h-5 w-5 text-brand-blue" /> FAQ Commerciale & Technique
               </h2>
 
-              <div className="divide-y divide-slate-900 border-t border-b border-slate-900">
+              <div className="divide-y divide-slate-200 border-t border-b border-slate-200">
                 {faqs.map((faq, idx) => (
                   <div key={idx} className="py-4">
                     <button
                       onClick={() => setFaqOpen(faqOpen === idx ? null : idx)}
-                      className="w-full flex justify-between items-center text-left text-xs font-bold text-slate-200 hover:text-cyan-400 transition-colors"
+                      className="w-full flex justify-between items-center text-left text-xs font-bold text-slate-800 hover:text-brand-blue transition-colors"
                     >
                       <span>{faq.q}</span>
-                      <span className="text-cyan-400 text-lg font-mono ml-2">
+                      <span className="text-brand-blue text-lg font-mono ml-2">
                         {faqOpen === idx ? '-' : '+'}
                       </span>
                     </button>
                     {faqOpen === idx && (
-                      <p className="text-[11px] text-slate-400 leading-relaxed mt-2.5 pl-1.5 border-l border-slate-800">
+                      <p className="text-[11px] text-slate-600 leading-relaxed mt-2.5 pl-1.5 border-l border-slate-200">
                         {faq.a}
                       </p>
                     )}
@@ -130,16 +165,16 @@ export default function ContactPage() {
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-6 border border-slate-900 bg-slate-900/10 p-6 rounded-3xl backdrop-blur-md relative">
-            <h2 className="text-lg font-bold text-white mb-4">Envoyer un message</h2>
-            <p className="text-xs text-slate-400 mb-6">
+          <div className="lg:col-span-6 border border-slate-200 bg-white p-8 rounded-3xl relative shadow-[0_1px_3px_rgba(0,0,0,0.015)]">
+            <h2 className="text-lg font-bold text-slate-900 mb-4">Envoyer un message</h2>
+            <p className="text-xs text-slate-600 mb-6">
               Remplissez ce formulaire et notre équipe technique vous contactera dans les plus brefs délais.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {submitted && (
-                <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold text-emerald-400 flex items-center gap-2">
-                  <Check className="h-4 w-4" /> Message envoyé avec succès. Nous vous répondrons sous peu.
+                <div className="p-3.5 rounded-xl bg-brand-green/10 border border-brand-green/30 text-xs font-bold text-brand-green flex items-center gap-2">
+                  <Check className="h-4 w-4 text-brand-green" /> Message envoyé avec succès. Nous vous répondrons sous peu.
                 </div>
               )}
 
@@ -151,7 +186,7 @@ export default function ContactPage() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Ex : M. KOFFI Yao"
-                  className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-900 text-xs text-slate-200 focus:outline-none focus:border-cyan-500"
+                  className="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:bg-white focus:border-brand-blue placeholder:text-slate-400 transition-colors"
                 />
               </div>
 
@@ -164,7 +199,7 @@ export default function ContactPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="adresse@mail.com"
-                    className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-900 text-xs text-slate-200 focus:outline-none focus:border-cyan-500"
+                    className="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:bg-white focus:border-brand-blue placeholder:text-slate-400 transition-colors"
                   />
                 </div>
                 <div className="space-y-1">
@@ -173,8 +208,8 @@ export default function ContactPage() {
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Ex : +225 05..."
-                    className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-900 text-xs text-slate-200 focus:outline-none focus:border-cyan-500"
+                    placeholder="Ex : +226 05..."
+                    className="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:bg-white focus:border-brand-blue placeholder:text-slate-400 transition-colors"
                   />
                 </div>
               </div>
@@ -187,14 +222,14 @@ export default function ContactPage() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Décrivez votre besoin technique ou projet d'acquisition d'équipements..."
-                  className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-900 text-xs text-slate-200 placeholder:text-slate-700 focus:outline-none focus:border-cyan-500"
+                  className="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors"
                 />
               </div>
 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 text-xs shadow-lg shadow-cyan-500/10 transition-colors"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold bg-brand-blue hover:bg-blue-750 text-white text-xs shadow-md transition-colors"
                 >
                   <Send className="h-4 w-4" /> Envoyer le message
                 </button>
