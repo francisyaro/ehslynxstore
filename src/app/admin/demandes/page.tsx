@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { getStoredRequests, QuoteRequest } from '@/lib/services/mockData';
 import { useAdmin } from '../layout';
 import { 
-  FileText, 
   ArrowLeft, 
   Search, 
   Filter, 
@@ -13,8 +12,6 @@ import {
   Clock, 
   Building,
   User,
-  LayoutGrid,
-  Sparkles,
   Inbox,
   UserCheck
 } from 'lucide-react';
@@ -63,29 +60,30 @@ export default function AdminRequestsList() {
     { value: 'refusee', label: '9. Refusées' },
   ];
 
+  // Colors using official EHS-LYNX colors (blue, green, red)
   const statusConfig: Record<string, { label: string; color: string; dot: string }> = {
-    nouvelle: { label: 'Nouvelle', color: 'bg-blue-500/10 text-blue-400 border-blue-500/25', dot: 'bg-blue-450' },
-    en_qualification: { label: 'En qualification', color: 'bg-amber-500/10 text-amber-400 border-amber-500/25', dot: 'bg-amber-450' },
-    informations_requises: { label: 'Infos requises', color: 'bg-orange-500/10 text-orange-400 border-orange-500/25', dot: 'bg-orange-450' },
-    affectee: { label: 'Affectée', color: 'bg-pink-500/10 text-pink-400 border-pink-500/25', dot: 'bg-pink-450' },
-    consultation_fournisseur: { label: 'Consultation Fournisseur', color: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/25', dot: 'bg-indigo-450' },
-    offre_en_preparation: { label: 'Offre en préparation', color: 'bg-purple-500/10 text-purple-400 border-purple-500/25', dot: 'bg-purple-450' },
-    devis_transmis: { label: 'Devis transmis', color: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/25', dot: 'bg-cyan-450' },
-    acceptee: { label: 'Acceptée', color: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/25', dot: 'bg-emerald-450' },
-    refusee: { label: 'Refusée', color: 'bg-rose-500/10 text-rose-400 border-rose-500/25', dot: 'bg-rose-450' },
+    nouvelle: { label: 'Nouvelle', color: 'bg-blue-50 text-brand-blue border-blue-100', dot: 'bg-brand-blue' },
+    en_qualification: { label: 'En qualification', color: 'bg-amber-50 text-amber-800 border-amber-100', dot: 'bg-amber-500' },
+    informations_requises: { label: 'Infos requises', color: 'bg-orange-50 text-orange-800 border-orange-100', dot: 'bg-orange-500' },
+    affectee: { label: 'Affectée', color: 'bg-pink-50 text-pink-700 border-pink-100', dot: 'bg-pink-500' },
+    consultation_fournisseur: { label: 'Consultation Fournisseur', color: 'bg-indigo-50 text-indigo-700 border-indigo-100', dot: 'bg-indigo-500' },
+    offre_en_preparation: { label: 'Offre en préparation', color: 'bg-purple-50 text-purple-700 border-purple-100', dot: 'bg-purple-500' },
+    devis_transmis: { label: 'Devis transmis', color: 'bg-cyan-50 text-cyan-800 border-cyan-100', dot: 'bg-cyan-500' },
+    acceptee: { label: 'Acceptée', color: 'bg-green-50 text-brand-green border-green-100', dot: 'bg-brand-green' },
+    refusee: { label: 'Refusée', color: 'bg-red-50 text-brand-red border-red-100', dot: 'bg-brand-red' },
   };
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8 animate-fade-in">
       
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800/40">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
         <div className="space-y-1">
           <Link href="/admin" className="inline-flex items-center gap-1 text-[10px] uppercase font-bold text-slate-500 hover:text-brand-blue transition-colors group">
             <ArrowLeft className="h-3.5 w-3.5 transform group-hover:-translate-x-0.5 transition-transform" /> Console d'administration
           </Link>
-          <h1 className="text-2xl font-black text-white sm:text-3xl">Gestion des Demandes</h1>
-          <p className="text-xs text-slate-400 font-semibold mt-1">
+          <h1 className="text-2xl font-black text-slate-900 sm:text-3xl">Gestion des Demandes</h1>
+          <p className="text-xs text-slate-500 font-bold mt-1">
             {activeAgent === 'all' 
               ? `Toutes les demandes enregistrées (${filteredRequests.length})` 
               : `Demandes affectées à ${activeAgent} (${filteredRequests.length})`}
@@ -93,8 +91,8 @@ export default function AdminRequestsList() {
         </div>
       </div>
 
-      {/* Filter and search panel */}
-      <div className="flex flex-col md:flex-row gap-4 justify-between items-center bg-[#0a0f1d]/60 border border-slate-800/80 p-4 rounded-2xl shadow-xl backdrop-blur-md">
+      {/* Filter panel (Light theme) */}
+      <div className="flex flex-col md:flex-row gap-4 justify-between items-center bg-white border border-slate-200 p-4 rounded-2xl shadow-xs">
         
         {/* Search */}
         <div className="relative w-full md:max-w-md">
@@ -103,18 +101,18 @@ export default function AdminRequestsList() {
             placeholder="Rechercher par référence, client, e-mail, pays..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#080d19] border border-slate-800 text-slate-200 text-xs focus:outline-none focus:border-brand-blue placeholder:text-slate-500 transition-colors"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-xs focus:outline-none focus:bg-white focus:border-brand-blue placeholder:text-slate-400 transition-colors"
           />
-          <Search className="absolute left-3.5 top-3.5 h-3.5 w-3.5 text-slate-500" />
+          <Search className="absolute left-3.5 top-3.5 h-3.5 w-3.5 text-slate-400" />
         </div>
 
         {/* Status Filter */}
         <div className="flex items-center gap-2 w-full md:w-auto">
-          <Filter className="h-4 w-4 text-slate-500 shrink-0" />
+          <Filter className="h-4 w-4 text-slate-400 shrink-0" />
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="w-full md:w-60 px-3 py-2.5 rounded-xl bg-[#080d19] border border-slate-800 text-xs text-slate-250 font-bold focus:outline-none focus:border-brand-blue cursor-pointer"
+            className="w-full md:w-60 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 font-bold focus:outline-none focus:bg-white focus:border-brand-blue cursor-pointer"
           >
             <option value="">Tous les statuts du workflow</option>
             {statuses.map((st) => (
@@ -124,80 +122,82 @@ export default function AdminRequestsList() {
         </div>
       </div>
 
-      {/* Requests table list */}
-      <div className="border border-slate-800/80 rounded-2xl overflow-hidden bg-[#0a0f1d]/75 shadow-2xl backdrop-blur-md">
+      {/* Requests table list (Light theme) */}
+      <div className="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-xs">
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-slate-800/60 text-left">
-            <thead className="bg-[#0b1123] text-[10px] text-slate-450 font-bold uppercase tracking-wider">
+          <table className="min-w-full divide-y divide-slate-100 text-left">
+            <thead className="bg-slate-50 text-[10px] text-slate-500 font-bold uppercase tracking-wider">
               <tr>
-                <th className="px-6 py-4.5">Référence</th>
-                <th className="px-6 py-4.5">Date</th>
-                <th className="px-6 py-4.5">Entreprise & Pays</th>
-                <th className="px-6 py-4.5">Contact Client</th>
-                <th className="px-6 py-4.5">Affectation</th>
-                <th className="px-6 py-4.5">Statut</th>
-                <th className="px-6 py-4.5">Matériel</th>
-                <th className="px-6 py-4.5 text-right">Actions</th>
+                <th className="px-6 py-4">Référence</th>
+                <th className="px-6 py-4">Date</th>
+                <th className="px-6 py-4">Entreprise & Pays</th>
+                <th className="px-6 py-4">Contact Client</th>
+                <th className="px-6 py-4">Affectation</th>
+                <th className="px-6 py-4">Statut</th>
+                <th className="px-6 py-4">Matériel</th>
+                <th className="px-6 py-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/40 text-xs text-slate-300">
+            <tbody className="divide-y divide-slate-100 text-xs text-slate-700">
               {filteredRequests.length > 0 ? (
                 filteredRequests.map((req) => {
                   const config = statusConfig[req.status] || { 
                     label: req.status.replace('_', ' '), 
-                    color: 'bg-slate-800/40 text-slate-400 border-slate-750',
-                    dot: 'bg-slate-500'
+                    color: 'bg-slate-50 text-slate-600 border-slate-200',
+                    dot: 'bg-slate-400'
                   };
                   return (
-                    <tr key={req.id} className="hover:bg-slate-850/20 transition-colors group">
+                    <tr key={req.id} className="hover:bg-slate-50/50 transition-colors group">
                       {/* Ref */}
-                      <td className="px-6 py-4.5 font-mono font-bold text-brand-blue group-hover:text-cyan-400 transition-colors">
+                      <td className="px-6 py-4 font-mono font-bold text-brand-blue group-hover:text-brand-green transition-colors">
                         {req.reference}
                       </td>
                       {/* Date */}
-                      <td className="px-6 py-4.5 text-slate-450 font-mono flex items-center gap-1.5 mt-2.5 border-0">
-                        <Clock className="h-3.5 w-3.5 text-slate-650" /> {new Date(req.created_at).toLocaleDateString('fr-FR')}
+                      <td className="px-6 py-4 text-slate-450 font-mono">
+                        <div className="flex items-center gap-1.5">
+                          <Clock className="h-3.5 w-3.5 text-slate-400" /> {new Date(req.created_at).toLocaleDateString('fr-FR')}
+                        </div>
                       </td>
                       {/* Company & Country */}
-                      <td className="px-6 py-4.5">
-                        <div className="font-extrabold text-white flex items-center gap-1.5">
-                          <Building className="h-3.5 w-3.5 text-slate-500" /> {req.company_name}
+                      <td className="px-6 py-4">
+                        <div className="font-extrabold text-slate-850 flex items-center gap-1.5">
+                          <Building className="h-3.5 w-3.5 text-slate-400" /> {req.company_name}
                         </div>
-                        <div className="text-[10px] text-slate-500 font-semibold pl-5 mt-0.5">{req.country}</div>
+                        <div className="text-[10px] text-slate-550 font-semibold pl-5 mt-0.5">{req.country}</div>
                       </td>
                       {/* Contact client */}
-                      <td className="px-6 py-4.5">
-                        <div className="font-semibold text-slate-200 flex items-center gap-1.5">
-                          <User className="h-3.5 w-3.5 text-slate-500" /> {req.contact_name}
+                      <td className="px-6 py-4">
+                        <div className="font-semibold text-slate-700 flex items-center gap-1.5">
+                          <User className="h-3.5 w-3.5 text-slate-400" /> {req.contact_name}
                         </div>
                         <div className="text-[10px] text-slate-500 pl-5 mt-0.5 truncate max-w-[180px]">{req.email}</div>
                       </td>
                       {/* Assignee */}
-                      <td className="px-6 py-4.5">
+                      <td className="px-6 py-4">
                         {req.assigned_to ? (
-                          <span className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-350 bg-slate-800/40 px-2.5 py-1 rounded-lg border border-slate-700/50">
+                          <span className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-700 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200">
                             <UserCheck className="h-3 w-3 text-brand-green" /> {req.assigned_to.split(' ')[0]}
                           </span>
                         ) : (
-                          <span className="text-[10px] italic text-slate-600">Non assignée</span>
+                          <span className="text-[10px] italic text-slate-400">Non assignée</span>
                         )}
                       </td>
                       {/* Status */}
-                      <td className="px-6 py-4.5">
+                      <td className="px-6 py-4">
                         <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-wider border ${config.color}`}>
                           <span className={`h-1.5 w-1.5 rounded-full ${config.dot}`} />
                           {config.label}
                         </span>
                       </td>
                       {/* Qty items */}
-                      <td className="px-6 py-4.5 font-bold text-slate-400">
+                      <td className="px-6 py-4 font-bold text-slate-500">
                         {req.items.length} {req.items.length > 1 ? 'articles' : 'article'}
                       </td>
                       {/* Actions */}
-                      <td className="px-6 py-4.5 text-right">
+                      <td className="px-6 py-4 text-right">
                         <Link
                           href={`/admin/demandes/${req.id}`}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-800 bg-[#0d1326] hover:bg-brand-blue/20 hover:border-brand-blue hover:text-white text-[10px] font-black text-slate-400 transition-all group/action"
+                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-brand-blue hover:text-white text-[10px] font-black text-slate-600 transition-all group/action"
                         >
                           Traiter <ArrowUpRight className="h-3 w-3 transform group-hover/action:translate-x-0.5 group-hover/action:-translate-y-0.5 transition-transform" />
                         </Link>
@@ -209,8 +209,8 @@ export default function AdminRequestsList() {
                 <tr>
                   <td colSpan={8} className="px-6 py-20 text-center">
                     <div className="max-w-md mx-auto flex flex-col items-center justify-center space-y-3">
-                      <Inbox className="h-10 w-10 text-slate-650" />
-                      <p className="text-xs text-slate-500 font-bold">Aucune demande trouvée avec les critères sélectionnés.</p>
+                      <Inbox className="h-10 w-10 text-slate-300" />
+                      <p className="text-xs text-slate-400 font-bold">Aucune demande trouvée avec les critères sélectionnés.</p>
                     </div>
                   </td>
                 </tr>

@@ -160,7 +160,6 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
     updateRequestData(updated, 'Note ajoutée à l\'historique');
   };
 
-  // Simulate PDF Quotation transmission with premium multi-step loaders
   const handleTransmitQuote = () => {
     if (!request) return;
 
@@ -202,11 +201,10 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
           setIsGeneratingPdf(false);
           setPdfGenStep(0);
         }, 1200);
-      }, 1000);
-    }, 1000);
+      }, 1050);
+    }, 1050);
   };
 
-  // Pre-filled WhatsApp template
   const getWhatsAppLink = () => {
     if (!request) return '';
     const number = request.whatsapp || request.phone || '';
@@ -215,7 +213,6 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
     return `https://wa.me/${cleanNumber}?text=${encodeURIComponent(text)}`;
   };
 
-  // Pre-filled Email template
   const getEmailLink = () => {
     if (!request) return '';
     const subject = `EHS LYNX AFRIK — Qualification de votre demande de prix ${request.reference}`;
@@ -234,7 +231,6 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
     );
   }
 
-  // Group steps into 4 logical business phases
   const phases = [
     { id: 'A', name: '1. Qualification', steps: statusList.filter(s => s.phase === 'A') },
     { id: 'B', name: '2. Chiffrage', steps: statusList.filter(s => s.phase === 'B') },
@@ -242,37 +238,36 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
     { id: 'D', name: '4. Décision', steps: statusList.filter(s => s.phase === 'D') },
   ];
 
-  // Determine currently active phase
   const currentPhase = statusList.find(s => s.value === status)?.phase || 'A';
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8 animate-fade-in">
       
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-slate-800/40">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-slate-200">
         <div className="space-y-1">
           <Link href="/admin/demandes" className="inline-flex items-center gap-1 text-[10px] uppercase font-bold text-slate-500 hover:text-brand-blue transition-colors group">
             <ArrowLeft className="h-3.5 w-3.5 transform group-hover:-translate-x-0.5 transition-transform" /> Retour aux demandes
           </Link>
-          <h1 className="text-2xl font-black text-white flex items-center gap-3">
-            Fiche Demande <span className="font-mono text-brand-blue bg-brand-blue/5 border border-brand-blue/15 px-3 py-1 rounded-xl text-lg font-bold">{request.reference}</span>
+          <h1 className="text-2xl font-black text-slate-900 flex items-center gap-3">
+            Fiche Demande <span className="font-mono text-brand-blue bg-blue-50 border border-blue-100 px-3 py-1 rounded-xl text-lg font-bold shadow-2xs">{request.reference}</span>
           </h1>
         </div>
 
         {success && (
-          <div className="px-4 py-2.5 rounded-xl bg-brand-green/10 border border-brand-green/20 text-xs font-bold text-brand-green flex items-center gap-1.5 animate-pulse shadow-[0_0_15px_rgba(16,130,57,0.1)]">
+          <div className="px-4 py-2.5 rounded-xl bg-green-50 border border-green-150 text-xs font-bold text-brand-green flex items-center gap-1.5 animate-pulse shadow-xs">
             <Check className="h-4.5 w-4.5" /> {success}
           </div>
         )}
       </div>
 
-      {/* WORKFLOW PIPELINE stepper */}
-      <div className="bg-[#0a0f1d]/75 border border-slate-800/80 p-6 rounded-3xl space-y-5 shadow-2xl backdrop-blur-md">
+      {/* WORKFLOW PIPELINE stepper (Light theme) */}
+      <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-5 shadow-xs">
         <div className="flex items-center justify-between">
-          <h2 className="text-xs font-black uppercase tracking-widest text-slate-450 flex items-center gap-2">
+          <h2 className="text-xs font-black uppercase tracking-widest text-brand-blue flex items-center gap-2">
             <Workflow className="h-4.5 w-4.5 text-brand-blue" /> Pipeline du Workflow Commercial
           </h2>
-          <span className="text-[10px] bg-slate-800/50 border border-slate-700/60 text-slate-350 px-2.5 py-1 rounded-lg font-bold">
+          <span className="text-[10px] bg-slate-50 border border-slate-200 text-slate-600 px-2.5 py-1 rounded-lg font-bold">
             Phase Active : {phases.find(p=>p.id===currentPhase)?.name}
           </span>
         </div>
@@ -287,14 +282,14 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                 key={ph.id}
                 className={`p-4 rounded-2xl border transition-all duration-300 ${
                   isPhaseActive 
-                    ? 'bg-gradient-to-b from-[#0e1428]/80 to-[#0a0f1d]/90 border-brand-blue shadow-[0_0_15px_rgba(18,67,140,0.1)]' 
+                    ? 'bg-blue-50/15 border-brand-blue shadow-2xs' 
                     : isPhasePassed
-                    ? 'bg-slate-900/35 border-slate-800/60 opacity-75'
-                    : 'bg-transparent border-slate-850/50 opacity-40'
+                    ? 'bg-slate-50/50 border-slate-200 opacity-90'
+                    : 'bg-slate-50/20 border-slate-100 opacity-50'
                 }`}
               >
                 <p className={`text-[10px] font-black uppercase tracking-wider mb-2.5 ${
-                  isPhaseActive ? 'text-cyan-400' : isPhasePassed ? 'text-brand-green' : 'text-slate-500'
+                  isPhaseActive ? 'text-brand-blue' : isPhasePassed ? 'text-brand-green' : 'text-slate-400'
                 }`}>
                   {ph.name}
                 </p>
@@ -307,12 +302,12 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                         onClick={() => handleStatusChange(st.value)}
                         className={`w-full text-left px-2.5 py-1.5 rounded-lg text-[10px] font-bold transition-all flex items-center justify-between ${
                           isStepActive
-                            ? 'bg-brand-blue/20 text-white border border-brand-blue/30 shadow-[0_0_8px_rgba(18,67,140,0.2)]'
-                            : 'text-slate-400 hover:text-white hover:bg-slate-800/30'
+                            ? 'bg-brand-blue/10 text-brand-blue border border-brand-blue/30 shadow-2xs'
+                            : 'text-slate-500 hover:text-brand-blue hover:bg-slate-50'
                         }`}
                       >
                         <span className="truncate">{st.label.substring(3)}</span>
-                        {isStepActive && <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_#22d3ee]" />}
+                        {isStepActive && <span className="h-1.5 w-1.5 rounded-full bg-brand-blue shadow-[0_0_4px_rgba(18,67,140,0.5)]" />}
                       </button>
                     );
                   })}
@@ -330,39 +325,39 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
         <div className="lg:col-span-8 space-y-8">
           
           {/* Client & Org Info Card */}
-          <div className="bg-[#0a0f1d]/85 border border-slate-800/80 p-6 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6 shadow-2xl backdrop-blur-md">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-6 shadow-xs">
             
             <div className="space-y-4">
-              <h2 className="text-[10px] font-black text-slate-450 uppercase tracking-widest flex items-center gap-2 border-b border-slate-800/40 pb-3.5">
+              <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest flex items-center gap-2 border-b border-slate-100 pb-3.5">
                 <Building className="h-4 w-4 text-brand-blue" /> Informations Entreprise
               </h2>
               <div className="space-y-2 text-xs">
-                <p className="text-white font-extrabold text-sm tracking-wide">{request.company_name}</p>
-                <p className="text-slate-400 flex items-center gap-1.5">
-                  <span className="text-slate-500">Secteur :</span> {request.sector || 'Non renseigné'}
+                <p className="text-slate-900 font-extrabold text-sm tracking-wide">{request.company_name}</p>
+                <p className="text-slate-650 flex items-center gap-1.5">
+                  <span className="text-slate-400 font-bold">Secteur :</span> {request.sector || 'Non renseigné'}
                 </p>
-                <p className="text-slate-400 flex items-start gap-1.5">
-                  <span className="text-slate-500 shrink-0">Livraison :</span> 
+                <p className="text-slate-650 flex items-start gap-1.5">
+                  <span className="text-slate-400 font-bold shrink-0">Livraison :</span> 
                   <span className="leading-tight">{request.delivery_location || `${request.city}, ${request.country}`}</span>
                 </p>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-[10px] font-black text-slate-450 uppercase tracking-widest flex items-center gap-2 border-b border-slate-800/40 pb-3.5">
+              <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest flex items-center gap-2 border-b border-slate-100 pb-3.5">
                 <User className="h-4 w-4 text-brand-blue" /> Contact Principal
               </h2>
               <div className="space-y-2 text-xs">
-                <p className="text-white font-extrabold text-sm tracking-wide">{request.contact_name}</p>
-                <p className="text-slate-400">
-                  <span className="text-slate-500">Fonction :</span> {request.job_title || 'Non renseignée'}
+                <p className="text-slate-900 font-extrabold text-sm tracking-wide">{request.contact_name}</p>
+                <p className="text-slate-650">
+                  <span className="text-slate-400 font-bold">Fonction :</span> {request.job_title || 'Non renseignée'}
                 </p>
-                <p className="text-slate-400 flex items-center gap-1.5">
-                  <span className="text-slate-500">E-mail :</span> 
+                <p className="text-slate-650 flex items-center gap-1.5">
+                  <span className="text-slate-400 font-bold">E-mail :</span> 
                   <a href={`mailto:${request.email}`} className="text-brand-blue hover:underline font-semibold">{request.email}</a>
                 </p>
-                <p className="text-slate-400">
-                  <span className="text-slate-500">Téléphone :</span> {request.phone}
+                <p className="text-slate-655">
+                  <span className="text-slate-400 font-bold">Téléphone :</span> {request.phone}
                 </p>
               </div>
             </div>
@@ -370,11 +365,11 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
           </div>
 
           {/* Quick Communication Tool Panel */}
-          <div className="bg-[#0a0f1d]/85 border border-slate-800/80 p-6 rounded-3xl space-y-4 shadow-2xl backdrop-blur-md">
-            <h2 className="text-[10px] font-black text-slate-450 uppercase tracking-widest flex items-center gap-2 border-b border-slate-800/40 pb-3.5">
-              <Phone className="h-4 w-4 text-cyan-400" /> Actions de Contact Commercial Direct
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-xs">
+            <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest flex items-center gap-2 border-b border-slate-100 pb-3.5">
+              <Phone className="h-4 w-4 text-brand-green" /> Actions de Contact Commercial Direct
             </h2>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-500">
               Utilisez ces raccourcis pré-remplis pour contacter directement le prospect afin de qualifier son besoin ou clarifier sa demande :
             </p>
             <div className="flex flex-wrap gap-4 pt-1">
@@ -382,13 +377,13 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                 href={getWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-green/20 border border-brand-green/45 text-brand-green hover:bg-brand-green/30 hover:border-brand-green text-xs font-bold transition-all shadow-md"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-green-50 border border-green-200 text-brand-green hover:bg-green-100/50 text-xs font-bold transition-all shadow-2xs"
               >
                 <MessageSquare className="h-4 w-4" /> Contacter par WhatsApp
               </a>
               <a
                 href={getEmailLink()}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-blue/20 border border-brand-blue/45 text-brand-blue hover:bg-brand-blue/30 hover:border-brand-blue text-xs font-bold transition-all shadow-md"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-50 border border-blue-200 text-brand-blue hover:bg-blue-100/50 text-xs font-bold transition-all shadow-2xs"
               >
                 <Mail className="h-4 w-4" /> Envoyer un E-mail Qualif.
               </a>
@@ -396,37 +391,37 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
           </div>
 
           {/* Delivery & Logistics */}
-          <div className="bg-[#0a0f1d]/85 border border-slate-800/80 p-6 rounded-3xl space-y-4 shadow-2xl backdrop-blur-md">
-            <h2 className="text-[10px] font-black text-slate-450 uppercase tracking-widest flex items-center gap-2 border-b border-slate-800/40 pb-3.5">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-xs">
+            <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest flex items-center gap-2 border-b border-slate-100 pb-3.5">
               <Calendar className="h-4 w-4 text-brand-blue" /> Logistique & Exigences
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-              <div className="space-y-1 bg-slate-900/45 p-3 rounded-xl border border-slate-850/50">
-                <span className="text-[9px] text-slate-500 uppercase tracking-wider block font-bold">Délai de livraison souhaité</span>
-                <span className="text-slate-200 font-bold">{request.desired_delivery_date ? new Date(request.desired_delivery_date).toLocaleDateString('fr-FR') : 'Non spécifié'}</span>
+              <div className="space-y-1 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                <span className="text-[9px] text-slate-450 uppercase tracking-wider block font-bold">Délai de livraison souhaité</span>
+                <span className="text-slate-700 font-bold">{request.desired_delivery_date ? new Date(request.desired_delivery_date).toLocaleDateString('fr-FR') : 'Non spécifié'}</span>
               </div>
-              <div className="space-y-1 bg-slate-900/45 p-3 rounded-xl border border-slate-850/50">
-                <span className="text-[9px] text-slate-500 uppercase tracking-wider block font-bold">Canal privilégié de réponse</span>
-                <span className="px-2.5 py-0.5 rounded bg-brand-blue/10 border border-brand-blue/35 text-brand-blue text-[9px] uppercase font-black tracking-widest inline-block mt-1">{request.preferred_contact_channel}</span>
+              <div className="space-y-1 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                <span className="text-[9px] text-slate-455 uppercase tracking-wider block font-bold">Canal privilégié de réponse</span>
+                <span className="px-2.5 py-0.5 rounded bg-blue-50 border border-blue-100 text-brand-blue text-[9px] uppercase font-black tracking-widest inline-block mt-1">{request.preferred_contact_channel}</span>
               </div>
             </div>
             {request.general_comment && (
-              <div className="pt-2 border-t border-slate-800/40 text-xs">
-                <span className="text-[9px] text-slate-500 uppercase tracking-wider block font-bold mb-1.5">Commentaire général client</span>
-                <p className="text-slate-300 leading-relaxed bg-slate-900/50 p-4 rounded-2xl border border-slate-850">{request.general_comment}</p>
+              <div className="pt-2 border-t border-slate-100 text-xs">
+                <span className="text-[9px] text-slate-450 uppercase tracking-wider block font-bold mb-1.5">Commentaire général client</span>
+                <p className="text-slate-650 leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100">{request.general_comment}</p>
               </div>
             )}
           </div>
 
           {/* Items requested */}
-          <div className="bg-[#0a0f1d]/85 border border-slate-800/80 p-6 rounded-3xl space-y-4 shadow-2xl backdrop-blur-md">
-            <h2 className="text-[10px] font-black text-slate-450 uppercase tracking-widest flex items-center gap-2 border-b border-slate-800/40 pb-3.5">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-xs">
+            <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest flex items-center gap-2 border-b border-slate-100 pb-3.5">
               <ClipboardList className="h-4 w-4 text-brand-blue" /> Spécifications Articles demandés
             </h2>
 
-            <div className="border border-slate-800/80 rounded-2xl overflow-hidden">
-              <table className="min-w-full divide-y divide-slate-800/60 text-left">
-                <thead className="bg-[#0b1123] text-[9px] text-slate-450 font-bold uppercase tracking-wider">
+            <div className="border border-slate-200 rounded-2xl overflow-hidden">
+              <table className="min-w-full divide-y divide-slate-100 text-left">
+                <thead className="bg-slate-50 text-[9px] text-slate-500 font-bold uppercase tracking-wider">
                   <tr>
                     <th className="px-4 py-3.5">Marque / Modèle</th>
                     <th className="px-4 py-3.5">Désignation</th>
@@ -434,23 +429,23 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                     <th className="px-4 py-3.5 text-center">Quantité</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800/40 text-xs text-slate-300">
+                <tbody className="divide-y divide-slate-100 text-xs text-slate-700">
                   {request.items.map((item, idx) => (
-                    <tr key={idx} className="hover:bg-slate-850/10 transition-colors">
+                    <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
                       <td className="px-4 py-3.5">
-                        <span className="font-extrabold text-white block">{item.product_brand}</span>
+                        <span className="font-extrabold text-slate-900 block">{item.product_brand}</span>
                         <span className="text-[10px] font-mono text-brand-blue font-bold">{item.product_model}</span>
                       </td>
                       <td className="px-4 py-3.5">
-                        <div className="font-bold text-slate-200">{item.product_name}</div>
+                        <div className="font-bold text-slate-800">{item.product_name}</div>
                         {item.comment && (
                           <div className="text-[10px] text-slate-500 mt-1 italic">Note client : {item.comment}</div>
                         )}
                       </td>
-                      <td className="px-4 py-3.5 text-slate-400">
+                      <td className="px-4 py-3.5 text-slate-600">
                         {item.configuration}
                       </td>
-                      <td className="px-4 py-3.5 text-center font-black text-white text-sm">
+                      <td className="px-4 py-3.5 text-center font-black text-slate-800 text-sm">
                         {item.quantity}
                       </td>
                     </tr>
@@ -466,19 +461,19 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
         <div className="lg:col-span-4 space-y-8">
           
           {/* Status & assignment configuration panel */}
-          <div className="bg-[#0a0f1d]/85 border border-slate-800/80 p-6 rounded-3xl space-y-4 shadow-2xl backdrop-blur-md">
-            <h2 className="text-[10px] font-black text-slate-450 uppercase tracking-widest border-b border-slate-800/40 pb-3.5">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-xs">
+            <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest border-b border-slate-100 pb-3.5">
               Paramètres Dossier Commercial
             </h2>
 
             <div className="space-y-4">
               <div className="space-y-1.5">
-                <label className="text-[9px] font-black text-slate-500 uppercase tracking-wider block">Commercial Assigné</label>
+                <label className="text-[9px] font-black text-slate-400 uppercase tracking-wider block">Commercial Assigné</label>
                 <div className="relative">
                   <select
                     value={assignedTo}
                     onChange={(e) => handleAssigneeChange(e.target.value)}
-                    className="w-full px-3 py-2.5 rounded-xl bg-[#080d19] border border-slate-800 text-xs text-slate-200 font-bold focus:outline-none focus:border-brand-blue cursor-pointer"
+                    className="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 font-bold focus:outline-none focus:bg-white focus:border-brand-blue cursor-pointer"
                   >
                     <option value="">Non assigné (Libre)</option>
                     {salesAgents.map((a) => (
@@ -494,11 +489,11 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                   <button
                     onClick={handleTransmitQuote}
                     disabled={isGeneratingPdf}
-                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold bg-gradient-to-r from-brand-blue to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white text-xs shadow-lg shadow-brand-blue/15 hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold bg-brand-blue hover:bg-blue-750 text-white text-xs shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isGeneratingPdf ? (
                       <>
-                        <Loader2 className="h-4.5 w-4.5 animate-spin text-cyan-400" />
+                        <Loader2 className="h-4.5 w-4.5 animate-spin text-white" />
                         <span>
                           {pdfGenStep === 1 && "Calcul des spécifications..."}
                           {pdfGenStep === 2 && "Génération du PDF commercial..."}
@@ -518,13 +513,13 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
           </div>
 
           {/* Interactive PDF quote preview */}
-          <div className="bg-[#0a0f1d]/85 border border-slate-800/80 p-6 rounded-3xl space-y-4 shadow-2xl backdrop-blur-md">
-            <h2 className="text-[10px] font-black text-slate-450 uppercase tracking-widest border-b border-slate-800/40 pb-3.5 flex items-center justify-between">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-4 shadow-xs">
+            <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest border-b border-slate-100 pb-3.5 flex items-center justify-between">
               <span>Aperçu du Devis de Vente</span>
               <span className="text-[9px] text-brand-green font-bold flex items-center gap-0.5"><Sparkles className="h-3 w-3" /> Fictif</span>
             </h2>
 
-            <div className="bg-white text-slate-900 p-4 rounded-xl shadow-inner border border-slate-200 text-[10px] space-y-3 font-mono overflow-y-auto max-h-[360px]">
+            <div className="bg-white text-slate-900 p-4 rounded-xl border border-slate-200 text-[10px] space-y-3 font-mono overflow-y-auto max-h-[360px] shadow-inner">
               <div className="flex justify-between items-start border-b border-slate-200 pb-2">
                 <div>
                   <p className="font-extrabold text-slate-900 text-xs">EHS LYNX AFRIK</p>
@@ -568,15 +563,15 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
             
             <button 
               onClick={() => alert("Simulation : Fichier PDF généré en local et téléchargé.")}
-              className="w-full flex items-center justify-center gap-1 py-2 rounded-xl bg-slate-900 border border-slate-800 text-[10px] font-bold text-slate-450 hover:text-white hover:bg-slate-850 transition-colors"
+              className="w-full flex items-center justify-center gap-1 py-2 rounded-xl bg-slate-50 border border-slate-200 text-[10px] font-bold text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors"
             >
               <Download className="h-3.5 w-3.5" /> Télécharger Copie PDF
             </button>
           </div>
 
           {/* Activity Logs Timeline */}
-          <div className="bg-[#0a0f1d]/85 border border-slate-800/80 p-6 rounded-3xl space-y-6 shadow-2xl backdrop-blur-md">
-            <h2 className="text-[10px] font-black text-slate-450 uppercase tracking-widest border-b border-slate-800/40 pb-3.5 flex items-center gap-2">
+          <div className="bg-white border border-slate-200 p-6 rounded-3xl space-y-6 shadow-xs">
+            <h2 className="text-[10px] font-black text-brand-blue uppercase tracking-widest border-b border-slate-100 pb-3.5 flex items-center gap-2">
               <Activity className="h-4.5 w-4.5 text-brand-blue" /> Journal d'Activité Interne
             </h2>
 
@@ -586,7 +581,7 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                 <select
                   value={newLogAction}
                   onChange={(e) => setNewLogAction(e.target.value)}
-                  className="px-2.5 py-1.5 rounded-xl bg-[#080d19] border border-slate-800 text-[10px] text-slate-300 font-bold focus:outline-none focus:border-brand-blue cursor-pointer"
+                  className="px-2.5 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-[10px] text-slate-650 font-bold focus:outline-none focus:bg-white focus:border-brand-blue cursor-pointer"
                 >
                   <option value="note_interne">Note Interne</option>
                   <option value="relance">Relance effectuée</option>
@@ -600,11 +595,11 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                   value={newLogComment}
                   onChange={(e) => setNewLogComment(e.target.value)}
                   placeholder="Inscrire une note commerciale ou compte-rendu d'échange..."
-                  className="w-full pl-3 pr-10 py-2.5 rounded-xl bg-[#080d19] border border-slate-800 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-brand-blue"
+                  className="w-full pl-3 pr-10 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 bottom-3 p-1.5 bg-brand-blue hover:bg-blue-600 text-white rounded-lg transition-colors"
+                  className="absolute right-2 bottom-3 p-1.5 bg-brand-blue hover:bg-blue-750 text-white rounded-lg transition-colors"
                   title="Ajouter au journal"
                 >
                   <Send className="h-3 w-3" />
@@ -619,19 +614,19 @@ export default function RequestDetailClient({ id }: RequestDetailClientProps) {
                   <li key={log.id}>
                     <div className="relative pb-8">
                       {idx !== request.activity_logs.length - 1 ? (
-                        <span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-800" aria-hidden="true" />
+                        <span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-slate-100" aria-hidden="true" />
                       ) : null}
                       <div className="relative flex space-x-3">
                         <div>
-                          <span className="h-8 w-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center ring-4 ring-[#080d18] shadow-inner">
+                          <span className="h-8 w-8 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center ring-4 ring-white shadow-2xs">
                             <MessageSquare className="h-3.5 w-3.5 text-brand-blue" />
                           </span>
                         </div>
                         <div className="flex-1 min-w-0 pt-1">
-                          <div className="text-xs text-slate-350 leading-normal">
-                            <p className="font-semibold text-slate-200">{log.comment}</p>
-                            <p className="text-[9px] text-slate-550 mt-1 flex items-center gap-1.5">
-                              <span className="font-bold">Par : {log.actor}</span>
+                          <div className="text-xs text-slate-600 leading-normal">
+                            <p className="font-semibold text-slate-800">{log.comment}</p>
+                            <p className="text-[9px] text-slate-450 mt-1 flex items-center gap-1.5">
+                              <span className="font-bold text-slate-600">Par : {log.actor}</span>
                               <span>&bull;</span>
                               <span>{new Date(log.created_at).toLocaleString('fr-FR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' })}</span>
                             </p>
