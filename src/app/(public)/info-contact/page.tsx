@@ -10,6 +10,7 @@ export default function ContactPage() {
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const [showAllFaqs, setShowAllFaqs] = useState(false);
 
   const faqs = [
     {
@@ -27,8 +28,18 @@ export default function ContactPage() {
     {
       q: 'Vos appareils disposent-ils d\'homologations ATEX / sécurité intrinsèque ?',
       a: 'Oui, une large gamme de nos équipements (notamment les dosimètres SV 104A et les pompes GilAir Plus) est certifiée Intrinsèquement Sûre (ATEX Zone 0/1, IECEx, MSHA) pour une utilisation sécurisée en mine souterraine ou en site pétrochimique.'
+    },
+    {
+      q: 'Comment puis-je obtenir un devis personnalisé ?',
+      a: 'Il vous suffit de parcourir notre Store, d\'ajouter les équipements souhaités à votre panier de devis, puis de remplir le formulaire de validation. Nos ingénieurs HSE vous enverront une offre technico-commerciale détaillée sous 24 à 48 heures.'
+    },
+    {
+      q: 'Proposez-vous des formations à l\'utilisation des instruments ?',
+      a: 'Oui, à travers la Lynx Academy, nous organisons des sessions de formation théoriques et pratiques sur site ou dans nos locaux pour vos équipes (prise en main des appareils, traitement des données de mesure, et bonnes pratiques HSE).'
     }
   ];
+
+  const visibleFaqs = showAllFaqs ? faqs : faqs.slice(0, 4);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -134,34 +145,6 @@ export default function ContactPage() {
                 </a>
               </div>
             </div>
-
-            {/* FAQ Accordion */}
-            <div className="space-y-4">
-              <h2 className="text-lg font-bold text-slate-900 flex items-center gap-1.5">
-                <HelpCircle className="h-5 w-5 text-brand-blue" /> FAQ Commerciale & Technique
-              </h2>
-
-              <div className="divide-y divide-slate-200 border-t border-b border-slate-200">
-                {faqs.map((faq, idx) => (
-                  <div key={idx} className="py-4">
-                    <button
-                      onClick={() => setFaqOpen(faqOpen === idx ? null : idx)}
-                      className="w-full flex justify-between items-center text-left text-xs font-bold text-slate-800 hover:text-brand-blue transition-colors"
-                    >
-                      <span>{faq.q}</span>
-                      <span className="text-brand-blue text-lg font-mono ml-2">
-                        {faqOpen === idx ? '-' : '+'}
-                      </span>
-                    </button>
-                    {faqOpen === idx && (
-                      <p className="text-[11px] text-slate-600 leading-relaxed mt-2.5 pl-1.5 border-l border-slate-200">
-                        {faq.a}
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Contact Form */}
@@ -244,6 +227,66 @@ export default function ContactPage() {
               </svg>
               Vos données sont protégées. Envoi sécurisé SSL.
             </p>
+          </div>
+        </div>
+
+        {/* FAQ Section (Full Width, Centered, style benchmark) */}
+        <div className="mt-28 max-w-4xl mx-auto space-y-8">
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl font-black text-slate-900 flex items-center justify-center gap-2">
+              <HelpCircle className="h-6 w-6 text-brand-blue" /> FAQ Commerciale & Technique
+            </h2>
+            <p className="text-xs text-slate-500 max-w-md mx-auto">
+              Retrouvez les réponses aux questions les plus fréquentes sur nos instruments, étalonnages et livraisons.
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+            {visibleFaqs.map((faq, idx) => {
+              const isOpen = faqOpen === idx;
+              return (
+                <div
+                  key={idx}
+                  className="border border-slate-200 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200"
+                >
+                  <button
+                    onClick={() => setFaqOpen(isOpen ? null : idx)}
+                    className="w-full flex justify-between items-center text-left cursor-pointer group"
+                  >
+                    <span className="text-sm sm:text-base font-bold text-slate-900 leading-snug">{faq.q}</span>
+                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center text-slate-800 shrink-0 ml-4 transition-all duration-250 ${
+                      isOpen 
+                        ? 'bg-brand-green border-brand-green text-white shadow-md shadow-brand-green/20' 
+                        : 'bg-slate-50 border-slate-200 group-hover:bg-slate-100 group-hover:border-slate-300'
+                    }`}>
+                      {isOpen ? (
+                        <span className="text-base font-bold leading-none">-</span>
+                      ) : (
+                        <span className="text-base font-bold leading-none">+</span>
+                      )}
+                    </div>
+                  </button>
+                  {isOpen && (
+                    <div className="mt-4 pt-4 border-t border-slate-100 text-xs sm:text-sm text-slate-650 leading-relaxed">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Show More Button */}
+          <div className="flex justify-center pt-4">
+            <button
+              onClick={() => {
+                setShowAllFaqs(!showAllFaqs);
+                setFaqOpen(null); // Close any open FAQ to avoid index mismatches
+              }}
+              className="px-6 py-2.5 rounded-xl font-bold bg-brand-green hover:bg-green-750 text-white text-xs shadow-md shadow-brand-green/10 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+            >
+              {showAllFaqs ? 'Afficher moins' : 'Afficher plus'}
+            </button>
           </div>
         </div>
       </div>
