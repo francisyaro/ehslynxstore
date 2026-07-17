@@ -67,21 +67,21 @@ export default function ContactPage() {
               
               <div className="space-y-4">
                 <div className="flex gap-4 items-start">
-                  <div className="p-2.5 rounded-lg bg-slate-100 border border-slate-200 text-brand-blue shrink-0">
+                  <div className="p-3 rounded-xl bg-brand-green text-white shrink-0 shadow-sm shadow-brand-green/10">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Adresse</h3>
+                    <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Adresse</h3>
                     <p className="text-xs text-slate-800 mt-1 font-semibold">Rue de Saponé, Ouaga 2000, Ouagadougou, Burkina Faso</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4 items-start">
-                  <div className="p-2.5 rounded-lg bg-slate-100 border border-slate-200 text-brand-blue shrink-0">
+                  <div className="p-3 rounded-xl bg-brand-green text-white shrink-0 shadow-sm shadow-brand-green/10">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Téléphones (WhatsApp)</h3>
+                    <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Téléphones (WhatsApp)</h3>
                     <p className="text-xs text-slate-800 mt-1 font-semibold">00226 05 - 18 - 18 - 81</p>
                     <p className="text-xs text-slate-800 font-semibold">00226 63 - 62 - 71 - 71</p>
                     <p className="text-xs text-slate-800 font-semibold">+1 - 646 - 269  - 8937</p>
@@ -89,13 +89,13 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex gap-4 items-start">
-                  <div className="p-2.5 rounded-lg bg-slate-100 border border-slate-200 text-brand-blue shrink-0">
+                  <div className="p-3 rounded-xl bg-brand-green text-white shrink-0 shadow-sm shadow-brand-green/10">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">E-mail & Site</h3>
+                    <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">E-mail & Site</h3>
                     <p className="text-xs text-slate-800 mt-1 font-semibold">info@ehslynx.com</p>
-                    <p className="text-xs text-slate-500 font-semibold">ehslynxafrik.com</p>
+                    <p className="text-xs text-slate-550 font-semibold">ehslynxafrik.com</p>
                   </div>
                 </div>
               </div>
@@ -165,76 +165,85 @@ export default function ContactPage() {
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-6 border border-slate-200 bg-white p-8 rounded-3xl relative shadow-[0_1px_3px_rgba(0,0,0,0.015)]">
-            <h2 className="text-lg font-bold text-slate-900 mb-4">Envoyer un message</h2>
-            <p className="text-xs text-slate-600 mb-6">
+          <div className="lg:col-span-6 border-t-4 border-t-brand-blue border-x border-b border-slate-200 bg-white p-8 rounded-3xl relative shadow-2xl shadow-slate-100/90 transition-shadow hover:shadow-slate-200/90">
+            <h2 className="text-xl font-black text-slate-900 tracking-tight mb-2">Envoyer un message</h2>
+            <p className="text-xs text-slate-500 mb-6">
               Remplissez ce formulaire et notre équipe technique vous contactera dans les plus brefs délais.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-5">
               {submitted && (
-                <div className="p-3.5 rounded-xl bg-brand-green/10 border border-brand-green/30 text-xs font-bold text-brand-green flex items-center gap-2">
-                  <Check className="h-4 w-4 text-brand-green" /> Message envoyé avec succès. Nous vous répondrons sous peu.
+                <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 flex items-center gap-2 shadow-sm shadow-emerald-500/5">
+                  <Check className="h-4 w-4 text-brand-green shrink-0" />
+                  <span>Message envoyé avec succès. Nos experts vous répondront sous peu.</span>
                 </div>
               )}
 
-              <div className="space-y-1">
-                <label className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">Votre nom complet *</label>
+              <div className="space-y-1.5">
+                <label className="text-[10px] uppercase tracking-wider text-slate-500 font-extrabold block">Votre nom complet *</label>
                 <input
                   type="text"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Ex : M. KOFFI Yao"
-                  className="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:bg-white focus:border-brand-blue placeholder:text-slate-400 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50/50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 placeholder:text-slate-400 hover:border-slate-300 transition-all duration-200"
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <label className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">E-mail de contact *</label>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label className="text-[10px] uppercase tracking-wider text-slate-500 font-extrabold block">E-mail de contact *</label>
                   <input
                     type="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="adresse@mail.com"
-                    className="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:bg-white focus:border-brand-blue placeholder:text-slate-400 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50/50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 placeholder:text-slate-400 hover:border-slate-300 transition-all duration-200"
                   />
                 </div>
-                <div className="space-y-1">
-                  <label className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">Téléphone</label>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] uppercase tracking-wider text-slate-500 font-extrabold block">Téléphone</label>
                   <input
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="Ex : +226 05..."
-                    className="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:bg-white focus:border-brand-blue placeholder:text-slate-400 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50/50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 placeholder:text-slate-400 hover:border-slate-300 transition-all duration-200"
                   />
                 </div>
               </div>
 
-              <div className="space-y-1">
-                <label className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">Votre Message *</label>
+              <div className="space-y-1.5">
+                <label className="text-[10px] uppercase tracking-wider text-slate-500 font-extrabold block">Votre Message *</label>
                 <textarea
                   rows={4}
                   required
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Décrivez votre besoin technique ou projet d'acquisition d'équipements..."
-                  className="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50/50 border border-slate-200 text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 hover:border-slate-300 transition-all duration-200"
                 />
               </div>
 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold bg-brand-blue hover:bg-blue-750 text-white text-xs shadow-md transition-colors"
+                  className="group w-full flex items-center justify-center gap-2 py-3.5 rounded-full font-bold bg-brand-blue hover:bg-blue-750 text-white text-xs shadow-lg shadow-brand-blue/15 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 cursor-pointer"
                 >
-                  <Send className="h-4 w-4" /> Envoyer le message
+                  <Send className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" /> Envoyer le message
                 </button>
               </div>
             </form>
+
+            <p className="text-[10px] text-slate-400 text-center mt-5 flex items-center justify-center gap-1">
+              <svg className="h-3.5 w-3.5 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              Vos données sont protégées. Envoi sécurisé SSL.
+            </p>
           </div>
         </div>
       </div>
