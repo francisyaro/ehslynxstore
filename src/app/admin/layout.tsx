@@ -141,8 +141,8 @@ export default function AdminLayout({
         <div className="w-full lg:w-[45%] h-full flex flex-col justify-between p-8 sm:p-12 xl:p-14 z-10 bg-[#090d16] border-r border-slate-900/60 relative overflow-hidden shrink-0">
           <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-brand-blue/10 rounded-full blur-[100px] pointer-events-none" />
           
-          {/* Header/Logo (Larger) */}
-          <div className="flex items-center gap-2">
+          {/* Header/Logo (Larger & Centered) */}
+          <div className="flex justify-center items-center w-full">
             <img 
               src="/brands/ehslynxafrik-logo.png" 
               alt="EHS-LYNX AFRIK Logo" 
